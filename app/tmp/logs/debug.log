@@ -1,0 +1,1306 @@
+2014-06-18 15:45:41 Debug: Notice (8): Undefined index: row_count in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\Helper\PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP\View\Helper\PhpExcelHelper.php, line 153
+include - APP\View\Courses\manager_xuat_so_chung_nhan.ctp, line 37
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-06-18 15:45:50 Debug: Notice (8): Undefined index: row_count in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\Helper\PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP\View\Helper\PhpExcelHelper.php, line 153
+include - APP\View\Courses\manager_xuat_so_chung_nhan.ctp, line 37
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-06-18 15:48:17 Debug: Notice (8): Undefined index: row_count in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\Helper\PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP\View\Helper\PhpExcelHelper.php, line 153
+include - APP\View\Courses\manager_xuat_so_chung_nhan.ctp, line 37
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-06-18 15:49:15 Debug: Notice (8): Undefined index: row_count in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\Helper\PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP\View\Helper\PhpExcelHelper.php, line 153
+include - APP\View\Courses\manager_xuat_so_chung_nhan.ctp, line 37
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-06-18 15:50:02 Debug: Notice (8): Undefined index: row_count in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\Helper\PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP\View\Helper\PhpExcelHelper.php, line 153
+include - APP\View\Courses\manager_xuat_so_chung_nhan.ctp, line 37
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-06-18 15:56:11 Debug: Notice (8): Undefined index: row_count in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\Helper\PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP\View\Helper\PhpExcelHelper.php, line 153
+include - APP\View\Courses\manager_xuat_so_chung_nhan.ctp, line 37
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-06-18 15:59:45 Debug: Notice (8): Undefined index: row_count in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\Helper\PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP\View\Helper\PhpExcelHelper.php, line 153
+include - APP\View\Courses\manager_xuat_so_chung_nhan.ctp, line 37
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-06-18 16:02:24 Debug: Notice (8): Undefined index: row_count in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\Helper\PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP\View\Helper\PhpExcelHelper.php, line 153
+include - APP\View\Courses\manager_xuat_so_chung_nhan.ctp, line 37
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-06-18 16:05:26 Debug: Notice (8): Undefined index: row_count in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\Helper\PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP\View\Helper\PhpExcelHelper.php, line 153
+include - APP\View\Courses\manager_xuat_so_chung_nhan.ctp, line 37
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-06-18 16:08:19 Debug: Notice (8): Undefined index: row_count in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\Helper\PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP\View\Helper\PhpExcelHelper.php, line 153
+include - APP\View\Courses\manager_xuat_so_chung_nhan.ctp, line 42
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-06-26 14:45:39 Debug: Notice (8): Undefined variable: aco in [D:\WampDeveloper\Websites\thgv.local\webroot\lib\Cake\Controller\Component\AclComponent.php, line 123]
+Trace:
+AclComponent::allow() - CORE\Cake\Controller\Component\AclComponent.php, line 123
+AppController::beforeFilter() - APP\Controller\AppController.php, line 31
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE\Cake\Event\CakeEventManager.php, line 247
+Controller::startupProcess() - CORE\Cake\Controller\Controller.php, line 674
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-06-26 14:45:43 Debug: Notice (8): Undefined variable: aco in [D:\WampDeveloper\Websites\thgv.local\webroot\lib\Cake\Controller\Component\AclComponent.php, line 123]
+Trace:
+AclComponent::allow() - CORE\Cake\Controller\Component\AclComponent.php, line 123
+AppController::beforeFilter() - APP\Controller\AppController.php, line 31
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE\Cake\Event\CakeEventManager.php, line 247
+Controller::startupProcess() - CORE\Cake\Controller\Controller.php, line 674
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-06-26 14:45:49 Debug: Notice (8): Undefined variable: aco in [D:\WampDeveloper\Websites\thgv.local\webroot\lib\Cake\Controller\Component\AclComponent.php, line 123]
+Trace:
+AclComponent::allow() - CORE\Cake\Controller\Component\AclComponent.php, line 123
+AppController::beforeFilter() - APP\Controller\AppController.php, line 31
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE\Cake\Event\CakeEventManager.php, line 247
+Controller::startupProcess() - CORE\Cake\Controller\Controller.php, line 674
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-06-26 14:45:51 Debug: Notice (8): Undefined variable: aco in [D:\WampDeveloper\Websites\thgv.local\webroot\lib\Cake\Controller\Component\AclComponent.php, line 123]
+Trace:
+AclComponent::allow() - CORE\Cake\Controller\Component\AclComponent.php, line 123
+AppController::beforeFilter() - APP\Controller\AppController.php, line 31
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE\Cake\Event\CakeEventManager.php, line 247
+Controller::startupProcess() - CORE\Cake\Controller\Controller.php, line 674
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-06-26 14:45:54 Debug: Notice (8): Undefined variable: aco in [D:\WampDeveloper\Websites\thgv.local\webroot\lib\Cake\Controller\Component\AclComponent.php, line 123]
+Trace:
+AclComponent::allow() - CORE\Cake\Controller\Component\AclComponent.php, line 123
+AppController::beforeFilter() - APP\Controller\AppController.php, line 31
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE\Cake\Event\CakeEventManager.php, line 247
+Controller::startupProcess() - CORE\Cake\Controller\Controller.php, line 674
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-01 08:14:52 Debug: Notice (8): Undefined index: row_count in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\Helper\PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP\View\Helper\PhpExcelHelper.php, line 153
+include - APP\View\Courses\manager_xuat_so_chung_nhan.ctp, line 42
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 14:24:30 Debug: Notice (8): Undefined variable: export in [D:\WampDeveloper\Websites\thgv.local\webroot\app\Controller\CoursesController.php, line 128]
+Trace:
+CoursesController::manager_thong_ke_student() - APP\Controller\CoursesController.php, line 128
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 14:24:32 Debug: Notice (8): Undefined variable: export in [D:\WampDeveloper\Websites\thgv.local\webroot\app\Controller\CoursesController.php, line 128]
+Trace:
+CoursesController::manager_thong_ke_student() - APP\Controller\CoursesController.php, line 128
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 14:25:07 Debug: Notice (8): Undefined variable: export in [D:\WampDeveloper\Websites\thgv.local\webroot\app\Controller\CoursesController.php, line 128]
+Trace:
+CoursesController::manager_thong_ke_student() - APP\Controller\CoursesController.php, line 128
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 14:25:09 Debug: Notice (8): Undefined variable: export in [D:\WampDeveloper\Websites\thgv.local\webroot\app\Controller\CoursesController.php, line 128]
+Trace:
+CoursesController::manager_thong_ke_student() - APP\Controller\CoursesController.php, line 128
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 14:25:34 Debug: Notice (8): Undefined variable: export in [D:\WampDeveloper\Websites\thgv.local\webroot\app\Controller\CoursesController.php, line 128]
+Trace:
+CoursesController::manager_thong_ke_student() - APP\Controller\CoursesController.php, line 128
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 14:25:35 Debug: Notice (8): Undefined variable: export in [D:\WampDeveloper\Websites\thgv.local\webroot\app\Controller\CoursesController.php, line 128]
+Trace:
+CoursesController::manager_thong_ke_student() - APP\Controller\CoursesController.php, line 128
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 14:25:42 Debug: Notice (8): Undefined variable: export in [D:\WampDeveloper\Websites\thgv.local\webroot\app\Controller\CoursesController.php, line 128]
+Trace:
+CoursesController::manager_thong_ke_student() - APP\Controller\CoursesController.php, line 128
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 14:38:57 Debug: Notice (8): Undefined variable: export in [D:\WampDeveloper\Websites\thgv.local\webroot\app\Controller\CoursesController.php, line 128]
+Trace:
+CoursesController::manager_thong_ke_student() - APP\Controller\CoursesController.php, line 128
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 14:38:59 Debug: Notice (8): Undefined variable: export in [D:\WampDeveloper\Websites\thgv.local\webroot\app\Controller\CoursesController.php, line 128]
+Trace:
+CoursesController::manager_thong_ke_student() - APP\Controller\CoursesController.php, line 128
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 16:51:13 Debug: Notice (8): Undefined index: created in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 25]
+Trace:
+include - APP\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 25
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP\Controller\StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 16:51:13 Debug: Notice (8): Undefined index: status in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26]
+Trace:
+include - APP\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP\Controller\StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 16:51:13 Debug: Notice (8): Undefined index: created in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 25]
+Trace:
+include - APP\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 25
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP\Controller\StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 16:51:13 Debug: Notice (8): Undefined index: status in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26]
+Trace:
+include - APP\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP\Controller\StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 16:51:13 Debug: Notice (8): Undefined index: created in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 25]
+Trace:
+include - APP\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 25
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP\Controller\StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 16:51:13 Debug: Notice (8): Undefined index: status in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26]
+Trace:
+include - APP\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP\Controller\StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 16:52:20 Debug: Notice (8): Undefined index: status in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26]
+Trace:
+include - APP\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP\Controller\StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 16:52:20 Debug: Notice (8): Undefined index: status in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26]
+Trace:
+include - APP\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP\Controller\StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 16:52:20 Debug: Notice (8): Undefined index: status in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26]
+Trace:
+include - APP\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP\Controller\StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 16:53:02 Debug: Notice (8): Undefined index: status in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26]
+Trace:
+include - APP\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP\Controller\StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 16:53:02 Debug: Notice (8): Undefined index: status in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26]
+Trace:
+include - APP\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP\Controller\StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 16:53:02 Debug: Notice (8): Undefined index: status in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26]
+Trace:
+include - APP\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP\Controller\StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 16:55:15 Debug: Notice (8): Undefined index: status in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26]
+Trace:
+include - APP\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP\Controller\StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 16:55:15 Debug: Notice (8): Undefined index: status in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26]
+Trace:
+include - APP\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP\Controller\StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-16 16:55:15 Debug: Notice (8): Undefined index: status in [D:\WampDeveloper\Websites\thgv.local\webroot\app\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26]
+Trace:
+include - APP\View\StudentsCourses\xuat_thong_ke_ds_student.ctp, line 26
+View::_evaluate() - CORE\Cake\View\View.php, line 935
+View::_render() - CORE\Cake\View\View.php, line 897
+View::render() - CORE\Cake\View\View.php, line 466
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP\Controller\StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 160
+[main] - APP\webroot\index.php, line 108
+
+2014-07-20 08:58:47 Notice: Notice (8): Undefined variable: student_course_conditions in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1]
+Trace:
+include - APP/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP/Controller/StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-20 08:58:49 Notice: Notice (8): Undefined variable: student_course_conditions in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1]
+Trace:
+include - APP/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP/Controller/StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-20 08:58:49 Notice: Notice (8): Undefined variable: student_course_conditions in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1]
+Trace:
+include - APP/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP/Controller/StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-20 09:00:10 Notice: Notice (8): Undefined variable: student_course_conditions in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1]
+Trace:
+include - APP/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP/Controller/StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-20 09:00:11 Notice: Notice (8): Undefined variable: student_course_conditions in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1]
+Trace:
+include - APP/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP/Controller/StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-20 09:00:19 Notice: Notice (8): Undefined variable: student_course_conditions in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1]
+Trace:
+include - APP/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP/Controller/StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-20 09:00:37 Notice: Notice (8): Undefined variable: student_course_conditions in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1]
+Trace:
+include - APP/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP/Controller/StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-20 09:03:34 Notice: Notice (8): Undefined variable: student_course_conditions in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1]
+Trace:
+include - APP/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP/Controller/StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-20 09:04:04 Notice: Notice (8): Undefined variable: student_course_conditions in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1]
+Trace:
+include - APP/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP/Controller/StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-20 09:05:47 Notice: Notice (8): Undefined variable: student_course_conditions in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1]
+Trace:
+include - APP/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 1
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP/Controller/StudentsCoursesController.php, line 142
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-20 15:41:24 Notice: Notice (8): Undefined index: name in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Courses/manager_xuat_so_chung_nhan.ctp, line 33]
+Trace:
+include - APP/View/Courses/manager_xuat_so_chung_nhan.ctp, line 33
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-20 15:41:24 Notice: Notice (8): Undefined index: row_count in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Helper/PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP/View/Helper/PhpExcelHelper.php, line 153
+include - APP/View/Courses/manager_xuat_so_chung_nhan.ctp, line 41
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-21 09:25:21 Notice: Notice (8): Undefined index: name in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 21]
+Trace:
+include - APP/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 21
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP/Controller/StudentsCoursesController.php, line 146
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-21 09:25:21 Notice: Notice (8): Undefined index: status in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 26]
+Trace:
+include - APP/View/StudentsCourses/xuat_thong_ke_ds_student.ctp, line 26
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP/Controller/StudentsCoursesController.php, line 146
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-21 10:42:06 Notice: Notice (8): Undefined variable: course in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/StudentsCourses/xuat_excel_ds_student.ctp, line 21]
+Trace:
+include - APP/View/StudentsCourses/xuat_excel_ds_student.ctp, line 21
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP/Controller/StudentsCoursesController.php, line 91
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-21 10:42:06 Notice: Notice (8): Undefined variable: course in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/StudentsCourses/xuat_excel_ds_student.ctp, line 21]
+Trace:
+include - APP/View/StudentsCourses/xuat_excel_ds_student.ctp, line 21
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP/Controller/StudentsCoursesController.php, line 91
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-21 10:45:21 Notice: Notice (8): Undefined variable: course in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/StudentsCourses/xuat_excel_ds_student.ctp, line 21]
+Trace:
+include - APP/View/StudentsCourses/xuat_excel_ds_student.ctp, line 21
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP/Controller/StudentsCoursesController.php, line 91
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-21 10:45:21 Notice: Notice (8): Undefined variable: course in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/StudentsCourses/xuat_excel_ds_student.ctp, line 21]
+Trace:
+include - APP/View/StudentsCourses/xuat_excel_ds_student.ctp, line 21
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+StudentsCoursesController::manager_thong_ke_student() - APP/Controller/StudentsCoursesController.php, line 91
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-22 08:37:51 Notice: Notice (8): Undefined index: name in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Courses/xuat_thong_ke_course.ctp, line 52]
+Trace:
+include - APP/View/Courses/xuat_thong_ke_course.ctp, line 52
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+CoursesController::manager_thong_ke() - APP/Controller/CoursesController.php, line 68
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-22 08:37:51 Notice: Notice (8): Undefined index: name in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Courses/xuat_thong_ke_course.ctp, line 52]
+Trace:
+include - APP/View/Courses/xuat_thong_ke_course.ctp, line 52
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+CoursesController::manager_thong_ke() - APP/Controller/CoursesController.php, line 68
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-22 08:37:51 Notice: Notice (8): Undefined index: name in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Courses/xuat_thong_ke_course.ctp, line 52]
+Trace:
+include - APP/View/Courses/xuat_thong_ke_course.ctp, line 52
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+CoursesController::manager_thong_ke() - APP/Controller/CoursesController.php, line 68
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-22 10:20:40 Notice: Notice (8): Undefined index: row_count in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Helper/PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP/View/Helper/PhpExcelHelper.php, line 153
+include - APP/View/Courses/manager_xuat_so_chung_nhan.ctp, line 41
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-22 10:20:40 Notice: Notice (8): Undefined index: offset in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Helper/PhpExcelHelper.php, line 147]
+Trace:
+PhpExcelHelper::addTableRow() - APP/View/Helper/PhpExcelHelper.php, line 147
+include - APP/View/Courses/manager_xuat_so_chung_nhan.ctp, line 41
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-22 10:20:40 Notice: Notice (8): Undefined index: offset in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Helper/PhpExcelHelper.php, line 147]
+Trace:
+PhpExcelHelper::addTableRow() - APP/View/Helper/PhpExcelHelper.php, line 147
+include - APP/View/Courses/manager_xuat_so_chung_nhan.ctp, line 41
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-22 11:09:53 Notice: Notice (8): Undefined index: row_count in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Helper/PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP/View/Helper/PhpExcelHelper.php, line 153
+include - APP/View/Courses/manager_xuat_so_chung_nhan.ctp, line 41
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-22 11:09:53 Notice: Notice (8): Undefined index: offset in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Helper/PhpExcelHelper.php, line 147]
+Trace:
+PhpExcelHelper::addTableRow() - APP/View/Helper/PhpExcelHelper.php, line 147
+include - APP/View/Courses/manager_xuat_so_chung_nhan.ctp, line 41
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-22 11:09:53 Notice: Notice (8): Undefined index: offset in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Helper/PhpExcelHelper.php, line 147]
+Trace:
+PhpExcelHelper::addTableRow() - APP/View/Helper/PhpExcelHelper.php, line 147
+include - APP/View/Courses/manager_xuat_so_chung_nhan.ctp, line 41
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-22 11:09:54 Notice: Notice (8): Undefined index: row_count in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Helper/PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP/View/Helper/PhpExcelHelper.php, line 153
+include - APP/View/Courses/manager_xuat_so_chung_nhan.ctp, line 41
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-22 11:09:54 Notice: Notice (8): Undefined index: offset in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Helper/PhpExcelHelper.php, line 147]
+Trace:
+PhpExcelHelper::addTableRow() - APP/View/Helper/PhpExcelHelper.php, line 147
+include - APP/View/Courses/manager_xuat_so_chung_nhan.ctp, line 41
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-22 11:09:54 Notice: Notice (8): Undefined index: offset in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Helper/PhpExcelHelper.php, line 147]
+Trace:
+PhpExcelHelper::addTableRow() - APP/View/Helper/PhpExcelHelper.php, line 147
+include - APP/View/Courses/manager_xuat_so_chung_nhan.ctp, line 41
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-24 18:13:14 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-24 18:15:13 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-24 18:20:01 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-25 14:54:29 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-25 15:00:24 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-25 15:01:36 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-25 15:03:24 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-25 15:03:50 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-25 15:04:22 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-25 15:04:36 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-26 22:04:49 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-26 22:05:02 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-26 22:12:20 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-26 22:12:26 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-26 22:12:58 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-26 22:13:30 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-26 22:14:08 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-26 22:16:31 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-26 22:24:36 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-26 22:38:36 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-26 22:39:00 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-26 22:39:08 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-26 22:40:04 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-26 22:46:38 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-26 22:56:03 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-26 23:40:13 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-27 01:42:23 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-27 01:46:27 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-27 02:18:53 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-27 11:19:40 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-28 15:11:11 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-28 17:13:41 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-28 19:27:24 Notice: Notice (8): Undefined index: name in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Courses/xuat_thong_ke_course.ctp, line 52]
+Trace:
+include - APP/View/Courses/xuat_thong_ke_course.ctp, line 52
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+CoursesController::manager_thong_ke() - APP/Controller/CoursesController.php, line 118
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-28 19:27:25 Notice: Notice (8): Undefined index: name in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Courses/xuat_thong_ke_course.ctp, line 52]
+Trace:
+include - APP/View/Courses/xuat_thong_ke_course.ctp, line 52
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+CoursesController::manager_thong_ke() - APP/Controller/CoursesController.php, line 118
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-28 19:27:25 Notice: Notice (8): Undefined index: name in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Courses/xuat_thong_ke_course.ctp, line 52]
+Trace:
+include - APP/View/Courses/xuat_thong_ke_course.ctp, line 52
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+CoursesController::manager_thong_ke() - APP/Controller/CoursesController.php, line 118
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-28 19:27:25 Notice: Notice (8): Undefined index: name in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Courses/xuat_thong_ke_course.ctp, line 52]
+Trace:
+include - APP/View/Courses/xuat_thong_ke_course.ctp, line 52
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+CoursesController::manager_thong_ke() - APP/Controller/CoursesController.php, line 118
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-28 19:28:09 Notice: Notice (8): Undefined index: row_count in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Helper/PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP/View/Helper/PhpExcelHelper.php, line 153
+include - APP/View/Courses/manager_xuat_so_chung_nhan.ctp, line 41
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-28 19:28:09 Notice: Notice (8): Undefined index: offset in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/View/Helper/PhpExcelHelper.php, line 147]
+Trace:
+PhpExcelHelper::addTableRow() - APP/View/Helper/PhpExcelHelper.php, line 147
+include - APP/View/Courses/manager_xuat_so_chung_nhan.ctp, line 41
+View::_evaluate() - CORE/Cake/View/View.php, line 935
+View::_render() - CORE/Cake/View/View.php, line 897
+View::render() - CORE/Cake/View/View.php, line 466
+Controller::render() - CORE/Cake/Controller/Controller.php, line 954
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 192
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-29 08:40:53 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-29 09:22:54 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-29 09:27:53 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-29 09:31:54 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-29 11:01:12 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-30 09:24:46 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-07-30 22:39:39 Notice: Notice (8): Undefined variable: export in [/var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv/app/Controller/CoursesController.php, line 42]
+Trace:
+CoursesController::admin_thong_ke() - APP/Controller/CoursesController.php, line 42
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
