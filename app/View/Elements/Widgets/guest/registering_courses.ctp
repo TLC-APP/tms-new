@@ -19,9 +19,10 @@
                     <?php $stt = ($this->Paginator->param('page') - 1) * $this->Paginator->param('limit') + 1; ?>
                     <?php foreach ($courses as $course): ?>
                         <tr>
-                            <td><?php //echo $stt++;
-                                echo $this->Html->link();
-                            ?></td>
+                            <td><img alt="" class="img-responsive"  style="padding-right: 10px; 
+                                     width: 100px;"
+                                     src="<?php echo SUB_DIR; ?>/files/course/image/<?php echo $course['Course']['image_path'] . '/' . $course['Course']['image']; ?>">
+                            </td>
                             <td><?php echo $this->Html->link($course['Course']['name'], array('guest' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']), array('class' => 'add-button fancybox.ajax')) ?></td>
                             <td><?php echo $course['Chapter']['name'] ?></td>
                             <td><?php echo $course['Course']['register_student_number']; ?></td>

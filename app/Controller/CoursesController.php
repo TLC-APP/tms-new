@@ -721,12 +721,15 @@ class CoursesController extends AppController {
 
         if (!empty($this->request->data['pass_students'])) {
             $pass_students = $this->request->data['pass_students'];
+
             $last_cert = $this->Course->Attend->find('first', array('recursive' => -1, 'order' => array('created' => 'DESC'), 'conditions' => array('Attend.certificated_number is not null')));
 
-            $explode = ( explode('/', $last_cert['Attend']['certificated_number']));
-            $certificated_start_number = $explode[0];
-            if (empty($certificated_start_number)) {
+
+            if (empty($last_cert)) {
                 $certificated_start_number = 1;
+            } else {
+                $explode = ( explode('/', $last_cert['Attend']['certificated_number']));
+                $certificated_start_number = $explode[0];
             }
             $certificated_number_suffix = $this->Course->Chapter->Field->field('Field.certificated_number_suffix');
 
@@ -799,11 +802,13 @@ class CoursesController extends AppController {
 
             foreach ($pass_students as $key => $value) {
 
-                $certificated_number = $certificated_start_number + 1;
+                $certificated_number = ++$certificated_start_number;
                 if ($certificated_start_number < 10) {
-                    $certificated_number = '0' . $certificated_start_number;
+                    $certificated_number = '0' . $certificated_number;
                 }
                 $full_certificated_number = "'" . $certificated_number . $certificated_number_suffix . "'";
+                debug($full_certificated_number);
+
                 $data = array(
                     'Attend.is_passed' => 1,
                     'Attend.certificated_number' => $full_certificated_number,
@@ -833,7 +838,7 @@ class CoursesController extends AppController {
                 $this->Session->setFlash('Cập nhật kết quả không thành công!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
             }
         }
-        $this->redirect(array('manager' => true, 'action' => 'score', $course_id));
+        $this->redirect(array('admin' => true, 'action' => 'score', $course_id));
     }
 
     public function manager_xuat_so_chung_nhan($course_id = null) {

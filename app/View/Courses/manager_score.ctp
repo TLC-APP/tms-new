@@ -98,7 +98,7 @@
                                             <?php echo $course['Teacher']['HocVi']['name'] . ' '; ?>
 
                                         <?php endif; ?>
-                                        <?php echo $this->Html->link($course['Teacher']['name'], array('fields_manager' => true, 'controller' => 'users', 'action' => 'view', $course['Teacher']['id'])) ?>
+                                        <?php echo $this->Html->link($course['Teacher']['name'], array('manager' => true, 'controller' => 'users', 'action' => 'view', $course['Teacher']['id'])) ?>
 
                                     </td>
                                 </tr>

@@ -38,14 +38,14 @@
                                         <td><?php echo $student['Student']['name']; ?></td>
                                         <td><?php echo $student['created']; ?></td>
                                         <td>
-                                            <input type="checkbox" class ="pass" name="pass_students[]" value="<?php echo $student['Student']['id'] ?>"
+
                                             <?php
                                             if ($student['is_passed']) {
-                                                echo 'checked="checked">';
+                                                echo '<input type="checkbox" checked="checked" class ="pass" name="pass_students[]" value="' . $student['Student']['id'] . '">';
                                                 echo ' <input class= "fails" type="hidden" name="fail_students[]" value="0">';
                                             } else {
-                                                echo '>';
-                                                echo ' <input class= "fails" type="hidden" name="fail_students[]" value="' . $student['Student']['id'] . '">';
+                                                echo '<input type="checkbox" class ="pass" name="pass_students[]" value="0">';
+                                                echo '<input type="hidden"  class ="fails" name="fail_students[]" value="' . $student['Student']['id'] . '">';
                                             }
                                             ?>
 
@@ -67,7 +67,7 @@
                         </table>
                         <div class="btn-toolbar pull-right">
                             <?php echo $this->Form->end('Lưu'); ?>
-                            <?php echo $this->Html->link('Xuất excel', array('manager' => true, 'action' => 'xuat_so_chung_nhan', $course['Course']['id']), array('class' => 'btn btn-info')); ?>
+                            <?php echo $this->Html->link('Xuất excel', array('admin' => true, 'action' => 'xuat_so_chung_nhan', $course['Course']['id']), array('class' => 'btn btn-info')); ?>
                         </div>
                         </form>
                     </div><!-- /.tab-pane -->
@@ -98,7 +98,7 @@
                                             <?php echo $course['Teacher']['HocVi']['name'] . ' '; ?>
 
                                         <?php endif; ?>
-                                        <?php echo $this->Html->link($course['Teacher']['name'], array('fields_manager' => true, 'controller' => 'users', 'action' => 'view', $course['Teacher']['id'])) ?>
+                                        <?php echo $this->Html->link($course['Teacher']['name'], array('admin' => true, 'controller' => 'users', 'action' => 'view', $course['Teacher']['id'])) ?>
 
                                     </td>
                                 </tr>
@@ -145,7 +145,6 @@
                 selectAll.attr('checked', true);
 
             } else {
-                console.log('Function: checkItems: Else all items checked');
                 selectAll.attr('checked', false);
             }
         }
@@ -157,14 +156,25 @@
 
         selectAll.on('change', function() {
             if (this.checked) {
-                console.log('This checkbox is checked');
                 wrapperInputs.find(':checkbox').attr('checked', true);
 
-            } else {
-                console.log('This checkbox is NOT checked');
-                wrapperInputs.find(':checkbox').attr('checked', false);
 
+
+            } else {
+                wrapperInputs.find(':checkbox').attr('checked', false);
             }
+            $('.pass').each(function() {
+                var next = $(this).next();
+                if ($(this).attr('checked') == 'checked') {
+                    if(this.value ==0&&next.attr('value')!=0){
+                         this.value = next.attr('value');
+                    }
+                    next.attr('value', 0);
+                } else {
+                    next.attr('value', this.value);
+                    this.value = 0;
+                }
+            });
         });
 
     }
@@ -175,17 +185,19 @@
         var wrapperInputs = $('.inputs');
 
         selectAll(wrapperAll, wrapperInputs);
+
         $("#check_zone .pass").click(function() {
-            
-            var next=$(this).next();
-            if($(this).attr('checked')=='checked'){
-                this.value=next.attr('value');
-                next.attr('value',0);
-            }else{
-                next.attr('value',this.value);
-                this.value=0;
+
+            var next = $(this).next();
+            if ($(this).attr('checked') == 'checked') {
+                this.value = next.attr('value');
+                next.attr('value', 0);
+            } else {
+                next.attr('value', this.value);
+                this.value = 0;
             }
 
         });
+
     });
 </script>
