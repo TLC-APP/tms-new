@@ -15,9 +15,7 @@
                 <div class="tab-content">
                     <div id="tab_1-1" class="tab-pane active">
                         <div class="noi_dung" >
-                            <img alt="" class="img-responsive"  style="padding-right: 10px; 
-                                 width: 500px;"
-                                 src="<?php echo SUB_DIR;?>/files/course/image/<?php echo $course['Course']['image_path'] . '/' . $course['Course']['image']; ?>">
+                            <img alt="" class="img-responsive"  style="padding-right: 10px; width: 500px;"src="<?php echo SUB_DIR; ?>/files/course/image/<?php echo $course['Course']['image_path'] . '/' . $course['Course']['image']; ?>">
 
                             <p><?php echo $course['Course']['decription']; ?></p>
                         </div>
@@ -52,12 +50,12 @@
                                 <tr>
                                     <td>Hạn đăng ký</td> 
                                     <td>
-                                        <span class="text-red"><?php 
-                                        $start = new DateTime($course['Course']['enrolling_expiry_date']);
-                                                                    echo $start->format('H:i');
-                                                                    echo", Ngày: ";
-                                                                    echo $start->format('d/m/Y');
-                                        ?></span>
+                                        <span class="text-red"><?php
+                                            $start = new DateTime($course['Course']['enrolling_expiry_date']);
+                                            echo $start->format('H:i');
+                                            echo", Ngày: ";
+                                            echo $start->format('d/m/Y');
+                                            ?></span>
                                     </td>
                                 </tr>
 
@@ -138,7 +136,7 @@
                                                                     ?>
                                                                     <tr id='attachment_<?php echo $tailieu['id'] ?>'>
                                                                         <td><?php echo ++$stt ?></td>
-                                                                        <td><?php echo $this->Html->link($tailieu['attachment'], array('fields_manager' => false,'controller' => 'chapters', 'action' => 'download', $tailieu['id'] )); ?></td>
+                                                                        <td><?php echo $this->Html->link($tailieu['attachment'], array('fields_manager' => false, 'controller' => 'chapters', 'action' => 'download', $tailieu['id'])); ?></td>
                                                                     </tr>
                                                                 <?php endforeach; ?>
                                                                 <?php

@@ -97,8 +97,8 @@ class FieldsController extends AppController {
             $options = array('conditions' => array('Field.' . $this->Field->primaryKey => $id), 'recursive' => -1);
             $this->request->data = $this->Field->find('first', $options);
         }
-        $managers=  $this->Field->ManageBy->getFieldsManagerIdArray();
-        $manageUsers = $this->Field->ManageBy->find('list',array('conditions'=>array('ManageBy.id'=>$managers)));
+        $managers = $this->Field->ManageBy->getFieldsManagerIdArray();
+        $manageUsers = $this->Field->ManageBy->find('list', array('conditions' => array('ManageBy.id' => $managers)));
         $this->set(compact('manageUsers'));
     }
 
@@ -194,6 +194,14 @@ class FieldsController extends AppController {
         $contain = array('CreatedUser' => array('fields' => array('id', 'name')), 'ManageBy' => array('fields' => array('id', 'name')));
         $this->Paginator->settings = array('contain' => $contain);
         $this->set('fields', $this->Paginator->paginate());
+    }
+
+    public function elfinder() {
+        $this->TinymceElfinder->elfinder();
+    }
+
+    public function connector() {
+        $this->TinymceElfinder->connector();
     }
 
 }

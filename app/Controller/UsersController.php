@@ -28,6 +28,24 @@ class UsersController extends AppController {
         ));
     }
 
+    public function afterLogin() {
+        $this->autoRender = false;
+        if ($this->Session->check('login_times')) {
+            $this->Session->delete('login_times');
+        }
+        $this->User->id = $this->Auth->user('id');
+        $this->User->saveField('last_login', date("Y-m-d H:i:s"));
+        $department_id = ($this->User->field('User.department_id'));
+        $birthday = (($this->User->field('birthday')));
+        $birthplace = (($this->User->field('birthplace')));
+        $action = (in_array($this->request->action, array('logout', 'student_edit_profile')));
+        $show = ((!$department_id || empty($birthday) || empty($birthplace)) && !$action);
+        if ($show) {
+            $this->Session->setFlash('Vui lòng cập nhật đầy đủ thông tin cá nhân', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'));
+            $this->redirect(array('student' => true, 'controller' => 'users', 'action' => 'edit_profile', $this->Auth->user('id')));
+        }
+    }
+
     public function login() {
         $login_times = 1;
         if ($this->Session->check('login_times')) {
@@ -99,7 +117,7 @@ class UsersController extends AppController {
                     }
                 } else {
                     // display the raw API error
-                    $this->Session->setFlash('Bạn nhập chưa đúng captcha.','alert',array('plugin'=>'BoostCake','class'=>'alert-warning'));
+                    $this->Session->setFlash('Bạn nhập chưa đúng captcha.', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
                     return $this->redirect($this->request->referer());
                 }
             } else {
@@ -127,10 +145,8 @@ class UsersController extends AppController {
                             $this->User->id = $user['User']['id'];
                             $this->User->saveField('password', $password);
                             if ($this->Auth->login($user['User'])) {
-
                                 $this->Session->setFlash('Đăng nhập thành công!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'), 'auth');
-                                $this->User->id = $this->Auth->user('id');
-                                $this->User->saveField('last_login', date("Y-m-d H:i:s"));
+                                $this->afterLogin();
                                 return $this->redirect($this->Auth->redirectUrl());
                             } else {
                                 $this->Session->setFlash('Cập nhật tài khoản thành không thành công!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));

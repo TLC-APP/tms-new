@@ -20,5 +20,7 @@
         ],
         file_browser_callback: elFinderBrowser,
         //selector: 'textarea'
+        remove_script_host: false,
+        convert_urls: false
     });
 </script>

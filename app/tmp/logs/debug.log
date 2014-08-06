@@ -1304,3 +1304,39 @@ Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
 Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
 [main] - APP/webroot/index.php, line 108
 
+2014-08-06 13:48:47 Debug: Notice (8): Undefined index: row_count in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Helper\PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP\View\Helper\PhpExcelHelper.php, line 153
+include - APP\View\Courses\manager_xuat_so_chung_nhan.ctp, line 41
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 13:48:47 Debug: Notice (8): Undefined index: offset in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Helper\PhpExcelHelper.php, line 147]
+Trace:
+PhpExcelHelper::addTableRow() - APP\View\Helper\PhpExcelHelper.php, line 147
+include - APP\View\Courses\manager_xuat_so_chung_nhan.ctp, line 41
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 13:52:39 Debug: Notice (8): Undefined index: row_count in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Helper\PhpExcelHelper.php, line 153]
+Trace:
+PhpExcelHelper::addTableRow() - APP\View\Helper\PhpExcelHelper.php, line 153
+include - APP\View\Courses\manager_xuat_so_chung_nhan.ctp, line 41
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 198
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+

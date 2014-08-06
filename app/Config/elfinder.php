@@ -24,9 +24,9 @@ $config = array (
  * }
  *  			
  */			
-		'window_url' => Router::fullbaseUrl().'/thgv/fields/elfinder',		// call elfinder window
-		'connector_url' => Router::fullbaseUrl().'/thgv/fields/connector',	// connect to retrive files
-		'locale' => 'en', 
+		'window_url' => Router::url('/',true).'/fields/elfinder',		// call elfinder window
+		'connector_url' => Router::url('/',true).'/fields/connector',	// connect to retrive files
+		'locale' => 'vi', 
 			
 /**
  * for full list of options as well as documentation 
@@ -38,7 +38,7 @@ $config = array (
 			'roots' => array(
 				array(
 					'driver'        => 'LocalFileSystem',   					// driver for accessing file system (REQUIRED)
-					'URL'   		=> Router::fullbaseUrl().'/img/Uploads',	// upload main folder
+					'URL'   		=> Router::url('/',true).'/img/Uploads',	// upload main folder
 					'path'          => IMAGES.'Uploads',        				// path to files (REQUIRED)
 					'accessControl' => 'access',            					// disable and hide dot starting files (OPTIONAL)
 					'attributes' => array(

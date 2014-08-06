@@ -628,7 +628,9 @@ class CoursesController extends AppController {
         $chapters = $this->Course->Chapter->find('list');
         $teacher_id_array = $this->Course->Teacher->getTeacherIdArray();
         $teachers = $this->Course->Teacher->find('list', array('conditions' => array('Teacher.id' => $teacher_id_array)));
-        $this->set(compact('chapters', 'teachers'));
+        $attachment = $this->Course->Attachment->find('all', array('conditions' => array('Attachment.foreign_key' => $id, 'Attachment.model' => 'Course'), 'recursive' => -1));
+
+        $this->set(compact('chapters', 'teachers', 'attachment'));
     }
 
     public function admin_edit($id = null) {
@@ -722,28 +724,26 @@ class CoursesController extends AppController {
         if (!empty($this->request->data['pass_students'])) {
             $pass_students = $this->request->data['pass_students'];
 
-            $last_cert = $this->Course->Attend->find('first', array('recursive' => -1, 'order' => array('created' => 'DESC'), 'conditions' => array('Attend.certificated_number is not null')));
 
-
-            if (empty($last_cert)) {
-                $certificated_start_number = 1;
-            } else {
-                $explode = ( explode('/', $last_cert['Attend']['certificated_number']));
-                $certificated_start_number = $explode[0];
-            }
             $certificated_number_suffix = $this->Course->Chapter->Field->field('Field.certificated_number_suffix');
 
 
             $chung_chi_co_so = $this->Course->field('Course.chung_chi_co_so');
 
             foreach ($pass_students as $key => $value) {
+                $last_cert = $this->Course->Attend->find('first', array('fields' => array('id', 'certificated_number'), 'recursive' => -1, 'order' => array('created' => 'ASC'), 'conditions' => array('Attend.certificated_number is not null')));
 
+                if (empty($last_cert)) {
+                    $certificated_start_number = 1;
+                } else {
+                    $explode = ( explode('/', $last_cert['Attend']['certificated_number']));
+                    $certificated_start_number = $explode[0];
+                }
                 $certificated_number = ++$certificated_start_number;
                 if ($certificated_start_number < 10) {
                     $certificated_number = '0' . $certificated_number;
                 }
                 $full_certificated_number = "'" . $certificated_number . $certificated_number_suffix . "'";
-                debug($full_certificated_number);
 
                 $data = array(
                     'Attend.is_passed' => 1,
@@ -785,29 +785,25 @@ class CoursesController extends AppController {
         $chapter_id = $this->Course->field('Course.chapter_id');
         $field_id = $this->Course->Chapter->field('Chapter.field_id', array('Chapter.id' => $chapter_id));
         $this->Course->Chapter->Field->id = $field_id;
-
         if (!empty($this->request->data['pass_students'])) {
             $pass_students = $this->request->data['pass_students'];
-            $last_cert = $this->Course->Attend->find('first', array('recursive' => -1, 'order' => array('created' => 'DESC'), 'conditions' => array('Attend.certificated_number is not null')));
-
-            $explode = ( explode('/', $last_cert['Attend']['certificated_number']));
-            $certificated_start_number = $explode[0];
-            if (empty($certificated_start_number)) {
-                $certificated_start_number = 1;
-            }
             $certificated_number_suffix = $this->Course->Chapter->Field->field('Field.certificated_number_suffix');
-
-
             $chung_chi_co_so = $this->Course->field('Course.chung_chi_co_so');
 
             foreach ($pass_students as $key => $value) {
+                $last_cert = $this->Course->Attend->find('first', array('fields' => array('id', 'certificated_number'), 'recursive' => -1, 'order' => array('created' => 'ASC'), 'conditions' => array('Attend.certificated_number is not null')));
 
+                if (empty($last_cert)) {
+                    $certificated_start_number = 1;
+                } else {
+                    $explode = ( explode('/', $last_cert['Attend']['certificated_number']));
+                    $certificated_start_number = $explode[0];
+                }
                 $certificated_number = ++$certificated_start_number;
                 if ($certificated_start_number < 10) {
                     $certificated_number = '0' . $certificated_number;
                 }
                 $full_certificated_number = "'" . $certificated_number . $certificated_number_suffix . "'";
-                debug($full_certificated_number);
 
                 $data = array(
                     'Attend.is_passed' => 1,
@@ -822,7 +818,7 @@ class CoursesController extends AppController {
                 }
                 if ($this->Course->Attend->updateAll(
                                 $data, array('Attend.student_id' => $value, 'Attend.course_id' => $course_id, 'Attend.certificated_number is null'))) {
-                    //$this->Course->Chapter->Field->saveField('current_certificate_number', $certificated_start_number);
+                    
                 }
             }
         }
@@ -848,7 +844,7 @@ class CoursesController extends AppController {
         }
         $contain = array(
             'Chapter' => array('fields' => array('id', 'name')),
-            'Attend' => array(
+            'Attend' => array('conditions' => array('Attend.is_passed' => 1),
                 'Student' => array(
                     'fields' => array('id', 'name', 'phone_number', 'email', 'birthday', 'birthplace'),
                     'Department' => array('fields' => array('id', 'name')))

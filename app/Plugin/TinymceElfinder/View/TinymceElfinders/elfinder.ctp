@@ -13,7 +13,7 @@
     mySubmit: function (URL) {
       // pass selected file path to TinyMCE
       top.tinymce.activeEditor.windowManager.getParams().setUrl(URL);
-
+      
       // close popup window
       top.tinymce.activeEditor.windowManager.close();
     }

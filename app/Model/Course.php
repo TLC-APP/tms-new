@@ -20,11 +20,9 @@ class Course extends AppModel {
         'register_student_number' => "SELECT count(id) as Course__register_student_number 
         FROM  attends as Attend 
          where Attend.course_id=Course.id",
-        
         'pass_number' => 'SELECT count(id) as Course__pass_number
         FROM  attends as Attend 
          where Attend.course_id=Course.id and Attend.is_passed',
-        
         'so_buoi' => 'SELECT count(id) as Course__so_buoi
         FROM  courses_rooms as CoursesRoom 
          where CoursesRoom.course_id=Course.id'
@@ -57,7 +55,7 @@ class Course extends AppModel {
         'max_enroll_number' => array(
             'numeric' => array(
                 'rule' => array('naturalNumber'),
-            'message' => 'Số người học > 0',
+                'message' => 'Số người học > 0',
             //'allowEmpty' => false,
             //'required' => false,
             //'last' => false, // Stop validation after this rule
@@ -202,6 +200,7 @@ class Course extends AppModel {
             'conditions' => array(
                 'Attachment.model' => 'Course',
             ),
+            'limit' => 1
         ),
     );
 
@@ -239,15 +238,15 @@ class Course extends AppModel {
         // debug($coursescompleted_id_array);die;
         return $coursescompleted_id_array;
     }
+
     public function getCoursesExpired() {
         $now = new DateTime();
-        $conditions = array('Course.status' => COURSE_REGISTERING,'Course.enrolling_expiry_date <'=>$now->format('Y-m-d H:i:s'));
+        $conditions = array('Course.status' => COURSE_REGISTERING, 'Course.enrolling_expiry_date <' => $now->format('Y-m-d H:i:s'));
         $coursescompleted = $this->find('all', array('conditions' => $conditions, 'recursive' => -1));
         $coursescompleted_id_array = Set::classicExtract($coursescompleted, '{n}.Course.id');
         // debug($coursescompleted_id_array);die;
         return $coursescompleted_id_array;
     }
-
 
     public function getCoursesUnCompleted() {
         $conditions = array('Course.status' => COURSE_UNCOMPLETED);
