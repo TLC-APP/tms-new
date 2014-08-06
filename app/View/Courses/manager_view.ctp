@@ -184,6 +184,8 @@
                 <?php echo $this->Html->link('IN DS học viên', array('manager' => false, 'controller' => 'courses', 'action' => 'print_student', $course['Course']['id']), array('class' => 'btn btn-info')); ?>
                 <?php echo $this->Html->link('SỬA', array('manager' => true, 'controller' => 'courses', 'action' => 'edit', $course['Course']['id']), array('class' => 'btn btn-info')); ?>
                 <?php
+                if ($course['Course']['status'] == COURSE_COMPLETED)
+                    echo $this->Html->link('Cập nhật kết quả', array('manager' => true, 'controller' => 'courses', 'action' => 'score', $course['Course']['id']), array('class' => 'btn btn-info'));
                 if ($course['Course']['status'] != COURSE_CANCELLED)
                     echo $this->Form->postLink('<span class="fa fa-ban">Hủy</span>', array('manager' => false, 'action' => 'huy', $course['Course']['id']), array('escape' => false, 'class' => 'btn btn-warning'), __('Bạn có chắc hủy khóa học # %s?', $course['Course']['name'] . ' - ' . $course['Chapter']['name']));
                 else {

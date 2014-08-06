@@ -13,6 +13,10 @@
                 <th>Ngày mở khóa</th>
                 <th>Tình trạng khóa</th>
                 <th>Kết quả</th>
+                <th>Số CN</th>
+                <th>Ngày CN</th>
+                <th>Đã nhận</th>
+
         <tbody>
             <?php
             $stt = 1;
@@ -47,6 +51,10 @@
                     <td><?php echo $row['Course']['created']; ?></td>
                     <td><?php echo $status; ?></td>
                     <td><?php echo $row['Attend']['is_passed']; ?></td>
+                    <td><?php echo $row['Attend']['certificated_number']; ?></td>
+                    <td><?php echo $row['Attend']['certificated_date']; ?></td>
+                    <td><?php echo $row['Attend']['is_recieved']; ?></td>
+                    <td><?php echo $row['Attend']['recieve_date']; ?></td>
 
                 </tr>
 <?php endforeach; ?>

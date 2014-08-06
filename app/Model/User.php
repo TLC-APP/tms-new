@@ -95,6 +95,10 @@ class User extends AppModel {
                 'rule' => array('notEmpty'),
             ),
         ),
+        'avatar' => array(
+            'rule' => array('isValidMimeType', array('application/pdf', 'image/png'), false),
+            'message' => 'File is not a pdf or png'
+        )
     );
 
     function RegisterValidate() {

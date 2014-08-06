@@ -39,5 +39,18 @@ class AttachmentsController extends AppController {
             }
         }
     }
+    
+    public function sendFile($id) {
+        $this->Attachment->id=$id;
+        if ($this->Attachment->exists()) {
+            throw new Exception('Không tìm thấy file');
+        }
+        $dir=$this->Attachment->field('dir');
+        $model=$this->Attachment->field('model');
+        $this->response->file($path);
+        // Return response object to prevent controller from trying to render
+        // a view
+        return $this->response;
+    }
 
 }

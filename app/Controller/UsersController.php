@@ -58,6 +58,7 @@ class UsersController extends AppController {
             if ($login_times >= 2) {
                 if ($this->Recaptcha->verify()) {
                     if ($this->Auth->login()) {
+                        $this->afterLogin();
                         $this->Session->setFlash('Đăng nhập thành công!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'), 'auth');
                         $this->User->id = $this->Auth->user('id');
                         $this->User->saveField('last_login', date("Y-m-d H:i:s"));
@@ -81,7 +82,7 @@ class UsersController extends AppController {
                                 $this->User->id = $user['User']['id'];
                                 $this->User->saveField('password', $password);
                                 if ($this->Auth->login($user['User'])) {
-
+                                    $this->afterLogin();
                                     $this->Session->setFlash('Đăng nhập thành công!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'), 'auth');
                                     $this->User->id = $this->Auth->user('id');
                                     $this->User->saveField('last_login', date("Y-m-d H:i:s"));
@@ -122,6 +123,7 @@ class UsersController extends AppController {
                 }
             } else {
                 if ($this->Auth->login()) {
+                    $this->afterLogin();
                     $this->Session->setFlash('Đăng nhập thành công!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'), 'auth');
                     $this->User->id = $this->Auth->user('id');
                     $this->User->saveField('last_login', date("Y-m-d H:i:s"));
@@ -174,6 +176,8 @@ class UsersController extends AppController {
                             } else {
                                 $this->Session->setFlash('Không thể lưu thông tin User');
                             }
+                        } else {
+                            $this->Session->setFlash('Tài khoản đăng nhập không đúng!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
                         }
                     }
                 }

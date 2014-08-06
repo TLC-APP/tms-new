@@ -58,18 +58,9 @@ class AppController extends Controller {
             'admin' => false,
             'plugin' => false
         );
-        $this->Auth->logoutRedirect = array(
-            'controller' => 'dashboards',
-            'action' => 'home',
-            'admin' => false,
-            'plugin' => false
-        );
-        $this->Auth->loginRedirect = array(
-            'controller' => 'dashboards',
-            'action' => 'home',
-            'admin' => false,
-            'plugin' => false
-        );
+        $this->Auth->logoutRedirect = '/';
+        $this->Auth->unauthorizedRedirect='/';        
+        $this->Auth->loginRedirect = '/';
 
         $this->__checkCompleteCourse();
     }
@@ -80,7 +71,9 @@ class AppController extends Controller {
             $this->layout = $this->params['prefix'];
         }
         
-        if ($this->Auth->loggedIn() && ($this->User->isAdmin() || $this->User->isManager())&&($this->request->action!='manager_expired_courses'&&$this->request->action!='admin_expired_courses')) {
+        if ($this->Auth->loggedIn() && ($this->User->isAdmin() || $this->User->isManager())&&
+                ($this->request->action!='manager_expired_courses'&&
+                $this->request->action!='admin_expired_courses')) {
             $this->check_expire_course();
         }
     }
@@ -120,9 +113,11 @@ class AppController extends Controller {
 
     public function check_expire_course() {
         $expired_courses = $this->Course->getCoursesExpired();
-        //$prefix = 'manager';
+        if(is_null($this->request->prefix)){
+            $this->request->prefix='manager';
+        }
         if (!empty($expired_courses)) {
-            $this->Session->setFlash('Có '.count($expired_courses).' khóa học đã hết hạn đăng ký <a href="' .'/courses/expired_courses"> chi tiết</a>', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning', 'escape' => false));
+            $this->Session->setFlash('Có '.count($expired_courses).' khóa học đã hết hạn đăng ký <a href="' .SUB_DIR.'/'.$this->request->prefix.'/courses/expired_courses"> chi tiết</a>', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning', 'escape' => false));
         }
     }
 

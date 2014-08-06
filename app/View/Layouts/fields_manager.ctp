@@ -35,7 +35,10 @@
                 <!-- Main content -->
                 <section class="content">
                     <div class="row">
-                        <?php echo $this->Session->flash(); ?>
+                        <?php 
+                        echo $this->Session->flash(); 
+                        echo $this->Session->flash('auth'); 
+                        ?>
 
                         <?php echo $this->fetch('content'); ?>
                     </div>

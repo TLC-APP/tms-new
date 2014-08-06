@@ -628,8 +628,10 @@ class CoursesController extends AppController {
         $chapters = $this->Course->Chapter->find('list');
         $teacher_id_array = $this->Course->Teacher->getTeacherIdArray();
         $teachers = $this->Course->Teacher->find('list', array('conditions' => array('Teacher.id' => $teacher_id_array)));
-        $attachment = $this->Course->Attachment->find('all', array('conditions' => array('Attachment.foreign_key' => $id, 'Attachment.model' => 'Course'), 'recursive' => -1));
-
+        $attachment = $this->Course->Attachment->find('first', 
+                array('conditions' => array('Attachment.foreign_key' => $id, 
+                    'Attachment.model' => 'Course'), 'recursive' => -1));
+        
         $this->set(compact('chapters', 'teachers', 'attachment'));
     }
 
@@ -731,7 +733,14 @@ class CoursesController extends AppController {
             $chung_chi_co_so = $this->Course->field('Course.chung_chi_co_so');
 
             foreach ($pass_students as $key => $value) {
-                $last_cert = $this->Course->Attend->find('first', array('fields' => array('id', 'certificated_number'), 'recursive' => -1, 'order' => array('created' => 'ASC'), 'conditions' => array('Attend.certificated_number is not null')));
+                $last_cert = $this->Course->Attend->find('first', array(
+                    'fields' => array('id', 'certificated_number','course_id'), 
+                    'recursive' => -1, 
+                    'order' => array('Attend.certificated_number' => 'DESC'), 
+                    'conditions' => array(
+                        'Attend.certificated_number is not null',
+                        'Attend.certificated_number like'=>'%'.$certificated_number_suffix
+                        )));
 
                 if (empty($last_cert)) {
                     $certificated_start_number = 1;
@@ -791,7 +800,7 @@ class CoursesController extends AppController {
             $chung_chi_co_so = $this->Course->field('Course.chung_chi_co_so');
 
             foreach ($pass_students as $key => $value) {
-                $last_cert = $this->Course->Attend->find('first', array('fields' => array('id', 'certificated_number'), 'recursive' => -1, 'order' => array('created' => 'ASC'), 'conditions' => array('Attend.certificated_number is not null')));
+                $last_cert = $this->Course->Attend->find('first', array('fields' => array('id', 'certificated_number'), 'recursive' => -1, 'order' => array('certificated_number' => 'ASC'), 'conditions' => array('Attend.certificated_number is not null')));
 
                 if (empty($last_cert)) {
                     $certificated_start_number = 1;
@@ -953,6 +962,18 @@ class CoursesController extends AppController {
     }
 
     public function manager_expired_courses() {
+        $expired_courses = $this->Course->getCoursesExpired();
+        $conditions = array('Course.id' => $expired_courses);
+        $contain = array(
+            'User' => array('fields' => array('id', 'name')),
+            'Teacher' => array('fields' => array('id', 'name'),
+            ), 'Chapter'
+        );
+        $this->Paginator->settings = array('contain' => $contain, 'conditions' => $conditions, 'order' => array('Course.created' => 'DESC'));
+        $this->set('courses', $this->Paginator->paginate());
+    }
+    
+    public function admin_expired_courses() {
         $expired_courses = $this->Course->getCoursesExpired();
         $conditions = array('Course.id' => $expired_courses);
         $contain = array(

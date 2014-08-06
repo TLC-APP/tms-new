@@ -9,7 +9,7 @@ class DATABASE_CONFIG {
         'host' => 'localhost',
         'login' => 'root',
         'password' => '',
-        'database' => 'thgv',
+        'database' => 'thgv_test',
         'prefix' => '',
         'encoding' => 'utf8'
 
@@ -33,15 +33,9 @@ class DATABASE_CONFIG {
         'host' => 'localhost',
         'login' => 'root',
         'password' => '',
-        'database' => 'thgv',
+        'database' => 'thgv_test',
         'prefix' => '',
         'encoding' => 'utf8'
     );
     
-    public $dropbox = array(
-        'datasource' => 'Dropbox.DropboxSource',
-        'consumer_key' => 'm40qhswyyyq8aet',
-        'consumer_secret' => '7gfkr22jiaa5jc0',
-    );
-
 }

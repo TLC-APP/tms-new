@@ -6,7 +6,6 @@
         <th><?php echo $this->Paginator->sort('teacher_id', 'Tập huấn bởi'); ?></th>
         <th><?php echo $this->Paginator->sort('max_enroll_number', 'Đăng ký tối đa'); ?></th>
         <th><?php echo $this->Paginator->sort('register_student_number', 'Đã đăng ký'); ?></th>
-
         <th><?php echo $this->Paginator->sort('is_published', 'Xuất bản'); ?></th>
         <th><?php echo $this->Paginator->sort('enrolling_expiry_date', 'Hết hạn đăng ký'); ?></th>
         <th><?php echo $this->Paginator->sort('created', 'Ngày tạo'); ?></th>

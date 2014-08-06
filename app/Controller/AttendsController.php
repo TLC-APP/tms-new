@@ -77,7 +77,7 @@ class AttendsController extends AppController {
         if ($export) {
             $student_course_conditions = $this->Session->read('student_course_conditions');
             $attends = $this->Attend->find('all', array(
-                'fields' => array('id', 'course_id', 'student_id', 'is_passed', 'created'),
+                'fields' => array('recieve_date','id', 'course_id', 'student_id', 'is_passed', 'certificated_number', 'certificated_date', 'is_recieved', 'created'),
                 'conditions' => $student_course_conditions,
                 'contain' => array('Course' => array(
                         'fields' => array('id', 'name', 'teacher_id', 'chapter_id', 'created', 'status'),
@@ -148,7 +148,7 @@ class AttendsController extends AppController {
                 }
                 $this->Session->write('student_course_conditions', $student_course_conditions);
                 $attends = $this->Attend->find('all', array(
-                    'fields' => array('id', 'course_id', 'student_id', 'is_passed', 'created'),
+                    'fields' => array('recieve_date','id', 'course_id', 'student_id', 'is_passed', 'certificated_number', 'certificated_date', 'is_recieved', 'created'),
                     'conditions' => $student_course_conditions,
                     'contain' => array('Course' => array(
                             'fields' => array('id', 'name', 'teacher_id', 'chapter_id', 'created', 'status'),
@@ -348,7 +348,8 @@ class AttendsController extends AppController {
         }
         return $this->redirect($this->request->referer());
     }
-public function admin_delete($id = null) {
+
+    public function admin_delete($id = null) {
         $this->Attend->id = $id;
         if (!$this->Attend->exists()) {
             throw new NotFoundException(__('Invalid students course'));
@@ -361,6 +362,7 @@ public function admin_delete($id = null) {
         }
         return $this->redirect($this->request->referer());
     }
+
     /**
      * delete method
      *
@@ -388,7 +390,7 @@ public function admin_delete($id = null) {
         );
         $khoa_da_dang_ky = $this->Attend->getEnrolledCourses($this->Auth->user('id'));
         $conditions = array('Course.id' => $khoa_da_dang_ky, 'Course.status' => COURSE_COMPLETED);
-        $courses_notification = $this->Attend->find('all', array('conditions' => $conditions, 'contain' => $contain));
+        $courses_notification = $this->Attend->find('all', array('conditions' => $conditions, 'contain' => $contain,'group'=>array('Course.id')));
         $this->set(compact('$courses_notification'));
         return $courses_notification;
     }

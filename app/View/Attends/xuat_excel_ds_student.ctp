@@ -12,6 +12,10 @@ $colunms = array(
     array('label' => 'Ngày mở', 'width' => 'auto', 'filter' => true),
     array('label' => 'Tình trạng khóa', 'width' => 'auto', 'filter' => true),
     array('label' => 'Kết quả', 'width' => 'auto', 'filter' => false),
+    array('label' => 'Số CN', 'width' => 'auto', 'filter' => false),
+    array('label' => 'Ngày CN', 'width' => 'auto', 'filter' => true),
+    array('label' => 'Đã nhận', 'width' => 'auto', 'filter' => true),
+    array('label' => 'Ngày nhận', 'width' => 'auto', 'filter' => false),
 );
 $this->PhpExcel->addTableHeader($colunms, array('font' => 'Times New Roman', 'bold' => true));
 // data 
@@ -44,7 +48,11 @@ foreach ($attends as $row) {
         $row['Course']['Chapter']['Field']['name'],
         $row['Course']['created'],
         $status,
-        ($row['Attend']['is_passed']) ? 'Đạt' : 'Không đạt'
+        ($row['Attend']['is_passed']) ? 'Đạt' : 'Không đạt',
+        $row['Attend']['certificated_number'],
+        $row['Attend']['certificated_date'],
+        ($row['Attend']['is_recieved']) ? 'Đã nhận' : 'Chưa nhận',
+        $row['Attend']['recieve_date']
     ));
 }
 $this->PhpExcel->addTableFooter();

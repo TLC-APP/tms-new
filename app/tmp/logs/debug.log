@@ -1340,3 +1340,507 @@ Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 198
 Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
 [main] - APP\webroot\index.php, line 108
 
+2014-08-06 15:09:33 Debug: Notice (8): Undefined index: certificated_number in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 53]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 53
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:09:33 Debug: Notice (8): Undefined index: certificated_date in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 54]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 54
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:09:33 Debug: Notice (8): Undefined index: is_recieved in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 55]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:09:33 Debug: Notice (8): Undefined index: certificated_number in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 53]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 53
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:09:33 Debug: Notice (8): Undefined index: certificated_date in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 54]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 54
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:09:33 Debug: Notice (8): Undefined index: is_recieved in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 55]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:09:33 Debug: Notice (8): Undefined index: certificated_number in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 53]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 53
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:09:33 Debug: Notice (8): Undefined index: certificated_date in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 54]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 54
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:09:33 Debug: Notice (8): Undefined index: is_recieved in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 55]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:09:33 Debug: Notice (8): Undefined index: certificated_number in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 53]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 53
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:09:33 Debug: Notice (8): Undefined index: certificated_date in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 54]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 54
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:09:33 Debug: Notice (8): Undefined index: is_recieved in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 55]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:09:33 Debug: Notice (8): Undefined index: certificated_number in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 53]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 53
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:09:34 Debug: Notice (8): Undefined index: certificated_date in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 54]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 54
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:09:34 Debug: Notice (8): Undefined index: is_recieved in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 55]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:09:34 Debug: Notice (8): Undefined index: certificated_number in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 53]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 53
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:09:34 Debug: Notice (8): Undefined index: certificated_date in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 54]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 54
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:09:34 Debug: Notice (8): Undefined index: is_recieved in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 55]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: certificated_number in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 54]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 54
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: certificated_date in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 55]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: is_recieved in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 56]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 56
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: certificated_number in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 54]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 54
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: certificated_date in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 55]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: is_recieved in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 56]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 56
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: certificated_number in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 54]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 54
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: certificated_date in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 55]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: is_recieved in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 56]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 56
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: certificated_number in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 54]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 54
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: certificated_date in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 55]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: is_recieved in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 56]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 56
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: certificated_number in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 54]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 54
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: certificated_date in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 55]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: is_recieved in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 56]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 56
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: certificated_number in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 54]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 54
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: certificated_date in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 55]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 55
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
+2014-08-06 15:10:38 Debug: Notice (8): Undefined index: is_recieved in [D:\WampDeveloper\Websites\tlc.tvu.edu.local\webroot\thgv\app\View\Attends\xuat_thong_ke_ds_student.ctp, line 56]
+Trace:
+include - APP\View\Attends\xuat_thong_ke_ds_student.ctp, line 56
+View::_evaluate() - CORE\Cake\View\View.php, line 948
+View::_render() - CORE\Cake\View\View.php, line 910
+View::render() - CORE\Cake\View\View.php, line 471
+Controller::render() - CORE\Cake\Controller\Controller.php, line 954
+AttendsController::manager_thong_ke_student() - APP\Controller\AttendsController.php, line 162
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE\Cake\Controller\Controller.php, line 490
+Dispatcher::_invoke() - CORE\Cake\Routing\Dispatcher.php, line 191
+Dispatcher::dispatch() - CORE\Cake\Routing\Dispatcher.php, line 165
+[main] - APP\webroot\index.php, line 108
+
