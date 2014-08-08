@@ -1,12 +1,7 @@
 <meta charset="UTF-8">
-<title>Hệ thống quản lý Thông tin Tập huấn Giáo viên | Trang phục vụ quản lý lĩnh vực</title>
+<title>Hệ thống quản lý Thông tin Tập huấn Giáo viên | Trang phục vụ quản lý</title>
 <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 <!-- bootstrap 3.0.2 -->
-<?php echo $this->Html->css('select2'); ?>
-<?php echo $this->Html->css('select2-bootstrap'); ?>
-<?php echo $this->Html->script('plugins/select2/select2'); ?>
-
-
 <?php echo $this->Html->link('TMS', array('controller' => 'dashboards', 'action' => 'home','admin'=>false,'plugin'=>false), array('class' => 'logo')); ?>
 <!-- Header Navbar: style can be found in header.less -->
 <nav class="navbar navbar-static-top" role="navigation">

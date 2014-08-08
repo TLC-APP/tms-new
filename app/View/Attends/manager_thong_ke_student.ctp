@@ -24,7 +24,7 @@ echo $this->Html->script('jquery.form');
         echo $this->Form->input('Student.department_id', array('empty' => '-- Chọn đơn vị --'));
         echo $this->Form->input('Attend.is_passed', array('type'=>'select','empty' => '-- Kết quả --','required'=>false,'options' => array( '1' => 'Đạt', '0' => 'Không đạt')));
         echo $this->Form->input('field_id', array('empty' => '-- Chọn lĩnh vực --'));
-        echo $this->Form->input('chapter_id', array('empty' => '-- Chọn chuyên đề --', 'required' => false));
+        echo $this->Form->input('chapter_id', array( 'required' => false));
         echo $this->Form->input('status', array('type' => 'select', 'options' => array(
                 COURSE_COMPLETED => 'Đã hoàn thành',
                 COURSE_UNCOMPLETED => 'Chưa hoàn thành',
@@ -70,6 +70,7 @@ echo $this->Html->script('jquery.form');
 
                         });
                     });
+                    
         });
 
         $('#thong_ke_form').on('submit', function(e) {
@@ -86,7 +87,6 @@ echo $this->Html->script('jquery.form');
 
             $('.overlay').remove();
             $('.loading-img').remove();
-            console.log(responseText);
             $('#ket_qua').html(responseText);
             return true;
         }

@@ -5,7 +5,9 @@
 <?php echo $this->Html->css('bootstrap'); ?>
 <!-- font Awesome -->
 <?php echo $this->Html->css('font-awesome.min'); ?>
-
+<?php echo $this->Html->css('select2'); ?>
+<?php echo $this->Html->css('select2-bootstrap'); ?>
+<?php echo $this->Html->script('plugins/select2/select2'); ?>
 <!-- fullCalendar -->
 <?php echo $this->Html->css('fullcalendar/fullcalendar'); ?>
 <!-- Theme style -->

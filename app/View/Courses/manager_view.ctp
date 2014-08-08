@@ -24,7 +24,7 @@
 
                     <div id="noi_dung" class="tab-pane">
                         <div class="noi_dung" >
-                            <!--<img alt="" class="pull-left"  style="padding-right: 10px; width: 500px;"src="/files/course/image/<?php //echo $course['Course']['image_path'] . '/' . $course['Course']['image']; ?>">-->
+                            <!--<img alt="" class="pull-left"  style="padding-right: 10px; width: 500px;"src="/files/course/image/<?php //echo $course['Course']['image_path'] . '/' . $course['Course']['image'];  ?>">-->
                             <p><?php echo $course['Course']['decription']; ?></p>
                         </div>
                     </div><!-- /.tab-pane -->
@@ -61,8 +61,29 @@
                                         <span class="text-red"><?php echo $course['Course']['enrolling_expiry_date']; ?></span>
                                     </td>
                                 </tr>
-                                <tr><td>Đã xuất bản</td><td><?php echo $course['Course']['is_published']; ?></td></tr>
-                                <tr><td> Tình trạng</td><td><?php echo $course['Course']['status']; ?></td></tr>
+                                <tr><td>Đã xuất bản</td><td><?php echo ($course['Course']['is_published']) ? 'Có' : 'Không'; ?></td></tr>
+                                <tr><td> Tình trạng</td>
+                                    <td><?php
+                                        $status = "";
+                                        switch ($course['Course']['status']) {
+                                            case COURSE_CANCELLED:
+                                                $status = 'Đã hủy';
+                                                break;
+                                            case COURSE_COMPLETED:
+                                                $status = 'Đã hoàn thành';
+                                                break;
+                                            case COURSE_UNCOMPLETED:
+                                                $status = 'Chưa hoàn thành';
+                                                break;
+                                            case COURSE_REGISTERING:
+                                                $status = 'Đang đăng ký';
+                                                break;
+
+                                            default:
+                                                break;
+                                        }
+                                        echo $status;
+                                        ?></td></tr>
 
                                 <tr>
                                     <td>Chuyên đề</td>
@@ -70,7 +91,12 @@
                                         <?php echo $this->Html->link($course['Chapter']['name'], array('controller' => 'chapters', 'action' => 'view', $course['Chapter']['id'])); ?>
                                     </td>
                                 </tr>
-
+                                <tr>
+                                    <td>Lĩnh vực</td>
+                                    <td>                 
+                                        <?php echo $course['Chapter']['Field']['name']; ?>
+                                    </td>
+                                </tr>
 
 
                             </tbody>
@@ -157,7 +183,7 @@
                                                             <tr id='attachment_<?php echo $tailieu['id'] ?>'>
                                                                 <td><?php echo ++$stt ?></td>
                                                                 <td><?php echo $this->Html->link($tailieu['attachment'], array('manager' => false, 'action' => 'download', $tailieu['id']));
-                                                            ?></td>
+                                                        ?></td>
                                                                 <td>
                                                                     <?php
                                                                     //echo $this->Form->postLink('<button class="btn btn-mini btn-warning" type="button">xóa</button>', array('fields_manager' => false, 'controller' => 'attachments', 'action' => 'delete', $tailieu['Attachment']['id']), array('escape' => false), __('bạn chắc xóa file %s?', $tailieu['Attachment']['attachment']));
@@ -189,8 +215,7 @@
                     echo $this->Form->postLink('<span class="fa fa-ban">Hủy</span>', array('manager' => false, 'action' => 'huy', $course['Course']['id']), array('escape' => false, 'class' => 'btn btn-warning'), __('Bạn có chắc hủy khóa học # %s?', $course['Course']['name'] . ' - ' . $course['Chapter']['name']));
                 else {
                     echo $this->Form->postLink('                                
-  <span class="fa fa-refresh">Khôi phục</span>', array('manager' => false, 'action' => 'uncancel', $course['Course']['id']), array('escape' => false,'class'=>'btn btn-info'), __('Bạn có chắc phục hồi khóa học # %s?', $course['Course']['name'] . ' - ' . $course['Chapter']['name']));
-
+  <span class="fa fa-refresh">Khôi phục</span>', array('manager' => false, 'action' => 'uncancel', $course['Course']['id']), array('escape' => false, 'class' => 'btn btn-info'), __('Bạn có chắc phục hồi khóa học # %s?', $course['Course']['name'] . ' - ' . $course['Chapter']['name']));
                 }
                 ?>
             </div>

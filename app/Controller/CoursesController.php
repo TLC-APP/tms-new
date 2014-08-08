@@ -304,7 +304,7 @@ class CoursesController extends AppController {
             'User' => array('fields' => array('id', 'name')),
             'CoursesRoom' => array(/* 'conditions' => array('CoursesRoom.start is not null'), */ 'order' => array('CoursesRoom.priority' => 'ASC'), 'Room'),
             'Teacher' => array('fields' => array('id', 'name', 'email', 'phone_number'), 'HocHam', 'HocVi'),
-            'Chapter' => array('Attachment'),
+            'Chapter' => array('Attachment','Field'=>array('fields'=>array('id','name'))),
             'Attend' => array('Student' => array('fields' => array('Student.id', 'Student.name', 'Student.email', 'Student.phone_number'))),
             'Attachment'
         );
@@ -323,7 +323,7 @@ class CoursesController extends AppController {
             'User' => array('fields' => array('id', 'name')),
             'CoursesRoom' => array('conditions' => array('CoursesRoom.start is not null'), 'order' => array('CoursesRoom.priority' => 'ASC')),
             'Teacher' => array('fields' => array('id', 'name', 'email', 'phone_number'), 'HocHam', 'HocVi'),
-            'Chapter' => array('Attachment'),
+            'Chapter' => array('Attachment','Field'=>array('fields'=>array('id','name'))),
             'Attachment'
         );
         $options = array('conditions' => array('Course.' . $this->Course->primaryKey => $id), 'contain' => $contain);
@@ -456,7 +456,7 @@ class CoursesController extends AppController {
             //'CoursesRoom' => array('Room' => array('id', 'name'), 'conditions' => array('CoursesRoom.course_id' => $id, 'CoursesRoom.start is null')),
             'CoursesRoom' => array('Room' => array('id', 'name'), 'conditions' => array('CoursesRoom.course_id' => $id)),
             'Teacher' => array('fields' => array('id', 'name', 'email', 'phone_number'), 'HocHam', 'HocVi'),
-            'Chapter' => array('Attachment'),
+            'Chapter' => array('Attachment','Field'=>array('fields'=>array('id','name'))),
             'Attachment',
             'Attend' => array('Student' => array('fields' => array('id', 'name', 'email', 'phone_number')), 'fields' => array('id', 'student_id', 'course_id'))
         );
@@ -628,10 +628,7 @@ class CoursesController extends AppController {
         $chapters = $this->Course->Chapter->find('list');
         $teacher_id_array = $this->Course->Teacher->getTeacherIdArray();
         $teachers = $this->Course->Teacher->find('list', array('conditions' => array('Teacher.id' => $teacher_id_array)));
-        $attachment = $this->Course->Attachment->find('first', array('conditions' => array('Attachment.foreign_key' => $id,
-                'Attachment.model' => 'Course'), 'recursive' => -1));
-
-        $this->set(compact('chapters', 'teachers', 'attachment'));
+        $this->set(compact('chapters', 'teachers'));
     }
 
     public function admin_edit($id = null) {
@@ -668,7 +665,7 @@ class CoursesController extends AppController {
             //'CoursesRoom' => array('Room' => array('id', 'name'), 'conditions' => array('CoursesRoom.course_id' => $id, 'CoursesRoom.start is null')),
             'CoursesRoom' => array('Room' => array('id', 'name'), 'conditions' => array('CoursesRoom.course_id' => $id)),
             'Teacher' => array('fields' => array('id', 'name', 'email', 'phone_number'), 'HocHam', 'HocVi'),
-            'Chapter' => array('Attachment'),
+            'Chapter' => array('Attachment','Field'=>array('fields'=>array('id','name'))),
             'Attachment',
             'Attend' => array('Student' => array('fields' => array('id', 'name', 'email', 'phone_number')))
         );
@@ -712,141 +709,265 @@ class CoursesController extends AppController {
         $this->set(compact('course'));
     }
 
-    public function manager_update_score($course_id) {
+    /*
+      public function manager_update_score($course_id) {
 
-        if (!$this->Course->exists($course_id)) {
-            throw new NotFoundException(__('Invalid course'));
+      if (!$this->Course->exists($course_id)) {
+      throw new NotFoundException(__('Invalid course'));
+      }
+      $this->Course->id = $course_id;
+      $chapter_id = $this->Course->field('Course.chapter_id');
+      $field_id = $this->Course->Chapter->field('Chapter.field_id', array('Chapter.id' => $chapter_id));
+
+      $this->Course->Chapter->Field->id = $field_id;
+
+      $field_current_cert_no = $this->Course->Chapter->Field->field('current_certificate_number');
+
+      if (!empty($this->request->data['pass_students'])) {
+      $pass_students = $this->request->data['pass_students'];
+      $certificated_number_suffix = $this->Course->Chapter->Field->field('Field.certificated_number_suffix');
+      $chung_chi_co_so = $this->Course->field('Course.chung_chi_co_so');
+
+      foreach ($pass_students as $key => $value) {
+      $last_cert = $this->Course->Attend->find('first', array(
+      'fields' => array('id', 'certificated_number', 'course_id'),
+      'recursive' => -1,
+      'order' => array('Attend.certificated_number' => 'DESC'),
+      'conditions' => array(
+      'Attend.certificated_number is not null',
+      'Attend.certificated_number like' => '%' . $certificated_number_suffix
+      )));
+
+      if (empty($last_cert)) {
+      $certificated_start_number = 0;
+      } else {
+      $explode = ( explode('/', $last_cert['Attend']['certificated_number']));
+      $certificated_start_number = $explode[0];
+      }
+
+      if ($certificated_start_number > $field_current_cert_no) {
+      $x = $field_current_cert_no;
+      } else {
+      $x = $certificated_start_number;
+      }
+
+      $certificated_number = ++$x;
+
+      if ($certificated_number < 10) {
+      $certificated_number = '0' . $certificated_number;
+      }
+      $full_certificated_number = "'" . $certificated_number . $certificated_number_suffix . "'";
+
+      $data = array(
+      'Attend.is_passed' => 1,
+      'Attend.certificated_number' => $full_certificated_number,
+      'Attend.certificated_date' => '"' . date('Y-m-d H:i:s', strtotime('now')) . '"'
+      );
+      if (!$chung_chi_co_so) {
+      $data = array(
+      'Attend.is_passed' => 1,
+      'Attend.certificated_date' => '"' . date('Y-m-d H:i:s', strtotime('now')) . '"'
+      );
+      }
+      if ($this->Course->Attend->updateAll(
+      $data, array('Attend.student_id' => $value, 'Attend.course_id' => $course_id, 'Attend.certificated_number is null'))) {
+      $this->Course->Chapter->Field->saveField('current_certificate_number', $x);
+      }
+      }
+      }
+      if (!empty($this->request->data['fail_students'])) {
+      $fail_students = $this->request->data['fail_students'];
+
+      if ($this->Course->Attend->updateAll(array('Attend.is_passed' => 0, 'Attend.is_recieved' => 0, 'Attend.recieve_date' => NULL, 'Attend.certificated_date' => NULL, 'Attend.certificated_number' => NULL), array('Attend.student_id' => $fail_students, 'Attend.course_id' => $course_id))) {
+      $this->Session->setFlash('Đã cập nhật kết quả thành công bảng điểm!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'));
+      } else {
+      $this->Session->setFlash('Cập nhật kết quả không thành công!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
+      }
+      }
+      $this->redirect(array('manager' => true, 'action' => 'score', $course_id));
+      } */
+
+    protected function getLastCertNo($field_id) {
+        $lastCertNo = 0;
+        $this->Course->Chapter->Field->id = $field_id;
+        $suffix = $this->Course->Chapter->Field->field('Field.certificated_number_suffix');
+        $last_cert = $this->Course->Attend->find('first', array(
+            'fields' => array('id', 'certificated_number', 'course_id'),
+            'recursive' => -1,
+            'order' => array('Attend.certificated_number' => 'DESC'),
+            'conditions' => array(
+                'Attend.certificated_number is not null',
+                'Attend.certificated_number like' => '%' . $suffix
+        )));
+
+        if (!empty($last_cert)) {
+            $explode = ( explode('/', $last_cert['Attend']['certificated_number']));
+            $lastCertNo = $explode[0];
         }
+        return $lastCertNo;
+    }
+
+    public function manager_update_score($course_id) {
         $this->Course->id = $course_id;
         $chapter_id = $this->Course->field('Course.chapter_id');
         $field_id = $this->Course->Chapter->field('Chapter.field_id', array('Chapter.id' => $chapter_id));
-
         $this->Course->Chapter->Field->id = $field_id;
 
-        $field_current_cert_no = $this->Course->Chapter->Field->field('current_certificate_number');
-
         if (!empty($this->request->data['pass_students'])) {
+
             $pass_students = $this->request->data['pass_students'];
-            $certificated_number_suffix = $this->Course->Chapter->Field->field('Field.certificated_number_suffix');
-            $chung_chi_co_so = $this->Course->field('Course.chung_chi_co_so');
-
+            $suffix = $this->Course->Chapter->Field->field('Field.certificated_number_suffix');
+            $hasNo = $this->Course->field('Course.chung_chi_co_so');
             foreach ($pass_students as $key => $value) {
-                $last_cert = $this->Course->Attend->find('first', array(
-                    'fields' => array('id', 'certificated_number', 'course_id'),
-                    'recursive' => -1,
-                    'order' => array('Attend.certificated_number' => 'DESC'),
-                    'conditions' => array(
-                        'Attend.certificated_number is not null',
-                        'Attend.certificated_number like' => '%' . $certificated_number_suffix
-                )));
+                if ($value) {
+                    $pass = $this->Course->Attend->field(
+                            'is_passed', array(
+                        'Attend.student_id' => $value,
+                        'Attend.course_id' => $course_id));
+                    if (!$pass) {
+                        $field_current_cert_no = $this->Course->Chapter->Field->field('current_certificate_number');
+                        $lastCertNo = $this->getLastCertNo($field_id);
+                        if ($lastCertNo > $field_current_cert_no) {
+                            $x = $field_current_cert_no + 1;
+                        } else {
+                            $x = $lastCertNo + 1;
+                        }
+                        $certNo = $x;
+                        if ($certNo < 10) {
+                            $certNo = '0' . $certNo;
+                        }
+                        $certificated_number = "'" . $certNo . $suffix . "'";
+                        $data = array(
+                            'Attend.is_passed' => 1,
+                            'Attend.certificated_number' => $certificated_number,
+                            'Attend.certificated_date' => '"' . date('Y-m-d H:i:s', strtotime('now')) . '"'
+                        );
+                        if (!$hasNo) {
+                            $data = array(
+                                'Attend.is_passed' => 1,
+                                'Attend.certificated_date' => '"' . date('Y-m-d H:i:s', strtotime('now')) . '"'
+                            );
+                        }
+                        if ($this->Course->Attend->updateAll(
+                                        $data, array('Attend.student_id' => $value, 'Attend.course_id' => $course_id,
+                                    'Attend.certificated_number is null'))) {
 
-                if (empty($last_cert)) {
-                    $certificated_start_number = 0;
-                } else {
-                    $explode = ( explode('/', $last_cert['Attend']['certificated_number']));
-                    $certificated_start_number = $explode[0];
-                }
-
-                if ($certificated_start_number > $field_current_cert_no) {
-                    $x = $field_current_cert_no;
-                } else {
-                    $x = $certificated_start_number;
-                }
-
-                $certificated_number = ++$x;
-
-                if ($certificated_number < 10) {
-                    $certificated_number = '0' . $certificated_number;
-                }
-                $full_certificated_number = "'" . $certificated_number . $certificated_number_suffix . "'";
-
-                $data = array(
-                    'Attend.is_passed' => 1,
-                    'Attend.certificated_number' => $full_certificated_number,
-                    'Attend.certificated_date' => '"' . date('Y-m-d H:i:s', strtotime('now')) . '"'
-                );
-                if (!$chung_chi_co_so) {
-                    $data = array(
-                        'Attend.is_passed' => 1,
-                        'Attend.certificated_date' => '"' . date('Y-m-d H:i:s', strtotime('now')) . '"'
-                    );
-                }
-                if ($this->Course->Attend->updateAll(
-                                $data, array('Attend.student_id' => $value, 'Attend.course_id' => $course_id, 'Attend.certificated_number is null'))) {
-                    $this->Course->Chapter->Field->saveField('current_certificate_number', $x);
+                            $this->Course->Chapter->Field->saveField('current_certificate_number', $x);
+                        }
+                    }
                 }
             }
         }
         if (!empty($this->request->data['fail_students'])) {
-
-
             $fail_students = $this->request->data['fail_students'];
+            foreach ($fail_students as $key => $value) {
+                if ($value) {
+                    $pass = $this->Course->Attend->field(
+                            'is_passed', array(
+                        'Attend.student_id' => $value,
+                        'Attend.course_id' => $course_id));
+                    if ($pass) {
+                        $field_current_cert_no = $this->Course->Chapter->Field->field('current_certificate_number');
+                        $certNo = $this->Course->Attend->field('Attend.certificated_number', array('Attend.course_id' => $course_id, 'Attend.student_id' => $value));
+                        $explode = ( explode('/', $certNo));
+                        $fail = $explode[0];
 
+                        if ($this->Course->Attend->updateAll(
+                                        array('Attend.is_passed' => 0, 'Attend.is_recieved' => 0,
+                                    'Attend.recieve_date' => NULL, 'Attend.certificated_date' => NULL,
+                                    'Attend.certificated_number' => NULL), array('Attend.student_id' => $value, 'Attend.course_id' => $course_id))) {
 
-            if ($this->Course->Attend->updateAll(array('Attend.is_passed' => 0, 'Attend.is_recieved' => 0, 'Attend.recieve_date' => NULL, 'Attend.certificated_date' => NULL, 'Attend.certificated_number' => NULL), array('Attend.student_id' => $fail_students, 'Attend.course_id' => $course_id))) {
-                $this->Session->setFlash('Đã cập nhật kết quả thành công bảng điểm!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'));
-            } else {
-                $this->Session->setFlash('Cập nhật kết quả không thành công!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
+                            if ($fail == $field_current_cert_no) {
+                                $lastCertNo = $this->getLastCertNo($field_id);
+                                $this->Course->Chapter->Field->id = $field_id;
+                                $this->Course->Chapter->Field->saveField('current_certificate_number', (int) $lastCertNo);
+                            }
+                        }
+                    }
+                }
             }
         }
         $this->redirect(array('manager' => true, 'action' => 'score', $course_id));
     }
 
     public function admin_update_score($course_id) {
-        if (!$this->Course->exists($course_id)) {
-            throw new NotFoundException(__('Invalid course'));
-        }
         $this->Course->id = $course_id;
         $chapter_id = $this->Course->field('Course.chapter_id');
         $field_id = $this->Course->Chapter->field('Chapter.field_id', array('Chapter.id' => $chapter_id));
         $this->Course->Chapter->Field->id = $field_id;
+
         if (!empty($this->request->data['pass_students'])) {
+
             $pass_students = $this->request->data['pass_students'];
-            $certificated_number_suffix = $this->Course->Chapter->Field->field('Field.certificated_number_suffix');
-            $chung_chi_co_so = $this->Course->field('Course.chung_chi_co_so');
-
+            $suffix = $this->Course->Chapter->Field->field('Field.certificated_number_suffix');
+            $hasNo = $this->Course->field('Course.chung_chi_co_so');
             foreach ($pass_students as $key => $value) {
-                $last_cert = $this->Course->Attend->find('first', array('fields' => array('id', 'certificated_number'), 'recursive' => -1, 'order' => array('certificated_number' => 'ASC'), 'conditions' => array('Attend.certificated_number is not null')));
+                if ($value) {
+                    $pass = $this->Course->Attend->field(
+                            'is_passed', array(
+                        'Attend.student_id' => $value,
+                        'Attend.course_id' => $course_id));
+                    if (!$pass) {
+                        $field_current_cert_no = $this->Course->Chapter->Field->field('current_certificate_number');
+                        $lastCertNo = $this->getLastCertNo($field_id);
+                        if ($lastCertNo > $field_current_cert_no) {
+                            $x = $field_current_cert_no + 1;
+                        } else {
+                            $x = $lastCertNo + 1;
+                        }
+                        $certNo = $x;
+                        if ($certNo < 10) {
+                            $certNo = '0' . $certNo;
+                        }
+                        $certificated_number = "'" . $certNo . $suffix . "'";
+                        $data = array(
+                            'Attend.is_passed' => 1,
+                            'Attend.certificated_number' => $certificated_number,
+                            'Attend.certificated_date' => '"' . date('Y-m-d H:i:s', strtotime('now')) . '"'
+                        );
+                        if (!$hasNo) {
+                            $data = array(
+                                'Attend.is_passed' => 1,
+                                'Attend.certificated_date' => '"' . date('Y-m-d H:i:s', strtotime('now')) . '"'
+                            );
+                        }
+                        if ($this->Course->Attend->updateAll(
+                                        $data, array('Attend.student_id' => $value, 'Attend.course_id' => $course_id,
+                                    'Attend.certificated_number is null'))) {
 
-                if (empty($last_cert)) {
-                    $certificated_start_number = 1;
-                } else {
-                    $explode = ( explode('/', $last_cert['Attend']['certificated_number']));
-                    $certificated_start_number = $explode[0];
-                }
-                $certificated_number = ++$certificated_start_number;
-                if ($certificated_start_number < 10) {
-                    $certificated_number = '0' . $certificated_number;
-                }
-                $full_certificated_number = "'" . $certificated_number . $certificated_number_suffix . "'";
-
-                $data = array(
-                    'Attend.is_passed' => 1,
-                    'Attend.certificated_number' => $full_certificated_number,
-                    'Attend.certificated_date' => '"' . date('Y-m-d H:i:s', strtotime('now')) . '"'
-                );
-                if (!$chung_chi_co_so) {
-                    $data = array(
-                        'Attend.is_passed' => 1,
-                        'Attend.certificated_date' => '"' . date('Y-m-d H:i:s', strtotime('now')) . '"'
-                    );
-                }
-                if ($this->Course->Attend->updateAll(
-                                $data, array('Attend.student_id' => $value, 'Attend.course_id' => $course_id, 'Attend.certificated_number is null'))) {
-                    
+                            $this->Course->Chapter->Field->saveField('current_certificate_number', $x);
+                        }
+                    }
                 }
             }
         }
         if (!empty($this->request->data['fail_students'])) {
-
-
             $fail_students = $this->request->data['fail_students'];
+            foreach ($fail_students as $key => $value) {
+                if ($value) {
+                    $pass = $this->Course->Attend->field(
+                            'is_passed', array(
+                        'Attend.student_id' => $value,
+                        'Attend.course_id' => $course_id));
+                    if ($pass) {
+                        $field_current_cert_no = $this->Course->Chapter->Field->field('current_certificate_number');
+                        $certNo = $this->Course->Attend->field('Attend.certificated_number', array('Attend.course_id' => $course_id, 'Attend.student_id' => $value));
+                        $explode = ( explode('/', $certNo));
+                        $fail = $explode[0];
 
+                        if ($this->Course->Attend->updateAll(
+                                        array('Attend.is_passed' => 0, 'Attend.is_recieved' => 0,
+                                    'Attend.recieve_date' => NULL, 'Attend.certificated_date' => NULL,
+                                    'Attend.certificated_number' => NULL), array('Attend.student_id' => $value, 'Attend.course_id' => $course_id))) {
 
-            if ($this->Course->Attend->updateAll(array('Attend.is_passed' => 0, 'Attend.is_recieved' => 0, 'Attend.recieve_date' => NULL, 'Attend.certificated_date' => NULL, 'Attend.certificated_number' => NULL), array('Attend.student_id' => $fail_students, 'Attend.course_id' => $course_id))) {
-                $this->Session->setFlash('Đã cập nhật kết quả thành công bảng điểm!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'));
-            } else {
-                $this->Session->setFlash('Cập nhật kết quả không thành công!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
+                            if ($fail == $field_current_cert_no) {
+                                $lastCertNo = $this->getLastCertNo($field_id);
+                                $this->Course->Chapter->Field->id = $field_id;
+                                $this->Course->Chapter->Field->saveField('current_certificate_number', (int) $lastCertNo);
+                            }
+                        }
+                    }
+                }
             }
         }
         $this->redirect(array('admin' => true, 'action' => 'score', $course_id));
@@ -1082,7 +1203,7 @@ class CoursesController extends AppController {
             'User' => array('fields' => array('id', 'name')),
             'CoursesRoom' => array('conditions' => array('CoursesRoom.start is not null'), 'order' => array('CoursesRoom.priority' => 'ASC')),
             'Teacher' => array('fields' => array('id', 'name', 'email', 'phone_number'), 'HocHam', 'HocVi'),
-            'Chapter' => array('Attachment'),
+            'Chapter' => array('Attachment','Field'=>array('fields'=>array('id','name'))),
             'Attachment'
         );
         $options = array('conditions' => array('Course.' . $this->Course->primaryKey => $id), 'contain' => $contain);
@@ -1107,7 +1228,7 @@ class CoursesController extends AppController {
             'User' => array('fields' => array('id', 'name')),
             'CoursesRoom' => array('conditions' => array('CoursesRoom.start is not null'), 'order' => array('CoursesRoom.priority' => 'ASC')),
             'Teacher' => array('fields' => array('id', 'name', 'email', 'phone_number'), 'HocHam', 'HocVi'),
-            'Chapter' => array('Attachment'),
+            'Chapter' => array('Attachment','Field'=>array('fields'=>array('id','name'))),
             'Attachment',
             'Attend' => array('Student' => array('fields' => array('id', 'name', 'email', 'phone_number')))
         );

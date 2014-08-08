@@ -98,5 +98,5 @@ if (!defined("FILE_DIR")) {
     define("FILE_DIR", 'files');
 }
 
-Configure::write('Recaptcha.publicKey', '6Lcu2fcSAAAAAJu1YYHevg-_4FYwOlYScisKh2Xu');
-Configure::write('Recaptcha.privateKey', '6Lcu2fcSAAAAAFYGmxDB7-2qlQZ2PHZybSZ0YVoZ');
+Configure::write('Recaptcha.publicKey', '6LdmQvgSAAAAAN3GpA5uRaC09PCr6MlPWI0uyOpt');
+Configure::write('Recaptcha.privateKey', '6LdmQvgSAAAAABHtEeLa24Opr39pLe2pd01iiOiv');

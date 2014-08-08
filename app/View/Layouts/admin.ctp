@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <?php echo $this->element('Common/admin_head_tag', array('cache' => true)); ?>
+    <?php echo $this->element('Menu/admin/admin_head_tag', array('cache' => true)); ?>
     <body class="skin-black fixed">
         <!-- header logo: style can be found in header.less -->
         <header class="header">

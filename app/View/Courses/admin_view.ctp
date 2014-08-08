@@ -20,12 +20,12 @@
                         <?php if ($course['Course']['status'] == COURSE_COMPLETED) echo $this->element('admin/course/view/course_completed_students', array('students' => $course['Attend'])); ?>
 
                         <?php if ($course['Course']['status'] == COURSE_REGISTERING) echo $this->element('admin/course/view/course_registering_students', array('students' => $course['Attend'])); ?>
-                        <?php echo $this->Html->link(' In danh sách', array('admin'=>false,'controller'=>'courses','action'=>'print_student',$course['Course']['id']), array('class' => 'btn btn-info fa fa-print')); ?>
+                        <?php echo $this->Html->link(' In danh sách', array('admin' => false, 'controller' => 'courses', 'action' => 'print_student', $course['Course']['id']), array('class' => 'btn btn-info fa fa-print')); ?>
                     </div><!-- /.tab-pane -->
- 
+
                     <div id="tab_1-1" class="tab-pane">
                         <div class="noi_dung" >
-                            <!--<img alt="" class="pull-left"  style="padding-right: 10px; width: 500px;"src="/files/course/image/<?php //echo $course['Course']['image_path'] . '/' . $course['Course']['image']; ?>">-->
+                            <!--<img alt="" class="pull-left"  style="padding-right: 10px; width: 500px;"src="/files/course/image/<?php //echo $course['Course']['image_path'] . '/' . $course['Course']['image'];  ?>">-->
 
                             <p><?php echo $course['Course']['decription']; ?></p>
                         </div>
@@ -60,18 +60,45 @@
                                 <tr>
                                     <td>Hạn đăng ký</td> 
                                     <td>
-                                        <span class="text-red"><?php $enrolling_expiry_date=new DateTime($course['Course']['enrolling_expiry_date']);
-                                        echo $enrolling_expiry_date->format('H:i').', ngày: '.$enrolling_expiry_date->format('d/m/Y');
-                                        ?></span>
+                                        <span class="text-red"><?php
+                                            $enrolling_expiry_date = new DateTime($course['Course']['enrolling_expiry_date']);
+                                            echo $enrolling_expiry_date->format('H:i') . ', ngày: ' . $enrolling_expiry_date->format('d/m/Y');
+                                            ?></span>
                                     </td>
                                 </tr>
-                                <tr><td>Đã xuất bản</td><td><?php echo $course['Course']['is_published']; ?></td></tr>
-                                <tr><td> Tình trạng</td><td><?php echo $course['Course']['status']; ?></td></tr>
+                                <tr><td>Đã xuất bản</td><td><?php echo ($course['Course']['is_published']) ? 'Có' : 'Không'; ?></td></tr>
+                                <tr><td> Tình trạng</td>
+                                    <td><?php
+                                        $status = "";
+                                        switch ($course['Course']['status']) {
+                                            case COURSE_CANCELLED:
+                                                $status = 'Đã hủy';
+                                                break;
+                                            case COURSE_COMPLETED:
+                                                $status = 'Đã hoàn thành';
+                                                break;
+                                            case COURSE_UNCOMPLETED:
+                                                $status = 'Chưa hoàn thành';
+                                                break;
+                                            case COURSE_REGISTERING:
+                                                $status = 'Đang đăng ký';
+                                                break;
 
+                                            default:
+                                                break;
+                                        }
+                                        echo $status;
+                                        ?></td></tr>
                                 <tr>
                                     <td>Chuyên đề</td>
                                     <td>                 
-                                        <?php echo $this->Html->link($course['Chapter']['name'], array('controller' => 'chapters', 'action' => 'view', $course['Chapter']['id'])); ?>
+<?php echo $this->Html->link($course['Chapter']['name'], array('controller' => 'chapters', 'action' => 'view', $course['Chapter']['id'])); ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Lĩnh vực</td>
+                                    <td>                 
+<?php echo $course['Chapter']['Field']['name']; ?>
                                     </td>
                                 </tr>
 
@@ -95,7 +122,7 @@
                                             else
                                                 echo $this->element('Common/do_schedule', array('course_id' => $course['Course']['id']));
                                             ?>
-                                            <?php echo $this->element('Widgets/fields_manager/schedule'); ?>
+<?php echo $this->element('Widgets/fields_manager/schedule'); ?>
                                         </div>
                                     </div>
                                 </div>
@@ -123,7 +150,7 @@
                                                                 <td><?php echo ++$stt ?></td>
                                                                 <td><?php echo $this->Html->link($tailieu['attachment'], array('fields_manager' => false, 'controller' => 'chapters', 'action' => 'download', $tailieu['id'])); ?></td>
                                                             </tr>
-                                                        <?php endforeach; ?>
+<?php endforeach; ?>
 
                                                     </tbody>
                                                 </table>
@@ -161,7 +188,7 @@
                                                             <tr id='attachment_<?php echo $tailieu['id'] ?>'>
                                                                 <td><?php echo ++$stt ?></td>
                                                                 <td><?php echo $this->Html->link($tailieu['attachment'], array('fields_manager' => false, 'action' => 'download', $tailieu['id']));
-                                                        ?></td>
+                                                            ?></td>
                                                                 <td>
                                                                     <?php
                                                                     //echo $this->Form->postLink('<button class="btn btn-mini btn-warning" type="button">xóa</button>', array('fields_manager' => false, 'controller' => 'attachments', 'action' => 'delete', $tailieu['Attachment']['id']), array('escape' => false), __('bạn chắc xóa file %s?', $tailieu['Attachment']['attachment']));
@@ -169,7 +196,7 @@
                                                                     ?>
                                                                 </td>
                                                             </tr>
-                                                        <?php endforeach; ?>
+<?php endforeach; ?>
 
                                                     </tbody>
                                                 </table>
@@ -181,18 +208,17 @@
                             </div>
                         </div>
                     </div>
-                 
+
                 </div><!-- /.tab-content -->
             </div>
             <div class="btn-toolbar pull-right">
-                <?php echo $this->Html->link('SỬA', array('admin'=>true,'controller'=>'courses','action'=>'edit',$course['Course']['id']),array('class' => 'btn btn-info')); ?>
+                <?php echo $this->Html->link('SỬA', array('admin' => true, 'controller' => 'courses', 'action' => 'edit', $course['Course']['id']), array('class' => 'btn btn-info')); ?>
                 <?php
                 if ($course['Course']['status'] != COURSE_CANCELLED)
                     echo $this->Form->postLink('<span class="fa fa-ban">Hủy</span>', array('admin' => false, 'action' => 'huy', $course['Course']['id']), array('escape' => false, 'class' => 'btn btn-warning'), __('Bạn có chắc hủy khóa học # %s?', $course['Course']['name'] . ' - ' . $course['Chapter']['name']));
                 else {
                     echo $this->Form->postLink('                                
-  <span class="fa fa-refresh">Khôi phục</span>', array('admin' => false, 'action' => 'uncancel', $course['Course']['id']), array('escape' => false,'class'=>'btn btn-info'), __('Bạn có chắc phục hồi khóa học # %s?', $course['Course']['name'] . ' - ' . $course['Chapter']['name']));
-
+  <span class="fa fa-refresh">Khôi phục</span>', array('admin' => false, 'action' => 'uncancel', $course['Course']['id']), array('escape' => false, 'class' => 'btn btn-info'), __('Bạn có chắc phục hồi khóa học # %s?', $course['Course']['name'] . ' - ' . $course['Chapter']['name']));
                 }
                 ?>
             </div>

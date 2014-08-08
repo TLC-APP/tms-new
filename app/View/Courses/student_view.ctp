@@ -65,7 +65,12 @@
                                         <strong><?php echo $course['Chapter']['name']; ?></strong>
                                     </td>
                                 </tr>
-
+                                 <tr>
+                                    <td>Lĩnh vực</td>
+                                    <td>                 
+                                        <?php echo $course['Chapter']['Field']['name']; ?>
+                                    </td>
+                                </tr>
 
 
                             </tbody>
