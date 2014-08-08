@@ -96,8 +96,8 @@ class User extends AppModel {
             ),
         ),
         'avatar' => array(
-            'rule' => array('isValidMimeType', array('application/pdf', 'image/png'), false),
-            'message' => 'File is not a pdf or png'
+            'rule' => array('isValidMimeType', array('image/jpg', 'image/png'), false),
+            'message' => 'Bạn phải chọn ảnh .JPG hoặc .PNG'
         )
     );
 

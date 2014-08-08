@@ -23,6 +23,19 @@ class AppController extends Controller {
                 'element' => 'alert',
                 'key' => 'auth',
                 'params' => array('plugin' => 'BoostCake', 'class' => 'alert-warning')
+            ),
+            'allowedActions' => array('home', 'guest_cothedangki',
+                'guest_lich_homnay', 'courses_completed', 'help', 'contact',
+                'login', 'new_courses', 'getLastMessage', 'xem_thong_bao',
+                'guest_view_teacher', 'guest_view'),
+            'logoutRedirect' => '/',
+            'unauthorizedRedirect' => '/',
+            'loginRedirect' => '/',
+            'loginAction' => array(
+                'controller' => 'users',
+                'action' => 'login',
+                'admin' => false,
+                'plugin' => false
             )
         )
     );
@@ -35,33 +48,12 @@ class AppController extends Controller {
     public $uses = array('Course', 'CoursesRoom', 'User');
 
     function beforeFilter() {
-        if (in_array($this->request->action, array(
-                    'home', 'guest_cothedangki',
-                    'guest_lich_homnay', 'courses_completed', 'help', 'contact',
-                    'login', 'new_courses', 'getLastMessage', 'xem_thong_bao', 'guest_view_teacher', 'guest_view'))) {
-
-            $this->Auth->allow($this->request->action);
-        }
-
         if ($this->Auth->loggedIn()) {
-
             if (!$this->Auth->user('activated')) {
                 $this->Session->setFlash('Tài khoản đã bị khóa!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'), 'auth');
                 return $this->redirect($this->Auth->logout());
             }
-            
         }
-
-        $this->Auth->loginAction = array(
-            'controller' => 'users',
-            'action' => 'login',
-            'admin' => false,
-            'plugin' => false
-        );
-        $this->Auth->logoutRedirect = '/';
-        $this->Auth->unauthorizedRedirect='/';        
-        $this->Auth->loginRedirect = '/';
-
         $this->__checkCompleteCourse();
     }
 
@@ -70,19 +62,20 @@ class AppController extends Controller {
         if (!empty($this->params['prefix']) && !$this->request->is('ajax')) {
             $this->layout = $this->params['prefix'];
         }
-        
-        if ($this->Auth->loggedIn() && ($this->User->isAdmin() || $this->User->isManager())&&
-                ($this->request->action!='manager_expired_courses'&&
-                $this->request->action!='admin_expired_courses')) {
+
+        if ($this->Auth->loggedIn() && ($this->User->isAdmin() || $this->User->isManager()) &&
+                ($this->request->action != 'manager_expired_courses' &&
+                $this->request->action != 'admin_expired_courses')) {
             $this->check_expire_course();
         }
     }
 
     public function isAuthorized($user) {
+        
         //return true;
         $acl_check = false;
         try {
-            $acl_check = $this->Acl->check(array('User' => array('id' => $user['id'])),$this->request->action);
+            $acl_check = $this->Acl->check(array('User' => array('id' => $user['id'])), $this->request->action);
         } catch (Exception $exc) {
             return false;
         }
@@ -95,8 +88,6 @@ class AppController extends Controller {
 
         return false;
     }
-
-   
 
     public function __checkCompleteCourse() {
         $uncomplete_courses = $this->Course->getCoursesUnCompleted();
@@ -113,11 +104,11 @@ class AppController extends Controller {
 
     public function check_expire_course() {
         $expired_courses = $this->Course->getCoursesExpired();
-        if(is_null($this->request->prefix)){
-            $this->request->prefix='manager';
+        if (is_null($this->request->prefix)) {
+            $this->request->prefix = 'manager';
         }
         if (!empty($expired_courses)) {
-            $this->Session->setFlash('Có '.count($expired_courses).' khóa học đã hết hạn đăng ký <a href="' .SUB_DIR.'/'.$this->request->prefix.'/courses/expired_courses"> chi tiết</a>', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning', 'escape' => false));
+            $this->Session->setFlash('Có ' . count($expired_courses) . ' khóa học đã hết hạn đăng ký <a href="' . SUB_DIR . '/' . $this->request->prefix . '/courses/expired_courses"> chi tiết</a>', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning', 'escape' => false));
         }
     }
 

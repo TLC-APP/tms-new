@@ -628,10 +628,9 @@ class CoursesController extends AppController {
         $chapters = $this->Course->Chapter->find('list');
         $teacher_id_array = $this->Course->Teacher->getTeacherIdArray();
         $teachers = $this->Course->Teacher->find('list', array('conditions' => array('Teacher.id' => $teacher_id_array)));
-        $attachment = $this->Course->Attachment->find('first', 
-                array('conditions' => array('Attachment.foreign_key' => $id, 
-                    'Attachment.model' => 'Course'), 'recursive' => -1));
-        
+        $attachment = $this->Course->Attachment->find('first', array('conditions' => array('Attachment.foreign_key' => $id,
+                'Attachment.model' => 'Course'), 'recursive' => -1));
+
         $this->set(compact('chapters', 'teachers', 'attachment'));
     }
 
@@ -721,35 +720,42 @@ class CoursesController extends AppController {
         $this->Course->id = $course_id;
         $chapter_id = $this->Course->field('Course.chapter_id');
         $field_id = $this->Course->Chapter->field('Chapter.field_id', array('Chapter.id' => $chapter_id));
+
         $this->Course->Chapter->Field->id = $field_id;
+
+        $field_current_cert_no = $this->Course->Chapter->Field->field('current_certificate_number');
 
         if (!empty($this->request->data['pass_students'])) {
             $pass_students = $this->request->data['pass_students'];
-
-
             $certificated_number_suffix = $this->Course->Chapter->Field->field('Field.certificated_number_suffix');
-
-
             $chung_chi_co_so = $this->Course->field('Course.chung_chi_co_so');
 
             foreach ($pass_students as $key => $value) {
                 $last_cert = $this->Course->Attend->find('first', array(
-                    'fields' => array('id', 'certificated_number','course_id'), 
-                    'recursive' => -1, 
-                    'order' => array('Attend.certificated_number' => 'DESC'), 
+                    'fields' => array('id', 'certificated_number', 'course_id'),
+                    'recursive' => -1,
+                    'order' => array('Attend.certificated_number' => 'DESC'),
                     'conditions' => array(
                         'Attend.certificated_number is not null',
-                        'Attend.certificated_number like'=>'%'.$certificated_number_suffix
-                        )));
+                        'Attend.certificated_number like' => '%' . $certificated_number_suffix
+                )));
 
                 if (empty($last_cert)) {
-                    $certificated_start_number = 1;
+                    $certificated_start_number = 0;
                 } else {
                     $explode = ( explode('/', $last_cert['Attend']['certificated_number']));
                     $certificated_start_number = $explode[0];
                 }
-                $certificated_number = ++$certificated_start_number;
-                if ($certificated_start_number < 10) {
+
+                if ($certificated_start_number > $field_current_cert_no) {
+                    $x = $field_current_cert_no;
+                } else {
+                    $x = $certificated_start_number;
+                }
+
+                $certificated_number = ++$x;
+
+                if ($certificated_number < 10) {
                     $certificated_number = '0' . $certificated_number;
                 }
                 $full_certificated_number = "'" . $certificated_number . $certificated_number_suffix . "'";
@@ -767,7 +773,7 @@ class CoursesController extends AppController {
                 }
                 if ($this->Course->Attend->updateAll(
                                 $data, array('Attend.student_id' => $value, 'Attend.course_id' => $course_id, 'Attend.certificated_number is null'))) {
-                    //$this->Course->Chapter->Field->saveField('current_certificate_number', $certificated_start_number);
+                    $this->Course->Chapter->Field->saveField('current_certificate_number', $x);
                 }
             }
         }
@@ -972,7 +978,7 @@ class CoursesController extends AppController {
         $this->Paginator->settings = array('contain' => $contain, 'conditions' => $conditions, 'order' => array('Course.created' => 'DESC'));
         $this->set('courses', $this->Paginator->paginate());
     }
-    
+
     public function admin_expired_courses() {
         $expired_courses = $this->Course->getCoursesExpired();
         $conditions = array('Course.id' => $expired_courses);

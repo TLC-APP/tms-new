@@ -20,8 +20,8 @@ $this->Html->addCrumb('Thêm khóa học');
         <?php
         echo $this->Form->input('name', array('label' => 'Tên khóa'));
         echo $this->Form->input('chapter_id', array('label' => 'Chủ đề'));
-        echo $this->Form->input('image', array('label' => 'Ảnh đại diện', 'type' => 'file', 'class' => false));
-        echo $this->Form->input('image_path', array('type' => 'hidden'));
+        //echo $this->Form->input('image', array('label' => 'Ảnh đại diện', 'type' => 'file', 'class' => false));
+        //echo $this->Form->input('image_path', array('type' => 'hidden'));
         echo $this->Form->input('teacher_id', array('label' => 'Tập huấn bởi'));
         echo $this->Form->input('max_enroll_number', array('label' => 'Số người tối đa'));
         echo $this->Form->input('is_published', array('label' => 'Xuất bản',
