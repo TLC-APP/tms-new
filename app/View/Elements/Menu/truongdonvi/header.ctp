@@ -11,6 +11,7 @@
 <?php echo $this->Html->css('select2-bootstrap'); ?>
 <!-- daterange picker -->
 <?php echo $this->Html->css('daterangepicker/daterangepicker-bs3'); ?>
+<?php echo $this->Html->script('plugins/daterangepicker/daterangepicker'); ?>
 <!-- Theme style -->
 <?php echo $this->Html->css('AdminLTE'); ?>
 <!-- add new calendar event modal -->
@@ -30,7 +31,7 @@
 
 <?php echo $this->Html->script('plugins/select2/select2'); ?>
 <?php echo $this->Html->script('moment.min'); ?>
-<?php echo $this->Html->script('plugins/daterangepicker/daterangepicker'); ?>
+
 <?php
 //echo $this->Html->script('eldarion-ajax.min'); 
 echo $this->element('Common/fancybox');

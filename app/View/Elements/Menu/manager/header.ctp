@@ -21,6 +21,10 @@
 <?php echo $this->Html->script('jquery-ui-1.10.3.min') ?>
 <!-- Bootstrap -->
 <?php echo $this->Html->script('bootstrap.min') ?>
+<!-- daterange picker -->
+<?php echo $this->Html->css('daterangepicker/daterangepicker-bs3'); ?>
+<?php echo $this->Html->script('plugins/daterangepicker/daterangepicker'); ?>
+<?php echo $this->Html->script('moment.min'); ?>
 <!-- AdminLTE App -->
 <?php echo $this->Html->script('AdminLTE/app') ?>
 

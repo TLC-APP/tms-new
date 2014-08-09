@@ -29,16 +29,28 @@ echo $this->Html->script('jquery.form');
                 COURSE_CANCELLED => 'Đã hủy'
             ), 'empty' => '-- Tất cả --', 'required' => false));
         echo $this->Form->input('teacher_id', array('empty' => '-- Tập huấn bởi --'));
-        echo $this->Form->input('begin', array('label' => 'Từ ', 'type' => 'date', 'dateFormat' => 'DMY', 'monthNames' => false, 'empty' => true, 'minYear' => 2010));
-        echo $this->Form->input('end', array('label' => 'Đến ', 'type' => 'date', 'dateFormat' => 'DMY', 'monthNames' => false, 'empty' => true, 'minYear' => 2010));
+        //echo $this->Form->input('begin', array('label' => 'Từ ', 'type' => 'date', 'dateFormat' => 'DMY', 'monthNames' => false, 'empty' => true, 'minYear' => 2010));
+        //echo $this->Form->input('end', array('label' => 'Đến ', 'type' => 'date', 'dateFormat' => 'DMY', 'monthNames' => false, 'empty' => true, 'minYear' => 2010));
         ?>
+        <div class="form-group ">
+            <div class="input-group">                
+                <input type="text" name="data[khoang_thoi_gian]" placeholder="Từ - đến..."class="form-control" id="reservation"/>
+
+            </div><!-- /.input group -->
+        </div>
     </fieldset>
-    <?php echo $this->Form->submit('Thực hiện', array('div' => 'form-group','class'=>"btn btn-info")); ?>
+    <?php echo $this->Form->submit('Thực hiện', array('div' => 'form-group', 'class' => "btn btn-info")); ?>
     <?php echo $this->Form->end(); ?>
 </div>
 <script>
 
     $(function() {
+        //Date range picker
+        $('#reservation').daterangepicker(
+                {
+                    showDropdowns: true,
+                    format: 'YYYY/MM/DD'
+                });
         var fieldbox = $('#CourseFieldId');
         var chapterbox = $('#CourseChapterId');
         fieldbox.change(function() {
