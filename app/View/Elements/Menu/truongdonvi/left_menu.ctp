@@ -60,11 +60,7 @@ echo $this->Html->script('jquery.form');
                     COURSE_UNCOMPLETED => 'Chưa hoàn thành',
                     COURSE_CANCELLED => 'Đã hủy'
                 ), 'required' => false));
-
-
-//echo $this->Form->input('begin', array('label' => 'Từ ', 'type' => 'date', 'dateFormat' => 'DMY', 'monthNames' => false, 'empty' => true, 'minYear' => 2010));
-            //echo $this->Form->input('end', array('label' => 'Đến ', 'type' => 'date', 'dateFormat' => 'DMY', 'monthNames' => false, 'empty' => true, 'minYear' => 2010));
-            ?>
+         ?>
             <div class="form-group">
                 <label>Khoảng thời gian:</label>
                 <div class="input-group">
@@ -74,6 +70,7 @@ echo $this->Html->script('jquery.form');
                     <input type="text" name="data[khoang_thoi_gian]" class="form-control pull-right" id="reservation"/>
 
                 </div><!-- /.input group -->
+            </div>
                 <?php echo $this->Form->button('<i class="fa fa-search"></i>', array('type' => 'submit', 'div' => 'form-group', 'class' => "btn btn-success pull-right", 'escape' => false)); ?>
 
         </fieldset>
