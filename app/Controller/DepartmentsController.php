@@ -64,6 +64,18 @@ class DepartmentsController extends AppController {
         //$data = $this->Department->generateTreeList();
     }
 
+    public function admin_fix_tree() {
+        if ($this->Department->verify()) {
+            $this->Session->setFlash('Cấu trúc Tree bình thường!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
+        } else {
+            if ($this->Department->recover())
+                $this->Session->setFlash('Tree lỗi và đã fix!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'));
+            else
+                $this->Session->setFlash('Tree lỗi và fix không được!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
+        }
+        $this->redirect(array('controller' => 'departments', 'action' => 'index'));
+    }
+
     /**
      * view method
      *
@@ -75,7 +87,7 @@ class DepartmentsController extends AppController {
         if (!$this->Department->exists($id)) {
             throw new NotFoundException(__('Invalid department'));
         }
-        $options = array('fields'=>array('id','name','parent_id','truong_don_vi_id'),'conditions' => array('Department.' . $this->Department->primaryKey => $id));
+        $options = array('fields' => array('id', 'name', 'parent_id', 'truong_don_vi_id'), 'conditions' => array('Department.' . $this->Department->primaryKey => $id));
         $this->set('department', $this->Department->find('first', $options));
     }
 
@@ -83,7 +95,7 @@ class DepartmentsController extends AppController {
         if (!$this->Department->exists($id)) {
             throw new NotFoundException(__('Invalid department'));
         }
-        $options = array('conditions' => array('Department.' . $this->Department->primaryKey => $id),'recursive'=>0);
+        $options = array('conditions' => array('Department.' . $this->Department->primaryKey => $id), 'recursive' => 0);
         $this->set('department', $this->Department->find('first', $options));
     }
 
@@ -103,8 +115,8 @@ class DepartmentsController extends AppController {
             }
         }
         $parents = $this->Department->ParentDepartment->find('list');
-        $truongDonVis=$this->Department->TruongDonVi->find('list');
-        $this->set(compact('parents','truongDonVis'));
+        $truongDonVis = $this->Department->TruongDonVi->find('list');
+        $this->set(compact('parents', 'truongDonVis'));
     }
 
     public function admin_add() {
@@ -145,8 +157,8 @@ class DepartmentsController extends AppController {
             $this->request->data = $this->Department->find('first', $options);
         }
         $parents = $this->Department->ParentDepartment->find('list');
-        $truongDonVis=$this->Department->TruongDonVi->find('list');
-        $this->set(compact('parents','truongDonVis'));
+        $truongDonVis = $this->Department->TruongDonVi->find('list');
+        $this->set(compact('parents', 'truongDonVis'));
     }
 
     public function admin_edit($id = null) {
@@ -166,7 +178,8 @@ class DepartmentsController extends AppController {
             $this->request->data = $this->Department->find('first', $options);
         }
         $parents = $this->Department->ParentDepartment->find('list');
-        $this->set(compact('parents'));
+        $truongDonVis = $this->Department->TruongDonVi->find('list');
+        $this->set(compact('parents', 'truongDonVis'));
     }
 
     /**
@@ -185,20 +198,18 @@ class DepartmentsController extends AppController {
         $children = $this->Department->childCount();
         if ($children > 0) {
 
-            $this->Session->setFlash('xóa không thành công vì còn '.$children.' đơn vị con thuộc đơn vị này!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
+            $this->Session->setFlash('xóa không thành công vì còn ' . $children . ' đơn vị con thuộc đơn vị này!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
             $this->redirect($this->request->referer());
-            
         }
-        
+
         $users = $this->Department->field('user_number');
-        
+
         if ($users > 0) {
 
-            $this->Session->setFlash('xóa không thành công vì còn '.$users.' người dùng thuộc đơn vị này!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
+            $this->Session->setFlash('xóa không thành công vì còn ' . $users . ' người dùng thuộc đơn vị này!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
             $this->redirect($this->request->referer());
-            
         }
-        
+
         if ($this->Department->delete()) {
             $this->Session->setFlash('Xóa thành công', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
         } else {
@@ -216,18 +227,16 @@ class DepartmentsController extends AppController {
         $children = $this->Department->childCount();
         if ($children > 0) {
 
-            $this->Session->setFlash('xóa không thành công vì còn '.$children.' đơn vị con thuộc đơn vị này!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
+            $this->Session->setFlash('xóa không thành công vì còn ' . $children . ' đơn vị con thuộc đơn vị này!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
             $this->redirect($this->request->referer());
-            
         }
-        
+
         $users = $this->Department->field('user_number');
-        
+
         if ($users > 0) {
 
-            $this->Session->setFlash('xóa không thành công vì còn '.$users.' người dùng thuộc đơn vị này!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
+            $this->Session->setFlash('xóa không thành công vì còn ' . $users . ' người dùng thuộc đơn vị này!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
             $this->redirect($this->request->referer());
-            
         }
         if ($this->Department->delete()) {
             $this->Session->setFlash('Xóa thành công', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));

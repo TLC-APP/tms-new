@@ -21,21 +21,30 @@
             <th><?php echo $stt++; ?></th>
 
             <td>
-                <?php
-                echo $this->Html->link($course['Course']['name'], array('manager' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']));
-                $register_student_number = $course['Course']['register_student_number'];
-                if ($course['Course']['max_enroll_number'] > 0) {
-                    $percent = round(($register_student_number * 100) / $course['Course']['max_enroll_number']);
-                } else {
-                    $percent = 0;
-                }
-                ?>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default btn-flat"><?php
+                        echo $this->Html->link($course['Course']['name'], array('manager' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']));
+                        $register_student_number = $course['Course']['register_student_number'];
+                        ?></button>
+                    <button type="button" class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </div>
+
 
             <td>
-                <?php echo $this->Html->link($course['Chapter']['name'], array('controller' => 'chapters', 'action' => 'view', $course['Chapter']['id'])); ?>
+    <?php echo $this->Html->link($course['Chapter']['name'], array('controller' => 'chapters', 'action' => 'view', $course['Chapter']['id'])); ?>
             </td>
             <td>
-                <?php echo $this->Html->link($course['Teacher']['name'], array('controller' => 'users', 'action' => 'view', $course['Teacher']['id'])); ?>
+    <?php echo $this->Html->link($course['Teacher']['name'], array('controller' => 'users', 'action' => 'view', $course['Teacher']['id'])); ?>
             </td>
             <td><?php echo h($course['Course']['max_enroll_number']); ?>&nbsp;</td>
             <td><?php echo h($course['Course']['register_student_number']); ?>&nbsp;</td>
@@ -47,23 +56,24 @@
             <td class="tools">
             </td>
         </tr>
-    <?php endforeach; ?>
+<?php endforeach; ?>
 </table>
 <p>
-    <?php
-    echo $this->Paginator->counter(array(
-        'format' => __('Trang {:page} của {:pages} trang, hiển thị {:current} của {:count} tất cả, bắt đầu từ {:start}, đến {:end}')
-    ));
-    ?>	</p>
 <?php
-echo $this->Paginator->pagination(array(
-    'ul' => 'pagination'
+echo $this->Paginator->counter(array(
+    'format' => __('Trang {:page} của {:pages} trang, hiển thị {:current} của {:count} tất cả, bắt đầu từ {:start}, đến {:end}')
 ));
-?>
-<div style="text-align: right;">
-    <?php if (!empty($courses)) {
-        echo $this->Html->link('Xuất báo cáo', array(1), array('class' => 'btn btn-success'));
-    }
+?>	</p>
+    <?php
+    echo $this->Paginator->pagination(array(
+        'ul' => 'pagination'
+    ));
     ?>
+<div style="text-align: right;">
+<?php
+if (!empty($courses)) {
+    echo $this->Html->link('Xuất báo cáo', array(1), array('class' => 'btn btn-success'));
+}
+?>
 
 </div>

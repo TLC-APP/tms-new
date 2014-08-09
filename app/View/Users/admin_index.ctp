@@ -27,7 +27,7 @@
             $data = $this->Js->get('#UserSearchForm')->serializeForm(array('isForm' => true, 'inline' => true));
             $this->Js->get('#UserSearchForm')->event(
                     'submit', $this->Js->request(
-                            array('action' => 'search','manager'=>true), array(
+                            array('action' => 'search','admin'=>true), array(
                         'update' => '#results',
                         'data' => $data,
                         'async' => true,

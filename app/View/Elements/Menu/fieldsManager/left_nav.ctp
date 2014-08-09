@@ -5,7 +5,7 @@
         <!-- search form -->
         <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
-                
+
                 <input type="text" name="q" class="form-control" placeholder="Tìm kiếm..."/>
                 <span class="input-group-btn">
                     <button type='submit' name='seach' id='search-btn' class="btn btn-flat">
@@ -16,6 +16,28 @@
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
+            <?php if (count($loginUser['Group']) > 1): ?>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-bar-chart-o"></i>
+                        <span>Vai trò</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <?php foreach ($loginUser['Group'] as $group): ?>
+                            <li>
+                                <?php
+                                if ($group['alias'] != $this->params['prefix'])
+                                    echo $this->Html->link('<i class="fa fa-angle-double-right"></i>' . $group['name'], array(
+                                        'controller' => 'dashboards',
+                                        'action' => 'home', $group['alias'] => true), array('escape' => false));
+                                ?>                
+                            </li>
+
+                        <?php endforeach; ?>
+                    </ul>
+                </li>
+            <?php endif; ?>
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-bar-chart-o"></i>
@@ -48,8 +70,8 @@
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><?php echo $this->Html->link('<i class="fa fa-angle-double-right"></i> <span>Thêm mới</span>', array('action' => 'add','controller' => 'users','fields_manager' => true), array('escape' => false)); ?></li>
-                    <li><?php echo $this->Html->link('<i class="fa fa-angle-double-right"></i> <span>Danh sách</span>', array('action' => 'index','controller' => 'users','fields_manager' => true), array('escape' => false)); ?></li>
+                    <li><?php echo $this->Html->link('<i class="fa fa-angle-double-right"></i> <span>Thêm mới</span>', array('action' => 'add', 'controller' => 'users', 'fields_manager' => true), array('escape' => false)); ?></li>
+                    <li><?php echo $this->Html->link('<i class="fa fa-angle-double-right"></i> <span>Danh sách</span>', array('action' => 'index', 'controller' => 'users', 'fields_manager' => true), array('escape' => false)); ?></li>
                 </ul>
             </li>
 

@@ -6,7 +6,7 @@ class AppController extends Controller {
 
     public $components = array(
         'Session', 'RequestHandler',
-        'DebugKit.Toolbar',
+        //'DebugKit.Toolbar',
         'Paginator',
         'Acl' => array('habtm' => array(
                 'userModel' => 'Users.User',
@@ -30,7 +30,10 @@ class AppController extends Controller {
                 'guest_view_teacher', 'guest_view'),
             'logoutRedirect' => '/',
             'unauthorizedRedirect' => '/',
-            'loginRedirect' => '/',
+            'loginRedirect' => array(
+                'controller' => 'dashboards',
+                'action' => 'home',
+                'student' => true),
             'loginAction' => array(
                 'controller' => 'users',
                 'action' => 'login',
@@ -68,11 +71,15 @@ class AppController extends Controller {
                 $this->request->action != 'admin_expired_courses')) {
             $this->check_expire_course();
         }
+        if ($this->Auth->loggedIn()) {
+            $user = $this->User->find('first', array('contain' => array('Group' => array('order' => array('Group.name' => 'asc'))), 'conditions' => array('User.id' => $this->Auth->user('id'))));
+            $this->set('loginUser', $user);
+        }
     }
 
     public function isAuthorized($user) {
-        
-        //return true;
+
+        return true;
         $acl_check = false;
         try {
             $acl_check = $this->Acl->check(array('User' => array('id' => $user['id'])), $this->request->action);

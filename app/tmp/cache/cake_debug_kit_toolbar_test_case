@@ -1,2 +1,0 @@
-1407428304
-a:1:{i:0;a:1:{s:7:"sql_log";a:1:{s:7:"content";a:1:{s:4:"test";a:3:{s:7:"queries";a:1:{i:0;a:5:{s:5:"query";s:210:"SELECT `Post`.`id`, `Post`.`author_id`, `Post`.`title`, `Post`.`body`, `Post`.`published`, `Post`.`created`, `Post`.`updated` FROM `thgv_test`.`posts` AS `Post`   WHERE 1 = 1   ORDER BY `Post`.`id` ASC  LIMIT 1";s:8:"affected";i:1;s:7:"numRows";i:1;s:4:"took";d:0;s:7:"actions";s:0:"";}}s:5:"count";i:153;s:4:"time";d:457;}}}}}

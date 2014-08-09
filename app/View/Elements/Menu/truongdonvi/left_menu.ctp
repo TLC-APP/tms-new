@@ -2,9 +2,35 @@
 echo $this->Html->script('jquery.form');
 ?>
 <aside class="left-side sidebar-offcanvas">
+    
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
         <!-- Sidebar user panel -->
+        <?php if (count($loginUser['Group']) > 1): ?>
+        <ul class="sidebar-menu">
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-bar-chart-o"></i>
+                    <span>Vai trò</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <?php foreach ($loginUser['Group'] as $group): ?>
+                        <li>
+                            <?php
+                            if ($group['alias'] != $this->params['prefix'])
+                                echo $this->Html->link('<i class="fa fa-angle-double-right"></i>' . $group['name'], array(
+                                    'controller' => 'dashboards',
+                                    'action' => 'home', $group['alias'] => true), array('escape' => false));
+                            ?>                
+                        </li>
+
+                    <?php endforeach; ?>
+                </ul>
+            </li>
+        </ul>
+
+    <?php endif; ?>
         <!-- search form -->
         <?php
         echo $this->Form->create('Course', array(
@@ -55,6 +81,7 @@ echo $this->Html->script('jquery.form');
 
         <?php echo $this->Form->end(); ?>
         <!-- /.search form -->
+
     </section>
     <!-- /.sidebar -->
 

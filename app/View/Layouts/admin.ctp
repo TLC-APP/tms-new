@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <?php echo $this->element('Menu/admin/admin_head_tag', array('cache' => true)); ?>
-    <body class="skin-black fixed">
+    <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
             <?php echo $this->element('Menu/admin/header', array('cache' => true)); ?>

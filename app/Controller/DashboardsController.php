@@ -23,6 +23,7 @@ class DashboardsController extends AppController {
     }
 
     public function student_home() {
+
         $contain = array(
             'User' => array('fields' => array('id', 'name')), //create user
             'Teacher' => array('fields' => array('id', 'name')), //Teacher
@@ -52,10 +53,11 @@ class DashboardsController extends AppController {
     }
 
     public function teacher_home() {
-        
+
     }
 
     public function truongdonvi_home() {
+
         if (!empty($this->request->data)) {
             $this->autoRender = false;
             $khoang_thoi_gian = $this->request->data['khoang_thoi_gian'];
@@ -127,11 +129,12 @@ class DashboardsController extends AppController {
     }
 
     public function manager_home() {
-
+        
         $this->redirect(array('controller' => 'courses', 'action' => 'index', COURSE_REGISTERING));
     }
 
     public function fields_manager_home() {
+
         $this->redirect(array('fields_manager' => true, 'action' => 'index', 'controller' => 'courses', COURSE_REGISTERING));
     }
 
@@ -140,6 +143,7 @@ class DashboardsController extends AppController {
     }
 
     public function admin_home() {
+
         $this->redirect(array('controller' => 'courses', 'action' => 'index', COURSE_REGISTERING));
     }
 

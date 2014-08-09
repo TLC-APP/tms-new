@@ -21,6 +21,26 @@
                     <?php echo $this->Html->link('Khóa học đã tập huấn', array('controller' => 'courses_rooms', 'action' => 'da_tap_huan')); ?>
                 </li>
 
+                <?php if (count($loginUser['Group']) > 1): ?>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Vai trò <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <?php foreach ($loginUser['Group'] as $group): ?>
+                                <li>
+                                    <?php
+                                    if ($group['alias'] != $this->params['prefix'])
+                                        echo $this->Html->link($group['name'], array(
+                                            'controller' => 'dashboards',
+                                            'action' => 'home', $group['alias'] => true));
+                                    ?>                
+                                </li>
+
+                            <?php endforeach; ?>
+
+                        </ul>
+                    </li>
+                <?php endif; ?>
+
             </ul><!--//nav-->
         </div><!--//navabr-collapse-->
     </div><!--//container-->
