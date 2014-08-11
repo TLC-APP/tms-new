@@ -13,7 +13,7 @@ class CoursesController extends AppController {
 
     public $components = array('Paginator', 'Session', 'TinymceElfinder.TinymceElfinder', 'Email',
     );
-    public $helpers = array('TinymceElfinder.TinymceElfinder', 'PhpExcel');
+    public $helpers = array('TinymceElfinder.TinymceElfinder', 'PhpExcel', 'Js' => array('Jquery'));
 
     public function add() {
         if ($this->request->is('post')) {
@@ -577,8 +577,10 @@ class CoursesController extends AppController {
     }
 
     public function manager_index($status = null) {
-        
         $conditions = array();
+        if (!empty($this->request->data['Course']['name'])) {
+            $conditions = Set::merge($conditions, array('Course.name like' => '%' . $this->request->data['Course']['name'] . '%'));
+        }
         if (!empty($this->request->data['Course']['chapter_id'])) {
             $conditions = Set::merge($conditions, array('Course.chapter_id' => $this->request->data['Course']['chapter_id']));
         } else {
@@ -591,11 +593,11 @@ class CoursesController extends AppController {
         if (!empty($this->request->data['Course']['teacher_id'])) {
             $conditions = Set::merge($conditions, array('Course.teacher_id' => $this->request->data['Course']['teacher_id']));
         }
-        
-        if (!empty($this->request->data['Course']['is_passed'])) {
-            $conditions = Set::merge($conditions, array('Course.is_passed' => $this->request->data['Course']['is_passed']));
+
+        if (isset($this->request->data['Course']['is_published'])) {
+            $conditions = Set::merge($conditions, array('Course.is_published' => $this->request->data['Course']['is_published']));
         }
-        
+
         $contain = array(
             'User' => array('fields' => array('id', 'name')),
             'Teacher' => array('fields' => array('id', 'name'),
@@ -603,16 +605,19 @@ class CoursesController extends AppController {
         );
 
         if ($status) {
-            $conditions = Set::merge($conditions,array('Course.status' => $status));
+            $conditions = Set::merge($conditions, array('Course.status' => $status));
             $this->set('status', $status);
         }
-        $this->Paginator->settings = array('contain' => $contain, 'conditions' => $conditions, 'order' => array('Course.created' => 'DESC'));
+        $this->Paginator->settings = array('contain' => $contain, 'conditions' => $conditions, 'order' => array('Course.created' => 'DESC'), 'limit' => 2);
         $this->set('courses', $this->Paginator->paginate());
-        if($this->request->is('ajax')){
-            
+        if ($this->request->is('ajax')) {
+
             $this->render('manager_index_ajax');
         }
-        
+        $fields = $this->Course->Chapter->Field->find('list');
+        $teacher_id_array = $this->Course->Teacher->getTeacherIdArray();
+        $teachers = $this->Course->Teacher->find('list', array('conditions' => array('Teacher.id' => $teacher_id_array)));
+        $this->set(compact('fields', 'teachers', 'status'));
     }
 
     public function admin_index($status = null) {

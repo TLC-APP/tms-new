@@ -1,3 +1,4 @@
+<?php echo $this->element('Common/ajax_pagination_options', array('update' => '#datarows')) ?>
 <table class="table-hover table">
     <tr>
         <th>STT</th>
@@ -57,9 +58,7 @@
             <td><?php echo h($course['Course']['enrolling_expiry_date']); ?>&nbsp;</td>
             <td><?php echo h($course['Course']['created']); ?>&nbsp;</td>
             <td><?php echo h($course['User']['name']); ?>&nbsp;</td>
-
             <td class="tools">
-
                 <?php echo $this->Html->link('
   <span class="fa fa-edit"></span>', array('action' => 'edit', $course['Course']['id']), array('escape' => false));
                 ?>
@@ -112,4 +111,5 @@ echo $this->Paginator->pagination(array(
     'ul' => 'pagination'
 ));
 ?>
-<?php echo $this->Js->writeBuffer(); ?>
+<?php
+echo $this->Js->writeBuffer();

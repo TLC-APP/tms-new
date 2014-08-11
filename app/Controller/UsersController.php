@@ -55,7 +55,7 @@ class UsersController extends AppController {
             $this->Session->write('login_times', $login_times);
         }
         if ($this->request->is('post')) {
-            if ($login_times >= 2) {
+            if ($login_times >= 3) {
                 if ($this->Recaptcha->verify()) {
                     if ($this->Auth->login()) {
                         $this->afterLogin();

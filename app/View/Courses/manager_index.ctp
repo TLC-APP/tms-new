@@ -45,11 +45,11 @@ if (isset($status)) {
             ?>
             <fieldset>
                 <?php
-                echo $this->Form->input('name', array('placeholder' => 'Tên khóa...','required'=>false));
+                echo $this->Form->input('name', array('placeholder' => 'Tên khóa...', 'required' => false));
                 echo $this->Form->input('field_id', array('empty' => '-- Lĩnh vực --'));
                 echo $this->Form->input('chapter_id', array('empty' => '-- Chuyên đề --', 'required' => false));
                 echo $this->Form->input('teacher_id', array('empty' => '-- Tập huấn bởi --'));
-                echo $this->Form->input('is_published', array('empty' => '-- Xuất bản --','required'=>false, 'options' => array('1' => 'Có', '0' => 'Không')));
+                echo $this->Form->input('is_published', array('empty' => '-- Xuất bản --', 'required' => false, 'options' => array('1' => 'Có', '0' => 'Không')));
                 echo $this->Form->submit('Lọc', array('div' => 'form-group', 'class' => "btn btn-info"));
                 ?>
             </fieldset>
@@ -172,8 +172,6 @@ if (isset($status)) {
                 ?>
                 <?php echo $this->Js->writeBuffer(); ?>
             </div>
-
-            <?php echo $this->element('Common/ajax_loading'); ?>
         </div>
         <div class="box-footer" style="text-align: right;">
             <?php echo $this->Html->link('Thêm mới', array('action' => 'add'), array('class' => 'btn btn-success')); ?>
@@ -190,7 +188,7 @@ if (isset($status)) {
             e.preventDefault(); // prevent native submit
             $('#datarows').parent().parent().append('<div class="overlay"></div><div class="loading-img"></div>');
             $(this).ajaxSubmit({
-                //url: '<?php //echo SUB_DIR;  ?>/manager/courses/index/',
+                //url: '<?php //echo SUB_DIR;    ?>/manager/courses/index/',
                 success: response
             });
             return false;
@@ -204,5 +202,23 @@ if (isset($status)) {
             $('#datarows').html(responseText);
             return true;
         }
+        var fieldbox = $('#CourseFieldId');
+        var chapterbox = $('#CourseChapterId');
+        fieldbox.change(function() {
+            var field_id = (this.value);
+            $.ajax({
+                url: "<?php echo SUB_DIR; ?>/chapters/fill_selectbox/" + field_id + ".json"
+            })
+                    .done(function(data) {
+                        chapterbox.empty();
+                        $.each(data, function(i, value) {
+                            $.each(value, function(index, text) {
+                                chapterbox.append($('<option>').text(text).attr('value', index));
+                            });
+
+                        });
+                    });
+        });
     });
+
 </script>
