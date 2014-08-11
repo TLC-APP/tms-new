@@ -304,7 +304,7 @@ class CoursesController extends AppController {
             'User' => array('fields' => array('id', 'name')),
             'CoursesRoom' => array(/* 'conditions' => array('CoursesRoom.start is not null'), */ 'order' => array('CoursesRoom.priority' => 'ASC'), 'Room'),
             'Teacher' => array('fields' => array('id', 'name', 'email', 'phone_number'), 'HocHam', 'HocVi'),
-            'Chapter' => array('Attachment','Field'=>array('fields'=>array('id','name'))),
+            'Chapter' => array('Attachment', 'Field' => array('fields' => array('id', 'name'))),
             'Attend' => array('Student' => array('fields' => array('Student.id', 'Student.name', 'Student.email', 'Student.phone_number'))),
             'Attachment'
         );
@@ -323,7 +323,7 @@ class CoursesController extends AppController {
             'User' => array('fields' => array('id', 'name')),
             'CoursesRoom' => array('conditions' => array('CoursesRoom.start is not null'), 'order' => array('CoursesRoom.priority' => 'ASC')),
             'Teacher' => array('fields' => array('id', 'name', 'email', 'phone_number'), 'HocHam', 'HocVi'),
-            'Chapter' => array('Attachment','Field'=>array('fields'=>array('id','name'))),
+            'Chapter' => array('Attachment', 'Field' => array('fields' => array('id', 'name'))),
             'Attachment'
         );
         $options = array('conditions' => array('Course.' . $this->Course->primaryKey => $id), 'contain' => $contain);
@@ -456,7 +456,7 @@ class CoursesController extends AppController {
             //'CoursesRoom' => array('Room' => array('id', 'name'), 'conditions' => array('CoursesRoom.course_id' => $id, 'CoursesRoom.start is null')),
             'CoursesRoom' => array('Room' => array('id', 'name'), 'conditions' => array('CoursesRoom.course_id' => $id)),
             'Teacher' => array('fields' => array('id', 'name', 'email', 'phone_number'), 'HocHam', 'HocVi'),
-            'Chapter' => array('Attachment','Field'=>array('fields'=>array('id','name'))),
+            'Chapter' => array('Attachment', 'Field' => array('fields' => array('id', 'name'))),
             'Attachment',
             'Attend' => array('Student' => array('fields' => array('id', 'name', 'email', 'phone_number')), 'fields' => array('id', 'student_id', 'course_id'))
         );
@@ -577,7 +577,25 @@ class CoursesController extends AppController {
     }
 
     public function manager_index($status = null) {
+        
         $conditions = array();
+        if (!empty($this->request->data['Course']['chapter_id'])) {
+            $conditions = Set::merge($conditions, array('Course.chapter_id' => $this->request->data['Course']['chapter_id']));
+        } else {
+            if (!empty($this->request->data['Course']['field_id'])) {
+                $chapter_id_array = $this->Course->Chapter->getChapterByField_id($this->request->data['Course']['field_id']);
+                $conditions = Set::merge($conditions, array('Course.chapter_id' => $chapter_id_array)
+                );
+            }
+        }
+        if (!empty($this->request->data['Course']['teacher_id'])) {
+            $conditions = Set::merge($conditions, array('Course.teacher_id' => $this->request->data['Course']['teacher_id']));
+        }
+        
+        if (!empty($this->request->data['Course']['is_passed'])) {
+            $conditions = Set::merge($conditions, array('Course.is_passed' => $this->request->data['Course']['is_passed']));
+        }
+        
         $contain = array(
             'User' => array('fields' => array('id', 'name')),
             'Teacher' => array('fields' => array('id', 'name'),
@@ -585,11 +603,16 @@ class CoursesController extends AppController {
         );
 
         if ($status) {
-            $conditions = array('Course.status' => $status);
+            $conditions = Set::merge($conditions,array('Course.status' => $status));
             $this->set('status', $status);
         }
         $this->Paginator->settings = array('contain' => $contain, 'conditions' => $conditions, 'order' => array('Course.created' => 'DESC'));
         $this->set('courses', $this->Paginator->paginate());
+        if($this->request->is('ajax')){
+            
+            $this->render('manager_index_ajax');
+        }
+        
     }
 
     public function admin_index($status = null) {
@@ -665,7 +688,7 @@ class CoursesController extends AppController {
             //'CoursesRoom' => array('Room' => array('id', 'name'), 'conditions' => array('CoursesRoom.course_id' => $id, 'CoursesRoom.start is null')),
             'CoursesRoom' => array('Room' => array('id', 'name'), 'conditions' => array('CoursesRoom.course_id' => $id)),
             'Teacher' => array('fields' => array('id', 'name', 'email', 'phone_number'), 'HocHam', 'HocVi'),
-            'Chapter' => array('Attachment','Field'=>array('fields'=>array('id','name'))),
+            'Chapter' => array('Attachment', 'Field' => array('fields' => array('id', 'name'))),
             'Attachment',
             'Attend' => array('Student' => array('fields' => array('id', 'name', 'email', 'phone_number')))
         );
@@ -1203,7 +1226,7 @@ class CoursesController extends AppController {
             'User' => array('fields' => array('id', 'name')),
             'CoursesRoom' => array('conditions' => array('CoursesRoom.start is not null'), 'order' => array('CoursesRoom.priority' => 'ASC')),
             'Teacher' => array('fields' => array('id', 'name', 'email', 'phone_number'), 'HocHam', 'HocVi'),
-            'Chapter' => array('Attachment','Field'=>array('fields'=>array('id','name'))),
+            'Chapter' => array('Attachment', 'Field' => array('fields' => array('id', 'name'))),
             'Attachment'
         );
         $options = array('conditions' => array('Course.' . $this->Course->primaryKey => $id), 'contain' => $contain);
@@ -1228,7 +1251,7 @@ class CoursesController extends AppController {
             'User' => array('fields' => array('id', 'name')),
             'CoursesRoom' => array('conditions' => array('CoursesRoom.start is not null'), 'order' => array('CoursesRoom.priority' => 'ASC')),
             'Teacher' => array('fields' => array('id', 'name', 'email', 'phone_number'), 'HocHam', 'HocVi'),
-            'Chapter' => array('Attachment','Field'=>array('fields'=>array('id','name'))),
+            'Chapter' => array('Attachment', 'Field' => array('fields' => array('id', 'name'))),
             'Attachment',
             'Attend' => array('Student' => array('fields' => array('id', 'name', 'email', 'phone_number')))
         );
@@ -1346,7 +1369,7 @@ class CoursesController extends AppController {
             'User' => array('fields' => array('id', 'name')),
             'CoursesRoom' => array('conditions' => array('CoursesRoom.start is not null'), 'order' => array('CoursesRoom.priority' => 'ASC')),
             'Teacher' => array('fields' => array('id', 'name', 'email', 'phone_number'), 'HocHam', 'HocVi'),
-            'Chapter' => array('Attachment','Field'=>array('fields'=>array('id','name'))),
+            'Chapter' => array('Attachment', 'Field' => array('fields' => array('id', 'name'))),
             'Attachment'
         );
         $options = array('conditions' => array('Course.' . $this->Course->primaryKey => $id), 'contain' => $contain);

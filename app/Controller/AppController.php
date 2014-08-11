@@ -67,7 +67,7 @@ class AppController extends Controller {
         }
 
         if ($this->Auth->loggedIn() && ($this->User->isAdmin() || $this->User->isManager()) &&
-                ($this->request->action != 'manager_expired_courses' &&
+                ($this->request->action != 'manager_expired_courses' && $this->request->prefix!='student'&&
                 $this->request->action != 'admin_expired_courses')) {
             $this->check_expire_course();
         }
