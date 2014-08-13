@@ -301,6 +301,19 @@ class User extends AppModel {
         return count($user['Group']) > 0;
     }
 
+    public function isFieldsManager($id = null) {
+        if (!$id) {
+            $user = $this->find('first', array('fields' => array('id'), 'contain' => array('Group' => array('fields' => array('id', 'alias'), 'conditions' => array('Group.alias' => 'fields_manager'))), 'conditions' => array('User.id' => AuthComponent::user('id'))));
+        } else {
+            $user = $this->find('first', array(
+                'fields' => array('id'),
+                'contain' => array('Group' => array('fields' => array('id', 'alias'), 'conditions' => array('Group.alias' => 'fields_manager'))),
+                'conditions' => array('User.id' => $id)));
+        }
+
+        return count($user['Group']) > 0;
+    }
+
     public function getTeacherIdArray() {
         $teacher = $this->Group->find('all', array(
             'conditions' => array('Group.id' => $this->Group->getGroupIdByAlias('teacher')),

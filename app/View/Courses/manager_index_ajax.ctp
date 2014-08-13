@@ -3,6 +3,7 @@
     <tr>
         <th>STT</th>
         <th><?php echo $this->Paginator->sort('name', 'Tên khóa'); ?></th>
+        <th>Lĩnh vực</th>
         <th><?php echo $this->Paginator->sort('chapter_id', 'Chuyên đề'); ?></th>
         <th><?php echo $this->Paginator->sort('teacher_id', 'Tập huấn bởi'); ?></th>
         <th><?php echo $this->Paginator->sort('max_enroll_number', 'Đăng ký tối đa'); ?></th>
@@ -45,7 +46,9 @@
                         </div>
                     </div>
                 <?php endif; ?>
-
+            <td>
+                <?php echo $course['Chapter']['Field']['name'] ?>
+            </td>
             <td>
                 <?php echo $this->Html->link($course['Chapter']['name'], array('controller' => 'chapters', 'action' => 'view', $course['Chapter']['id'])); ?>
             </td>

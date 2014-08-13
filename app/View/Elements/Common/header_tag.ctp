@@ -11,6 +11,8 @@
 <?php echo $this->Html->css('/user/plugins/bootstrap/css/bootstrap.min') ?>
 <!-- Plugins CSS -->    
 <?php echo $this->Html->css('/user/plugins/font-awesome/css/font-awesome') ?>
+<?php echo $this->Html->css('/user/plugins/flexslider/flexslider') ?>
+<?php echo $this->Html->css('/user/plugins/pretty-photo/css/prettyPhoto') ?>
 <!-- Theme CSS -->  
 <?php echo $this->Html->css('/user/css/styles') ?>
 
@@ -27,6 +29,8 @@
 <?php echo $this->Html->script('/user/plugins/back-to-top'); ?>
 <?php echo $this->Html->script('/user/js/main'); ?>
 <?php echo $this->Html->script('plugins/fullcalendar/fullcalendar.min') ?>
+
+
 <?php
 echo $this->element('Common/fancybox');
 

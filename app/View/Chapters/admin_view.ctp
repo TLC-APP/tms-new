@@ -15,7 +15,7 @@
                         <span class="time"><i class="fa fa-clock-o"></i><?php $created=new DateTime($chapter['Chapter']['created']); 
                         echo ' Ngày tạo: '.$created->format('H:i').', '.$created->format('d/m/Y');
                         ?></span>
-                        <h3 class="timeline-header"><?php echo h($chapter['Chapter']['name']); ?></h3>
+                        <h3 class="timeline-header"><?php echo h($chapter['Chapter']['name']). ' - Lĩnh vực: '. $chapter['Field']['name'];?></h3>
                         <div class="timeline-body">
                             <div class="img-responsive">
 

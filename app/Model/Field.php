@@ -16,14 +16,15 @@ class Field extends AppModel {
      * @var string
      */
     public $displayField = 'name';
-    public $actsAs=array('Containable');
-     public $virtualFields = array(
+    public $actsAs = array('Containable');
+    public $virtualFields = array(
         'chapter_number' =>
         "SELECT count(id) as Field__chapter_number 
          FROM  chapters as Chapter 
          where 
             Chapter.field_id=Field.id 
             ");
+
     /**
      * Validation rules
      *
@@ -39,9 +40,9 @@ class Field extends AppModel {
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
-            'isUnique'=>array(
-                'rule'=>'isUnique',
-                'message'=>'Tên lĩnh vực này đã tồn tại'
+            'isUnique' => array(
+                'rule' => 'isUnique',
+                'message' => 'Tên lĩnh vực này đã tồn tại'
             )
         ),
     );
@@ -86,5 +87,11 @@ class Field extends AppModel {
             'order' => ''
         )
     );
+
+    public function managerFieldsId($user_id = null) {
+        
+        $fields = $this->find('all', array('recursive' => -1, 'fields' => array('id'), 'conditions' => array('Field.manage_user_id' => $user_id)));
+        return Set::classicExtract($fields, '{n}.Field.id');
+    }
 
 }

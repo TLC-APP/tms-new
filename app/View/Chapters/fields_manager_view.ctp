@@ -13,7 +13,7 @@
                 <div id="thong_tin_chung" class="tab-pane active">
                     <div class="timeline-item">
                         <span class="time"><i class="fa fa-clock-o"></i> Ngày tạo:<?php echo h($chapter['Chapter']['created']); ?></span>
-                        <h3 class="timeline-header"><?php echo h($chapter['Chapter']['name']); ?></h3>
+                        <h3 class="timeline-header"><?php echo h($chapter['Chapter']['name']). ' - Lĩnh vực: '. $chapter['Field']['name'];?></h3>
                         <div class="timeline-body">
                             <?php echo ($chapter['Chapter']['decriptions']); ?>
                         </div>

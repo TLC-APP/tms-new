@@ -17,9 +17,8 @@ echo $this->Html->css('jquery.minicolors', array('inline' => false));
                 <!-- the events -->
                 <div id='external-events'>  
                     <?php
-                    
                     foreach ($course['CoursesRoom'] as $buoi):
-                        if (empty($buoi['start'])||empty($buoi['end'])) {
+                        if (empty($buoi['start']) || empty($buoi['end'])) {
                             ?>
 
                             <div class='external-event' style="color: #fff ;background-color: <?php echo $buoi['color']; ?>" 
@@ -30,9 +29,9 @@ echo $this->Html->css('jquery.minicolors', array('inline' => false));
                                  data-priority='<?php echo $buoi['priority']; ?>' 
                                  data-color='<?php echo $buoi['color']; ?>'
                                  > 
-                            <?php echo $buoi['title']; ?>
+                                     <?php echo $buoi['title']; ?>
                             </div>                    
-    <?php } endforeach; ?>
+                        <?php } endforeach; ?>
 
                 </div>
             </div><!-- /.box-body -->
@@ -42,16 +41,16 @@ echo $this->Html->css('jquery.minicolors', array('inline' => false));
                 <h3 class="box-title">Thêm - Sửa - Xóa buổi học</h3>    
             </div>
             <div class="box-body">
-<?php echo $this->Form->create('CoursesRoom', array('id' => 'addBuoiForm')); ?>  
+                <?php echo $this->Form->create('CoursesRoom', array('id' => 'addBuoiForm')); ?>  
 
                 <label for="hue-demo">Màu nền</label>
                 <input type="text" id="txt_background_color" class="form-control demo" data-control="hue" name="data[CoursesRoom][color]" value="#ff6161">
                 <?php echo $this->Form->input('title', array('label' => false, 'id' => 'new-event', 'class' => 'form-control', 'placeholder' => "Tên buổi, vd: buổi 1, buổi 2")); ?>
                 <?php echo $this->Form->input('priority', array('label' => false, 'id' => 'pri-event', 'class' => 'form-control', 'placeholder' => "Thứ tự học, ví dụ: 1, 2, 3")); ?>
-                    <?php echo $this->Form->input('current_event_id', array('id' => 'txt_current_event', 'type' => 'hidden')); ?>
+                <?php echo $this->Form->input('current_event_id', array('id' => 'txt_current_event', 'type' => 'hidden')); ?>
                 <div class="input-group">
-<?php echo $this->Form->input('room_id', array('label' => false, 'div' => false, 'id' => 'room-event', 'class' => 'form-control', 'empty' => "Chọn phòng..")); ?>
-                    <span class="input-group-addon"><a href="<?php echo SUB_DIR?>/rooms/add" class="fancybox.ajax add-button"><i class="glyphicon glyphicon-plus"></i></a></span>
+                    <?php echo $this->Form->input('room_id', array('label' => false, 'div' => false, 'id' => 'room-event', 'class' => 'form-control', 'empty' => "Chọn phòng..")); ?>
+                    <span class="input-group-addon"><a href="<?php echo SUB_DIR ?>/rooms/add" class="fancybox.ajax add-button"><i class="glyphicon glyphicon-plus"></i></a></span>
                 </div>
 
             </div>
@@ -64,7 +63,7 @@ echo $this->Html->css('jquery.minicolors', array('inline' => false));
                     <button id="cancel-event" type="button" class="btn btn-warning btn-sm"><span class="fa fa-times"></span></button>
                 </div>
 
-<?php echo $this->Form->end(); ?>
+                <?php echo $this->Form->end(); ?>
             </div>
         </div>
     </div><!-- /.col -->
@@ -79,7 +78,10 @@ echo $this->Html->css('jquery.minicolors', array('inline' => false));
 </div><!-- /.row -->  
 <script>
     $(document).ready(function() {
-        $("#room-event").select2();
-
+        /*$("#room-event").select2();
+         $('#room-event').select2('destroy');
+         $('#room-event').prop('disabled', false);
+         $('#room-event').select2();
+         */
     });
 </script>

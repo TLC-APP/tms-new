@@ -244,7 +244,6 @@ class Course extends AppModel {
         $conditions = array('Course.status' => COURSE_REGISTERING, 'Course.enrolling_expiry_date <' => $now->format('Y-m-d H:i:s'));
         $coursescompleted = $this->find('all', array('conditions' => $conditions, 'recursive' => -1));
         $coursescompleted_id_array = Set::classicExtract($coursescompleted, '{n}.Course.id');
-        // debug($coursescompleted_id_array);die;
         return $coursescompleted_id_array;
     }
 
@@ -264,6 +263,15 @@ class Course extends AppModel {
 
     public function getTeachingCourse($teacher_id) {
         $conditions = array('Course.teacher_id' => $teacher_id);
+        $courses = $this->find('all', array('conditions' => $conditions, 'recursive' => -1, 'fields' => array('Course.id')));
+        return Set::classicExtract($courses, '{n}.Course.id');
+    }
+
+    public function getManagerCourse($fields_manager_id=null) {
+        if(!$fields_manager_id) $fields_manager_id= AuthComponent::user('id');
+        $fields=$this->Chapter->Field->managerFieldsId($fields_manager_id);
+        $chapter=  $this->Chapter->getChapterByFieldIdArray($fields);
+        $conditions = array('Course.chapter_id' => $chapter);
         $courses = $this->find('all', array('conditions' => $conditions, 'recursive' => -1, 'fields' => array('Course.id')));
         return Set::classicExtract($courses, '{n}.Course.id');
     }

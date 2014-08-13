@@ -1,32 +1,36 @@
 <meta charset="UTF-8">
-<title>Hệ thống quản lý Thông tin Tập huấn Giáo viên | Trang phục vụ quản lý lĩnh vực</title>
+<title>Hệ thống quản lý Thông tin Tập huấn Giáo viên | Trang phục vụ quản lý chung</title>
 <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 <!-- bootstrap 3.0.2 -->
 <?php echo $this->Html->css('bootstrap'); ?>
 <!-- font Awesome -->
 <?php echo $this->Html->css('font-awesome.min'); ?>
-<?php echo $this->Html->css('select2'); ?>
-<?php echo $this->Html->css('select2-bootstrap'); ?>
-<?php echo $this->Html->script('plugins/select2/select2'); ?>
 <!-- fullCalendar -->
 <?php echo $this->Html->css('fullcalendar/fullcalendar'); ?>
+<?php echo $this->Html->css('select2'); ?>
+<?php echo $this->Html->css('select2-bootstrap'); ?>
 <!-- Theme style -->
 <?php echo $this->Html->css('AdminLTE'); ?>
+<!-- add new calendar event modal -->
 <!-- jQuery 2.0.2 -->
-
-<?php echo $this->Html->script('jquery') ?>
-<?php echo $this->Html->script('jquery-migrate-1.2.1') ?>
-
+<?php //echo $this->Html->script('jquery') ?>
+<?php //echo $this->Html->script('jquery-migrate-1.2.1') ?>
+<?php echo $this->Html->script('/user/plugins/jquery-1.10.2.min'); ?>
+<?php echo $this->Html->script('/user/plugins/jquery-migrate-1.2.1.min'); ?>
 <!-- jQuery UI 1.10.3 -->
 <?php echo $this->Html->script('jquery-ui-1.10.3.min') ?>
 <!-- Bootstrap -->
 <?php echo $this->Html->script('bootstrap.min') ?>
-<!-- fullCalendar -->
-<?php echo $this->Html->script('plugins/fullcalendar/fullcalendar.min') ?>
-
+<!-- daterange picker -->
+<?php echo $this->Html->css('daterangepicker/daterangepicker-bs3'); ?>
+<?php echo $this->Html->script('plugins/daterangepicker/daterangepicker'); ?>
+<?php echo $this->Html->script('moment.min'); ?>
 <!-- AdminLTE App -->
 <?php echo $this->Html->script('AdminLTE/app') ?>
 
+<?php echo $this->Html->script('plugins/fullcalendar/fullcalendar.min') ?>
+
+<?php echo $this->Html->script('plugins/select2/select2'); ?>
 <?php
 //echo $this->Html->script('eldarion-ajax.min'); 
 echo $this->element('Common/fancybox');

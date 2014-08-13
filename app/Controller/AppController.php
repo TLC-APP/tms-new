@@ -67,8 +67,8 @@ class AppController extends Controller {
         }
 
         if ($this->Auth->loggedIn() && ($this->User->isAdmin() || $this->User->isManager()) &&
-                ($this->request->action != 'manager_expired_courses' && $this->request->prefix!='student'&&
-                $this->request->action != 'admin_expired_courses')) {
+                ($this->request->action != 'manager_expired_courses' && $this->request->prefix != 'student' &&
+                $this->request->action != 'admin_expired_courses' && $this->request->action != 'fields_manager_expired_courses')) {
             $this->check_expire_course();
         }
         if ($this->Auth->loggedIn()) {
@@ -110,7 +110,8 @@ class AppController extends Controller {
     }
 
     public function check_expire_course() {
-        $expired_courses = $this->Course->getCoursesExpired();
+
+        $expired_courses = ($this->request->prefix == 'fields_manager') ? $this->Course->getManagerCourse() : $this->Course->getCoursesExpired();
         if (is_null($this->request->prefix)) {
             $this->request->prefix = 'manager';
         }

@@ -1,6 +1,4 @@
-<?php echo $this->element('Common/ajax_pagination_options', array('update' => '#datarows')) ?>
 <?php
-echo $this->Html->script('jquery.form');
 $statusText = "";
 if (isset($status)) {
 
@@ -30,36 +28,13 @@ if (isset($status)) {
             <h3>Danh mục khóa học <?php echo $statusText; ?></h3>
         </div>
         <div class="box-body table-responsive no-padding">
-            <?php
-            echo $this->Form->create('Course', array(
-                'inputDefaults' => array(
-                    'div' => 'form-group',
-                    'label' => false,
-                    'wrapInput' => false,
-                    'class' => 'form-control'
-                ),
-                'url' => array('action' => 'index', 'manager' => true, $status),
-                'class' => 'form-inline ajax',
-                'id' => 'search_form'
-            ));
-            ?>
-            <fieldset>
-                <?php
-                echo $this->Form->input('name', array('placeholder' => 'Tên khóa...', 'required' => false));
-                echo $this->Form->input('field_id', array('empty' => '-- Lĩnh vực --'));
-                echo $this->Form->input('chapter_id', array('empty' => '-- Chuyên đề --', 'required' => false));
-                echo $this->Form->input('teacher_id', array('empty' => '-- Tập huấn bởi --'));
-                echo $this->Form->input('is_published', array('empty' => '-- Xuất bản --', 'required' => false, 'options' => array('1' => 'Có', '0' => 'Không')));
-                echo $this->Form->submit('Lọc', array('div' => 'form-group', 'class' => "btn btn-info"));
-                ?>
-            </fieldset>
-
-            <?php echo $this->Form->end(); ?>
+            <?php echo $this->element('Common/course_search_form');?>
             <div id="datarows">
                 <table class="table-hover table">
                     <tr>
                         <th>STT</th>
                         <th><?php echo $this->Paginator->sort('name', 'Tên khóa'); ?></th>
+                        <th>Lĩnh vực</th>
                         <th><?php echo $this->Paginator->sort('chapter_id', 'Chuyên đề'); ?></th>
                         <th><?php echo $this->Paginator->sort('teacher_id', 'Tập huấn bởi'); ?></th>
                         <th><?php echo $this->Paginator->sort('max_enroll_number', 'Đăng ký tối đa'); ?></th>
@@ -102,7 +77,9 @@ if (isset($status)) {
                                         </div>
                                     </div>
                                 <?php endif; ?>
-
+                            <td>
+                                <?php echo $course['Chapter']['Field']['name'] ?>
+                            </td>
                             <td>
                                 <?php echo $this->Html->link($course['Chapter']['name'], array('controller' => 'chapters', 'action' => 'view', $course['Chapter']['id'])); ?>
                             </td>
@@ -181,44 +158,3 @@ if (isset($status)) {
 </div>
 
 
-<script>
-
-    $(function() {
-        $('#search_form').on('submit', function(e) {
-            e.preventDefault(); // prevent native submit
-            $('#datarows').parent().parent().append('<div class="overlay"></div><div class="loading-img"></div>');
-            $(this).ajaxSubmit({
-                //url: '<?php //echo SUB_DIR;    ?>/manager/courses/index/',
-                success: response
-            });
-            return false;
-        });
-// post-submit callback 
-        function response(responseText, statusText, xhr, $form) {
-
-            $('.overlay').remove();
-            $('.loading-img').remove();
-
-            $('#datarows').html(responseText);
-            return true;
-        }
-        var fieldbox = $('#CourseFieldId');
-        var chapterbox = $('#CourseChapterId');
-        fieldbox.change(function() {
-            var field_id = (this.value);
-            $.ajax({
-                url: "<?php echo SUB_DIR; ?>/chapters/fill_selectbox/" + field_id + ".json"
-            })
-                    .done(function(data) {
-                        chapterbox.empty();
-                        $.each(data, function(i, value) {
-                            $.each(value, function(index, text) {
-                                chapterbox.append($('<option>').text(text).attr('value', index));
-                            });
-
-                        });
-                    });
-        });
-    });
-
-</script>

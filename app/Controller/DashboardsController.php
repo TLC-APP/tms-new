@@ -66,8 +66,8 @@ class DashboardsController extends AppController {
                 $khoang_thoi_gian = explode('-', $khoang_thoi_gian);
                 $start = DateTime::createFromFormat('Y/m/d', trim($khoang_thoi_gian[0]));
                 $end = DateTime::createFromFormat('Y/m/d', trim($khoang_thoi_gian[1]));
-                $conditions = Set::merge($conditions, array('Course.created >=' => $start->format('Y-m-d')));
-                $conditions = Set::merge($conditions, array('Course.created <=' => $end->format('Y-m-d')));
+                $conditions = Set::merge($conditions, array('Course.created >=' => $start->format('Y-m-d 00:00:00')));
+                $conditions = Set::merge($conditions, array('Course.created <=' => $end->format('Y-m-d 23:59:59')));
             }
             if (!empty($this->request->data['Course']['chapter_id'])) {
                 $conditions = Set::merge($conditions, array('Course.chapter_id' => $this->request->data['Course']['chapter_id']));

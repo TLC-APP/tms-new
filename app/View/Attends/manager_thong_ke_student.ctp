@@ -22,18 +22,24 @@ echo $this->Html->script('jquery.form');
         <legend>Thống kê người tham dự</legend>
         <?php
         echo $this->Form->input('Student.department_id', array('empty' => '-- Chọn đơn vị --'));
-        echo $this->Form->input('Attend.is_passed', array('type'=>'select','empty' => '-- Kết quả --','required'=>false,'options' => array( '1' => 'Đạt', '0' => 'Không đạt')));
+        echo $this->Form->input('Attend.is_passed', array('type' => 'select', 'empty' => '-- Kết quả --', 'required' => false, 'options' => array('1' => 'Đạt', '0' => 'Không đạt')));
         echo $this->Form->input('field_id', array('empty' => '-- Chọn lĩnh vực --'));
-        echo $this->Form->input('chapter_id', array( 'required' => false));
+        echo $this->Form->input('chapter_id', array('empty' => '-- Chọn chuyên đề --', 'required' => false));
         echo $this->Form->input('status', array('type' => 'select', 'options' => array(
                 COURSE_COMPLETED => 'Đã hoàn thành',
                 COURSE_UNCOMPLETED => 'Chưa hoàn thành',
                 COURSE_CANCELLED => 'Đã hủy'
             ), 'empty' => '-- Chọn tình trạng --', 'required' => false));
         echo $this->Form->input('teacher_id', array('empty' => '-- Tập huấn bởi --'));
-        echo $this->Form->input('begin', array('label' => 'Từ ', 'type' => 'date', 'dateFormat' => 'DMY', 'monthNames' => false, 'empty' => true, 'minYear' => 2010));
-        echo $this->Form->input('end', array('label' => 'Đến ', 'type' => 'date', 'dateFormat' => 'DMY', 'monthNames' => false, 'empty' => true, 'minYear' => 2010));
+        //echo $this->Form->input('begin', array('label' => 'Từ ', 'type' => 'date', 'dateFormat' => 'DMY', 'monthNames' => false, 'empty' => true, 'minYear' => 2010));
+        //echo $this->Form->input('end', array('label' => 'Đến ', 'type' => 'date', 'dateFormat' => 'DMY', 'monthNames' => false, 'empty' => true, 'minYear' => 2010));
         ?>
+        <div class="form-group ">
+            <div class="input-group">                
+                <input type="text" name="data[khoang_thoi_gian]" placeholder="Từ - đến..."class="form-control" id="reservation"/>
+
+            </div><!-- /.input group -->
+        </div>
     </fieldset>
     <?php echo $this->Form->submit('Thực hiện', array('class' => 'btn btn-info')) ?>
     <?php echo $this->Form->end(); ?>

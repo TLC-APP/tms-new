@@ -144,5 +144,12 @@ class Chapter extends AppModel {
         $courses_id_array = Set::classicExtract($chapters, '{n}.Chapter.id');
         return $courses_id_array;
     }
+    
+    public function getChapterByFieldIdArray($fields_id=array()) {
+        $conditions = array('Chapter.field_id' => $fields_id);
+        $chapters = $this->find('all', array('conditions' => $conditions, 'recursive' => -1));
+        $courses_id_array = Set::classicExtract($chapters, '{n}.Chapter.id');
+        return $courses_id_array;
+    }
 
 }

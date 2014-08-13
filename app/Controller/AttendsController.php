@@ -111,26 +111,14 @@ class AttendsController extends AppController {
                 if (!empty($this->request->data['Course']['teacher_id'])) {
                     $course_conditions = Set::merge($course_conditions, array('Course.teacher_id' => $this->request->data['Course']['teacher_id']));
                 }
-                if (!empty($this->request->data['Course']['begin']) && !empty($this->request->data['Course']['end'])) {
-                    $begin = new DateTime();
-                    if ($begin->setDate($this->request->data['Course']['begin']['year'], $this->request->data['Course']['begin']['month'], $this->request->data['Course']['begin']['day'])) {
-                        $course_conditions = Set::merge($course_conditions, array('Course.created >=' => $begin->format('Y-m-d 00:00:00')));
-                        $end = new DateTime();
-                        if ($end->setDate($this->request->data['Course']['end']['year'], $this->request->data['Course']['end']['month'], $this->request->data['Course']['end']['day'])) {
-                            if ($begin > $end) {
-                                return $this->Session->setFlash('Khoảng thống kê không hợp lệ, từ < đến', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
-                            } else {
-                                $course_conditions = Set::merge($course_conditions, array('Course.created <=' => $end->format('Y-m-d 00:00:00')));
-                            }
-                        }
-                    } else {
-
-                        $end = new DateTime();
-                        if ($end->setDate($this->request->data['Course']['end']['year'], $this->request->data['Course']['end']['month'], $this->request->data['Course']['end']['day'])) {
-
-                            $course_conditions = Set::merge($course_conditions, array('Course.created <=' => $end->format('Y-m-d 00:00:00')));
-                        }
-                    }
+                $khoang_thoi_gian = $this->request->data['khoang_thoi_gian'];
+                $course_conditions = array();
+                if (!empty($khoang_thoi_gian)) {
+                    $khoang_thoi_gian = explode('-', $khoang_thoi_gian);
+                    $start = DateTime::createFromFormat('Y/m/d', trim($khoang_thoi_gian[0]));
+                    $end = DateTime::createFromFormat('Y/m/d', trim($khoang_thoi_gian[1]));
+                    $course_conditions = Set::merge($course_conditions, array('Course.created >=' => $start->format('Y-m-d 00:00:00')));
+                    $course_conditions = Set::merge($course_conditions, array('Course.created <=' => $end->format('Y-m-d 23:59:59')));
                 }
                 $courses = $this->Attend->Course->find('all', array('conditions' => $course_conditions, 'recursive' => -1, 'fields' => array('id')));
                 $course_id_array = Set::merge($course_id_array, Set::classicExtract($courses, '{n}.Course.id'));
@@ -194,6 +182,15 @@ class AttendsController extends AppController {
             $this->render('xuat_excel_ds_student');
         } else {
             if (!empty($this->request->data)) {
+                $khoang_thoi_gian = $this->request->data['khoang_thoi_gian'];
+                $course_conditions = array();
+                if (!empty($khoang_thoi_gian)) {
+                    $khoang_thoi_gian = explode('-', $khoang_thoi_gian);
+                    $start = DateTime::createFromFormat('Y/m/d', trim($khoang_thoi_gian[0]));
+                    $end = DateTime::createFromFormat('Y/m/d', trim($khoang_thoi_gian[1]));
+                    $course_conditions = Set::merge($course_conditions, array('Course.created >=' => $start->format('Y-m-d 00:00:00')));
+                    $course_conditions = Set::merge($course_conditions, array('Course.created <=' => $end->format('Y-m-d 23:59:59')));
+                }
                 if (!empty($this->request->data['Student']['department_id'])) {
                     $student_conditions = Set::merge($student_course_conditions, array('Student.department_id' => $this->request->data['Student']['department_id']));
                     $students = $this->Attend->Student->find('all', array('conditions' => $student_conditions, 'recursive' => -1, 'fields' => array('id')));

@@ -2,12 +2,15 @@
     <!-- WIDGET Lịch học hôm nay của tôi-->
     <?php
     $courses_today = $this->requestAction(array('student' => true, 'controller' => 'courses_rooms', 'action' => 'student_lich_homnay'));
+    if (!empty($courses_notification)) {
+        echo $this->element('Widgets/student/today_schedule', array('courses_today' => $courses_today));
+    }
     ?>
-    <?php echo $this->element('Widgets/student/today_schedule', array('courses_today' => $courses_today)) ?>
     <!-- WIDGET Lớp tập huấn có thể đăng ký-->
-    <?php 
+    <?php
     //debug($courses);
-    echo $this->element('Common/new_course', array('courses' => $courses)) ?>
+    echo $this->element('Common/new_course', array('courses' => $courses))
+    ?>
 </div>
 <div class="col-md-4">
     <div class="row">
@@ -20,10 +23,12 @@
         <!--WIDGET Thông báo chứng nhận-->
         <?php
         $courses_notification = $this->requestAction(array('student' => true, 'controller' => 'attends', 'action' => 'student_thongbao'));
+        if (!empty($courses_notification)) {
+            echo $this->element('Widgets/student/statistics', array('courses_notification' => $courses_notification));
+        }
         ?>
-        <?php echo $this->element('Widgets/student/statistics', array('courses_notification' => $courses_notification)) ?>
 
         <!--WIDGET Thông báo từ hệ thống-->
-        <?php echo $this->element('Widgets/student/notification') ?>
+<?php echo $this->element('Widgets/student/notification') ?>
     </div>
 </div>
