@@ -461,6 +461,8 @@ class CoursesController extends AppController {
         $courses_register = $this->Course->find('all', array('conditions' => $conditions, 'contain' => $contain, 'fields' => $course_fields,));
         return $courses_register;
     }
+    
+    
 
     public function fields_manager_open($id) {
         $this->Course->id = $id;

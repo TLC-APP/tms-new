@@ -501,6 +501,48 @@ class AttendsController extends AppController {
         $this->set('courses_studying', $courses_studying);
     }
 
+    public function guest_courses_studying() {
+        $loggin_id = $this->Auth->user('id');
+        $khoa_da_dang_ky = $this->Attend->getEnrolledCourses($loggin_id);
+        $fields = $this->Attend->Course->Chapter->Field->find('list');
+        $course = array();
+        $conditions = array();
+        $contain = array('Course' => array('fields' => array('id', 'name', 'status', 'session_number'), 'Teacher' => array('id', 'name'), 'Chapter' => array('id', 'name')));
+        $courses_studying = array();
+        if (!empty($khoa_da_dang_ky)) {
+            $course_uncompleted = $this->Attend->Course->getCoursesUnCompleted();
+            if (!empty($khoa_da_dang_ky) && !empty($course_uncompleted)) {
+                $course = array_intersect($khoa_da_dang_ky, $course_uncompleted);
+            }
+            $conditions = array('Attend.course_id' => $course, 'Attend.student_id' => $loggin_id);
+            if (!empty($this->request->data)) {
+                $field_id = $this->request->data['field_name'];
+                if (!empty($field_id)) {
+                    $chapter_id = $this->Attend->Course->Chapter->getChapterByField_id($field_id);
+                    $course_id = $this->Attend->Course->getCoursesByChapter_id($chapter_id);
+                    $course = array_intersect($khoa_da_dang_ky, $course_uncompleted, $course_id);
+                    $conditions = array('Attend.course_id' => $course, 'Attend.student_id' => $loggin_id);
+                }
+            }
+            $this->set(compact('fields'));
+            $courses_studying = $this->Attend->find('all', array('conditions' => $conditions, 'contain' => $contain));
+            $this->set('courses_studying', $courses_studying);
+            if ($this->request->is('ajax')) {
+                $this->render('student_courses_studying_ajax');
+            }
+            $this->set(compact('fields'));
+            $courses_studying = $this->Attend->find('all', array('conditions' => $conditions, 'contain' => $contain));
+            $this->set('courses_studying', $courses_studying);
+        } else {
+            $this->set(compact('fields'));
+            $this->set('courses_studying', $courses_studying);
+        }
+        if ($this->request->is('ajax'))
+            $this->render('student_courses_studying_ajax');
+        $this->set(compact('fields'));
+        $this->set('courses_studying', $courses_studying);
+    }
+    
     public function student_attended() {
         $loggin_id = $this->Auth->user('id');
         $khoa_da_dang_ky = $this->Attend->getEnrolledCourses($loggin_id);
