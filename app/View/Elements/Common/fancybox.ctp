@@ -11,8 +11,8 @@ echo $this->Html->script('/fancybox/source/helpers/jquery.fancybox-thumbs');
 <script type = "text/javascript">
     $(document).ready(function() {
         $(".add-button").fancybox({
-            fitToView: false,
-            autoSize: false,
+            fitToView: true,
+            autoSize: true,
             closeClick: false,
             openEffect: 'none',
             closeEffect: 'none'

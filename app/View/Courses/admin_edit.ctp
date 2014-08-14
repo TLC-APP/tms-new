@@ -19,7 +19,9 @@ $this->Html->addCrumb('Sửa khóa học '.$this->Form->value('name'));
         <legend>Sửa khóa học</legend>
         <?php
         echo $this->Form->input('id');
+        
         echo $this->Form->input('name', array('label' => 'Tên khóa'));
+        echo $this->Form->input('decription', array('label' => 'Miêu tả'));
         echo $this->Form->input('chapter_id', array('label' => 'Chủ đề'));
         //echo $this->Form->input('image', array('label' => 'Ảnh đại diện', 'type' => 'file', 'class' => false));
         //echo $this->Form->input('image_path', array('type' => 'hidden'));
@@ -32,7 +34,7 @@ $this->Html->addCrumb('Sửa khóa học '.$this->Form->value('name'));
         echo $this->Form->input('chung_chi_co_so', array('label' => 'Chứng nhận có số','type'=>'checkbox',
             'class'=>'iCheck-helper'));
         echo $this->Form->input('enrolling_expiry_date', array('label' => 'Ngày hết hạn đăng ký: ', 'class' => 'input datetime','dateFormat' => 'DMY', 'monthNames' => false));
-        echo $this->Form->input('decription', array('label' => 'Miêu tả'));
+        
         ?>
     </fieldset>
     <?php echo $this->Html->link('Back', array('action' => 'index', 1), array('type' => 'button', 'class' => 'btn btn-primary')); $nbsp; ?>

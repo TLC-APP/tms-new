@@ -90,9 +90,12 @@ class Attend extends AppModel {
         )
     );
 
-    public function getEnrolledCourses($user_id) {
-        $conditions = array('Attend.student_id' => $user_id);
+    public function getEnrolledCourses($user_id = null) {
+        $conditions=array();
+        if ($user_id)
+            $conditions = array('Attend.student_id' => $user_id);
         $attends = $this->find('all', array('conditions' => $conditions, 'recursive' => -1));
+        
         $enrolled_courses_id_array = Set::classicExtract($attends, '{n}.Attend.course_id');
         return $enrolled_courses_id_array;
     }
@@ -102,8 +105,8 @@ class Attend extends AppModel {
     public function getEnrolledCoursesByDepartment($department_id = null) {
         $results = array();
         if ($department_id) {
-            $users = $this->Student->getUserIdByDepartmentId($department_id,'Student'); //mang id cac user thuoc don vi
-            
+            $users = $this->Student->getUserIdByDepartmentId($department_id, 'Student'); //mang id cac user thuoc don vi
+
             $conditions = array('Attend.student_id' => $users);
             $results = $this->find('all', array('conditions' => $conditions, 'recursive' => -1));
             $results = Set::classicExtract($results, '{n}.Attend.course_id');

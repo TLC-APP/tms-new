@@ -20,6 +20,10 @@ class DashboardsController extends AppController {
             }
             $this->set('users', $user);
         }
+        $fields = $this->Course->Chapter->Field->find('list');
+        $teacher_id_array = $this->Course->Teacher->getTeacherIdArray();
+        $teachers = $this->Course->Teacher->find('list', array('conditions' => array('Teacher.id' => $teacher_id_array)));
+        $this->set(compact('fields', 'teachers'));
     }
 
     public function student_home() {
@@ -53,7 +57,7 @@ class DashboardsController extends AppController {
     }
 
     public function teacher_home() {
-
+        
     }
 
     public function truongdonvi_home() {
@@ -129,7 +133,7 @@ class DashboardsController extends AppController {
     }
 
     public function manager_home() {
-        
+
         $this->redirect(array('controller' => 'courses', 'action' => 'index', COURSE_REGISTERING));
     }
 

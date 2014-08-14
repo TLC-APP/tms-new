@@ -31,26 +31,7 @@
         </div><!--//wrapper-->
 
         <!-- ******FOOTER****** --> 
-        <footer class="footer">
-
-            <div class="bottom-bar">
-                <div class="container">
-                    <div class="row">
-                        <small class="copyright col-md-6 col-sm-12 col-xs-12">Phát triển bởi Trung tâm Hỗ trợ - Phát triển Dạy & Học năm 2014</small>
-                        <ul class="social pull-right col-md-6 col-sm-12 col-xs-12">
-                            <li><a href="#" ><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" ><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" ><i class="fa fa-youtube"></i></a></li>
-                            <li><a href="#" ><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#" ><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#" ><i class="fa fa-pinterest"></i></a></li>
-                            <li><a href="#" ><i class="fa fa-skype"></i></a></li> 
-                            <li class="row-end"><a href="#" ><i class="fa fa-rss"></i></a></li>
-                        </ul><!--//social-->
-                    </div><!--//row-->
-                </div><!--//container-->
-            </div><!--//bottom-bar-->
-        </footer><!--//footer-->
+        <?php echo $this->element('Common/footer');?>
 
 
 

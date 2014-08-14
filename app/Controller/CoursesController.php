@@ -432,7 +432,7 @@ class CoursesController extends AppController {
             'User' => array('fields' => array('id', 'name')),
             'CoursesRoom' => array('conditions' => array('CoursesRoom.start is not null'), 'order' => array('CoursesRoom.priority' => 'ASC')),
             'Teacher' => array('fields' => array('id', 'name', 'email', 'phone_number'), 'HocHam', 'HocVi'),
-            'Chapter' => array('Attachment','Field'=>array('id','name')),
+            'Chapter' => array('Attachment', 'Field' => array('id', 'name')),
             'Attachment'
         );
         $options = array('conditions' => array('Course.' . $this->Course->primaryKey => $id), 'contain' => $contain);
@@ -443,7 +443,7 @@ class CoursesController extends AppController {
     public function guest_cothedangki() {
         $contain = array(
             'User' => array('fields' => array('id', 'name')), //create user
-            'Teacher' => array('fields' => array('id', 'name'),'HocHam','HocVi'), //Teacher
+            'Teacher' => array('fields' => array('id', 'name'), 'HocHam', 'HocVi'), //Teacher
             'CoursesRoom' => array('Room' => array('id', 'name')),
             'Attend', //Khoa hoc
             'Chapter' => array('fields' => array('id', 'name'))//Chuyen de
@@ -461,8 +461,36 @@ class CoursesController extends AppController {
         $courses_register = $this->Course->find('all', array('conditions' => $conditions, 'contain' => $contain, 'fields' => $course_fields,));
         return $courses_register;
     }
-    
-    
+
+    public function guest_unCompleteCourses() {
+        $this->autoRender = false;
+        $uncompleteCourseIds = $this->Course->getCoursesUnCompleted();
+        $conditions = array('Course.id' => $uncompleteCourseIds);
+        $fields = array('id', 'name', 'decription', 'teacher_id');
+        $contain = array('Teacher' => array('id', 'name'));
+        $courses = $this->Course->find('all', array('conditions' => $conditions, 'contain' => $contain, 'fields' => $fields));
+
+        return $courses;
+    }
+
+    public function guest_completeCourses() {
+        $this->autoRender = false;
+        $paginator = $this->params;
+        $completeCourseIds = $this->Course->getCoursesCompleted();
+        $conditions = array('Course.id' => $completeCourseIds);
+        $fields = array('id', 'name', 'decription', 'teacher_id');
+        $contain = array('Teacher' => array('id', 'name'));
+
+        $this->Paginator->settings = array('conditions' => $conditions, 'contain' => $contain, 'fields' => $fields, 'limit' => 1);
+        $courses = $this->Paginator->paginate();
+        if ($this->request->is('requested')) {
+            return array('courses' => $courses, 'paginator' => $paginator, 'paging' => $this->params['paging']);
+        }
+        if ($this->request->is('ajax')) {
+            $this->set(compact('courses'));
+            $this->render('guest_completed_courses_ajax');
+        }
+    }
 
     public function fields_manager_open($id) {
         $this->Course->id = $id;

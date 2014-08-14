@@ -45,6 +45,8 @@ echo $this->Html->script('jquery.form');
 <script>
 
     $(function() {
+         $("#CourseChapterId").select2();
+        $("#CourseTeacherId").select2();
         //Date range picker
         $('#reservation').daterangepicker(
                 {
@@ -102,10 +104,4 @@ echo $this->Html->script('jquery.form');
 
     </div>
 </div>
-<script>
-    $(document).ready(function() {
-        $("#CourseChapterId").select2();
-        $("#CourseTeacherId").select2();
-    });
-</script>
 
