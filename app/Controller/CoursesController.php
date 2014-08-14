@@ -478,9 +478,20 @@ class CoursesController extends AppController {
         $paginator = $this->params;
         $completeCourseIds = $this->Course->getCoursesCompleted();
         $conditions = array('Course.id' => $completeCourseIds);
-        $fields = array('id', 'name', 'decription', 'teacher_id');
+        $fields = array('id', 'name', 'decription', 'teacher_id','created');
         $contain = array('Teacher' => array('id', 'name'));
         //search
+        if (!empty($this->request->data['khoang_thoi_gian'])) {
+            $khoang_thoi_gian = $this->request->data['khoang_thoi_gian'];
+            $khoang_thoi_gian = explode('-', $khoang_thoi_gian);
+            $start = DateTime::createFromFormat('Y/m/d', trim($khoang_thoi_gian[0]));
+            $end = DateTime::createFromFormat('Y/m/d', trim($khoang_thoi_gian[1]));
+            $conditions = Set::merge($conditions, array('Course.created >=' => $start->format('Y-m-d 00:00:00')));
+            $conditions = Set::merge($conditions, array('Course.created <=' => $end->format('Y-m-d 23:59:59')));
+        }
+        if (!empty($this->request->data['Course']['name'])) {
+            $conditions = Set::merge($conditions, array('Course.name like' => '%' . $this->request->data['Course']['name'] . '%'));
+        }
         if (!empty($this->request->data['Course']['chapter_id'])) {
             $conditions = Set::merge($conditions, array('Course.chapter_id' => $this->request->data['Course']['chapter_id']));
         } else {
@@ -494,8 +505,8 @@ class CoursesController extends AppController {
             $conditions = Set::merge($conditions, array('Course.teacher_id' => $this->request->data['Course']['teacher_id']));
         }
         //end search
-        $this->Paginator->settings = array('conditions' => $conditions, 'contain' => $contain, 'fields' => $fields, 'limit' => 1);
-        
+        $this->Paginator->settings = array('conditions' => $conditions, 'contain' => $contain, 'fields' => $fields, 'limit' => 6);
+
         $courses = $this->Paginator->paginate();
         if ($this->request->is('requested')) {
             return array('courses' => $courses, 'paginator' => $paginator, 'paging' => $this->params['paging']);

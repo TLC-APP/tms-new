@@ -113,7 +113,7 @@ class Chapter extends AppModel {
     public function createWithAttachments($data) {
         // Sanitize your images before adding them
         $dstailieu = array();
-        if (!empty($data['Attachment'][0])) {
+        if (!empty($data['Attachment'][0]['attachment']['name'])) {
             foreach ($data['Attachment'] as $i => $tailieu) {
                 if (is_array($data['Attachment'][$i])) {
                     // Force setting the `model` field to this model

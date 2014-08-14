@@ -150,6 +150,7 @@ class ChaptersController extends AppController {
     }
 
     public function manager_add() {
+        
         $loginId = $this->Auth->user('id');
         if ($this->request->is('post')) {
             $this->Chapter->create();

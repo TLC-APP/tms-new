@@ -28,16 +28,17 @@ $this->Paginator->options(array(
                         'wrapInput' => false,
                         'class' => 'form-control'
                     ),
-                    'url' => array('action' => 'thong_ke', 'manager' => true),
+                    
                     'class' => 'form-inline',
                     'id' => 'search_form'
                 ));
                 ?>
                 <fieldset>
                     <?php
-                    echo $this->Form->input('field_id',array('empty'=>'Lĩnh vực'));
-                    echo $this->Form->input('chapter_id', array('required' => false,'empty'=>'Chuyên đề'));
-                    echo $this->Form->input('teacher_id',array('empty'=>'Tập huấn viên'));
+                    echo $this->Form->input('name', array('placeholder' => 'tên khóa', 'required'=>false));
+                    echo $this->Form->input('field_id', array('empty' => 'Lĩnh vực'));
+                    echo $this->Form->input('chapter_id', array('required' => false, 'empty' => 'Chuyên đề'));
+                    echo $this->Form->input('teacher_id', array('empty' => 'Tập huấn viên'));
                     ?>
                     <div class="form-group ">
                         <div class="keywords">                
@@ -71,7 +72,10 @@ $this->Paginator->options(array(
                                     <?php echo $this->Html->link($this->Html->image($matches[1][0], array('class' => 'img-responsive', 'alt' => '')), array('guest' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']), array('class' => 'add-button fancybox.ajax', 'escape' => false)) ?>
 
                                     <div class="desc">
-                                        <h4><small><a href="#"><?php echo $course['Course']['name'] ?></a></small></h4>
+
+                                        <h4><small>
+                                            <?php echo $this->Html->link($course['Course']['name'] . ' - ' . $course['Teacher']['name'], array('guest' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']), array('class' => 'add-button fancybox.ajax', 'escape' => false)) ?>
+                                            </small></h4>
                                         <p></p>
                                     </div>
                                 </div>

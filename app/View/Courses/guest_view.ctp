@@ -5,7 +5,7 @@
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
                     <li ><a data-toggle="tab" href="#tab_2-4">Lịch học</a></li>
-                    <li class=""><a data-toggle="tab" href="#tab_2-2">Thông tin</a></li>
+                    <li class=""><a data-toggle="tab" href="#thong_tin">Thông tin</a></li>
                     <li class="active"><a data-toggle="tab" href="#tab_1-1">Nội dung</a></li>
                 </ul>
                 <div class="tab-content">
@@ -14,12 +14,16 @@
                             <p><?php echo $course['Course']['decription']; ?></p>
                         </div>
                     </div><!-- /.tab-pane -->
-                    <div id="tab_2-2" class="tab-pane">
+                    <div id="thong_tin" class="tab-pane">
                         <table class="table table-condensed">
                             <tbody style="font-size: 15px;">
                                 <tr>
                                     <td>Số buổi</td>
                                     <td><?php echo count($course['CoursesRoom']); ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Ngày mở</td>
+                                    <td><?php echo ($course['Course']['created']); ?></td>
                                 </tr>
                                 <tr>
                                     <td>Số lượng đăng ký tối đa</td> 

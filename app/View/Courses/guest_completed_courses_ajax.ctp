@@ -23,7 +23,8 @@ $this->Paginator->options(array(
                     <?php echo $this->Html->link($this->Html->image($matches[1][0], array('class' => 'img-responsive', 'alt' => '')), array('guest' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']), array('class' => 'add-button fancybox.ajax', 'escape' => false)) ?>
 
                     <div class="desc">
-                        <h4><small><a href="#"><?php echo $course['Course']['name'] ?></a></small></h4>
+                        <?php echo $this->Html->link($course['Course']['name'] . ' - ' . $course['Teacher']['name'], array('guest' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']), array('class' => 'add-button fancybox.ajax', 'escape' => false)) ?>
+
                         <p></p>
                     </div>
                 </div>

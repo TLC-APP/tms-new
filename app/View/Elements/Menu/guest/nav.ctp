@@ -21,7 +21,7 @@
                 <li class=" nav-item">
                     <?php echo $this->Html->link('Liên hệ', array('controller' => 'dashboards', 'action' => 'contact')); ?>
                 </li>
-                <?php if(count($loginUser['Group'])>1):?>
+                <?php if(isset($loginUser)&&count($loginUser['Group'])>1):?>
                 <li class="nav-item dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Vai trò <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu">

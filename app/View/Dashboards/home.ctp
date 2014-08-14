@@ -43,9 +43,9 @@
     <!--//Đang mở-->
     <?php echo $this->element('Widgets/guest/uncompleted_courses'); ?>
     <div class="row cols-wrapper">
-        <div class="col-md-3">
+        <div class="col-md-2">
             <?php echo $this->element('Widgets/guest/courses_today'); ?>
-        </div><!--//col-md-3-->
+        </div><!--//col-md-10-->
         <div class="col-md-9">
             <?php echo $this->element('Widgets/guest/completed_courses'); ?>
 
