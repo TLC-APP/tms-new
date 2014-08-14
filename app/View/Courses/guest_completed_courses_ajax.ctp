@@ -1,6 +1,6 @@
 <?php $this->Js->JqueryEngine->jQueryObject = 'jQuery'; ?>
 <?php
-$before = "$('#datarows').parent().parent().append('<div class=" . '"overlay"></div>' . "<div class=" . '"loading-img"></div>' . "');";
+$before = "$('#datarows').parent().append('<div class=" . '"overlay"></div>' . "<div class=" . '"loading-img"></div>' . "');";
 $complete = "$('.overlay').remove();$('.loading-img').remove();";
 $this->Paginator->options(array(
     'url' => array('controller' => 'Courses', 'action' => 'completeCourses', 'guest' => true),
@@ -38,3 +38,52 @@ $this->Paginator->options(array(
     ));
     ?>
     <?php echo $this->Js->writeBuffer(); ?></div>
+
+<script>
+    $(function() {
+        $("#CourseFieldId").select2();
+        $("#CourseTeacherId").select2();
+        $('#reservation').daterangepicker(
+                {
+                    showDropdowns: true,
+                    format: 'YYYY/MM/DD'
+                });
+        var fieldbox = $('#CourseFieldId');
+        var chapterbox = $('#CourseChapterId');
+        fieldbox.change(function() {
+            var field_id = (this.value);
+            $.ajax({
+                url: "<?php echo SUB_DIR; ?>/chapters/fill_selectbox/" + field_id + ".json"
+            })
+                    .done(function(data) {
+                        chapterbox.select2('destroy');
+                        $.each(data, function(i, value) {
+                            $.each(value, function(index, text) {
+                                chapterbox.append($('<option>').text(text).attr('value', index));
+                            });
+
+                            chapterbox.select2();
+                        });
+                    });
+        });
+
+        $('#search_form').on('submit', function(e) {
+            e.preventDefault(); // prevent native submit
+            $('#datarows').parent().append('<div class="overlay"></div><div class="loading-img"></div>');
+            $(this).ajaxSubmit({
+                url: '<?php echo SUB_DIR; ?>/guest/courses/completeCourses',
+                success: response
+            });
+            return false;
+        });
+// post-submit callback 
+        function response(responseText, statusText, xhr, $form) {
+            $('.overlay').remove();
+            $('.loading-img').remove();
+            $('#datarows').html(responseText);
+            return true;
+        }
+
+    });
+
+</script>

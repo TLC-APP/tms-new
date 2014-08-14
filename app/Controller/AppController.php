@@ -24,7 +24,7 @@ class AppController extends Controller {
                 'key' => 'auth',
                 'params' => array('plugin' => 'BoostCake', 'class' => 'alert-warning')
             ),
-            'allowedActions' => array('home', 'guest_cothedangki',
+            'allowedActions' => array('home', 'guest_cothedangki','fill_selectbox',
                 'guest_lich_homnay','guest_unCompleteCourses','guest_completeCourses', 'courses_completed', 'help', 'contact',
                 'login', 'new_courses', 'getLastMessage', 'xem_thong_bao',
                 'guest_view_teacher', 'guest_view'),

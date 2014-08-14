@@ -31,12 +31,12 @@ class ChaptersController extends AppController {
     public function fill_selectbox($field_id = null) {
         //$this->autoRender = false;
         $conditions = array();
-        $chapters = array("" => "-- Tất cả --");
+
         if ($field_id) {
             $conditions = Set::merge($conditions, array('Chapter.field_id' => $field_id));
         }
-        $chapters = Set::merge($this->Chapter->find('list', array('conditions' => $conditions)),$chapters);
-        sort($chapters);
+        $chapters = Set::merge($this->Chapter->find('list', array('conditions' => $conditions)));
+
         $this->set(array(
             'chapters' => $chapters,
             '_serialize' => array('chapters')

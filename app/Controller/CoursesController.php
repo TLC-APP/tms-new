@@ -480,8 +480,22 @@ class CoursesController extends AppController {
         $conditions = array('Course.id' => $completeCourseIds);
         $fields = array('id', 'name', 'decription', 'teacher_id');
         $contain = array('Teacher' => array('id', 'name'));
-
+        //search
+        if (!empty($this->request->data['Course']['chapter_id'])) {
+            $conditions = Set::merge($conditions, array('Course.chapter_id' => $this->request->data['Course']['chapter_id']));
+        } else {
+            if (!empty($this->request->data['Course']['field_id'])) {
+                $chapter_id_array = $this->Course->Chapter->getChapterByField_id($this->request->data['Course']['field_id']);
+                $conditions = Set::merge($conditions, array('Course.chapter_id' => $chapter_id_array)
+                );
+            }
+        }
+        if (!empty($this->request->data['Course']['teacher_id'])) {
+            $conditions = Set::merge($conditions, array('Course.teacher_id' => $this->request->data['Course']['teacher_id']));
+        }
+        //end search
         $this->Paginator->settings = array('conditions' => $conditions, 'contain' => $contain, 'fields' => $fields, 'limit' => 1);
+        
         $courses = $this->Paginator->paginate();
         if ($this->request->is('requested')) {
             return array('courses' => $courses, 'paginator' => $paginator, 'paging' => $this->params['paging']);
