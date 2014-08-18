@@ -6,9 +6,8 @@
                             <div class="footer-col-inner">
                                 <h3>Giới thiệu</h3>
                                 <ul>
-                                    <li><a href="about.html"><i class="fa fa-caret-right"></i>TLC</a></li>
-                                    <li><a href="contact.html"><i class="fa fa-caret-right"></i>Liên hệ</a></li>
-                                    <li><a href="privacy.html"><i class="fa fa-caret-right"></i>Quy định sử dụng</a></li>
+                                    <li><a href="http://tlc.tvu.edu.vn/index.php/gioi-thieu-ve-tlc/chuc-nam-nhiem-vu"><i class="fa fa-caret-right"></i>TLC</a></li>
+                                    <li><a href="#"><i class="fa fa-caret-right"></i>Quy định sử dụng</a></li>
                                 </ul>
                             </div><!--//footer-col-inner-->
                         </div><!--//foooter-col-->
@@ -24,7 +23,7 @@
                                         <span class="adr-group pull-left">       
                                             <span class="street-address">Trung tâm HTPT Dạy và học</span><br>
                                             <span class="street-address">Trường ĐH Trà Vinh</span><br>
-                                            <span class="region"> Phòng: A11.408, Khu hiệu bộ, Khu 1 </span><br>
+                                            <span class="region"> Phòng: A11.408, Khu hiệu bộ </span>
 
                                         </span>
                                     </p>

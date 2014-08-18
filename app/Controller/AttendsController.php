@@ -386,7 +386,7 @@ class AttendsController extends AppController {
             'Course' => array('fields' => array('id', 'name'))
         );
         $khoa_da_dang_ky = $this->Attend->getEnrolledCourses($this->Auth->user('id'));
-        $conditions = array('Course.id' => $khoa_da_dang_ky, 'Course.status' => COURSE_COMPLETED);
+        $conditions = array('Attend.course_id' => $khoa_da_dang_ky,'Attend.is_passed'=>1);
         $courses_notification = $this->Attend->find('all', array('conditions' => $conditions, 'contain' => $contain, 'group' => array('Course.id')));
         $this->set(compact('$courses_notification'));
         return $courses_notification;

@@ -96,17 +96,17 @@ if (isset($status)) {
                             <td class="tools">
 
                                 <?php echo $this->Html->link('
-  <span class="fa fa-edit"></span>', array('action' => 'edit', $course['Course']['id']), array('escape' => false));
+  <span class="fa fa-edit"></span>', array('action' => 'edit', $course['Course']['id']), array('escape' => false,'data-toggle'=>"tooltip" ,'data-placement'=>"left", 'title'=>"sửa khóa học"));
                                 ?>
                                 <?php
                                 if (isset($status) && $status == COURSE_COMPLETED) {
-                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-tower"></i>    </span>', array('manager' => true, 'action' => 'score', $course['Course']['id']), array('escape' => false));
+                                    echo $this->Html->link('<span> <i class="glyphicon glyphicon-tower"></i>    </span>', array('manager' => true, 'action' => 'score', $course['Course']['id']), array('escape' => false,'data-toggle'=>"tooltip" ,'data-placement'=>"left", 'title'=>"Cập nhật kết quả"));
                                 }
                                 ?>
                                 <?php
                                 if (isset($status) && $status != COURSE_UNCOMPLETED && $status != COURSE_COMPLETED) {
                                     echo $this->Form->postLink('                                
-  <span class="fa fa-play"></span>', array('action' => 'open', $course['Course']['id']), array('escape' => false), __('Bạn có chắc mở khóa học # %s?', $course['Course']['name'] . ' - ' . $course['Chapter']['name']));
+  <span class="fa fa-play"></span>', array('action' => 'open', $course['Course']['id']), array('escape' => false,'data-toggle'=>"tooltip" ,'data-placement'=>"left", 'title'=>"mở khóa học"), __('Bạn có chắc mở khóa học # %s?', $course['Course']['name'] . ' - ' . $course['Chapter']['name']));
                                 }
                                 ?>     
 
@@ -114,17 +114,17 @@ if (isset($status)) {
                                 if (isset($status) && $status != COURSE_CANCELLED) {
                                     echo $this->Form->postLink('
                                 
-  <span class="fa fa-ban"></span>', array('manager' => false, 'action' => 'huy', $course['Course']['id']), array('escape' => false), __('Bạn có chắc hủy khóa học # %s?', $course['Course']['name'] . ' - ' . $course['Chapter']['name']));
+  <span class="fa fa-ban"></span>', array('manager' => false, 'action' => 'huy', $course['Course']['id']), array('escape' => false,'data-toggle'=>"tooltip" ,'data-placement'=>"left", 'title'=>"hủy khóa học"), __('Bạn có chắc hủy khóa học # %s?', $course['Course']['name'] . ' - ' . $course['Chapter']['name']));
                                 }
                                 ?>
 
                                 <?php
                                 if (isset($status) && $status == COURSE_CANCELLED) {
                                     echo $this->Form->postLink('                                
-  <span class="fa fa-refresh"></span>', array('manager' => false, 'action' => 'uncancel', $course['Course']['id']), array('escape' => false), __('Bạn có chắc phục hồi khóa học # %s?', $course['Course']['name'] . ' - ' . $course['Chapter']['name']));
+  <span class="fa fa-refresh"></span>', array('manager' => false, 'action' => 'uncancel', $course['Course']['id']), array('escape' => false,'data-toggle'=>"tooltip" ,'data-placement'=>"left", 'title'=>"phục hồi khóa học"), __('Bạn có chắc phục hồi khóa học # %s?', $course['Course']['name'] . ' - ' . $course['Chapter']['name']));
 
                                     echo $this->Form->postLink('                                
-  <span class="fa fa-times"></span>', array('manager' => false, 'action' => 'delete', $course['Course']['id']), array('escape' => false), __('Bạn có chắc xóa khóa học # %s?', $course['Course']['name'] . ' - ' . $course['Chapter']['name']));
+  <span class="fa fa-times"></span>', array('manager' => false, 'action' => 'delete', $course['Course']['id']), array('escape' => false,'data-toggle'=>"tooltip" ,'data-placement'=>"left", 'title'=>"xóa khóa học"), __('Bạn có chắc xóa khóa học # %s?', $course['Course']['name'] . ' - ' . $course['Chapter']['name']));
                                 }
                                 ?>
 

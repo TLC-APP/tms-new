@@ -13,6 +13,7 @@ class DashboardsController extends AppController {
     public $helpers = array('Recaptcha.Recaptcha');
 
     public function home() {
+        $this->autoRender = false;
         if ($this->Auth->loggedIn()) {
             $user = $this->User->find('first', array('contain' => array('Group' => array('order' => array('Group.name' => 'asc'))), 'conditions' => array('User.id' => $this->Auth->user('id'))));
             if (count($user['Group']) == 1) {
@@ -20,10 +21,15 @@ class DashboardsController extends AppController {
             }
             $this->set('users', $user);
         }
-        $fields = $this->Course->Chapter->Field->find('list');
-        $teacher_id_array = $this->Course->Teacher->getTeacherIdArray();
-        $teachers = $this->Course->Teacher->find('list', array('conditions' => array('Teacher.id' => $teacher_id_array)));
-        $this->set(compact('fields', 'teachers'));
+        if ($this->RequestHandler->isMobile()) {
+            $this->render('home_mobile');
+        } else {
+            $fields = $this->Course->Chapter->Field->find('list');
+            $teacher_id_array = $this->Course->Teacher->getTeacherIdArray();
+            $teachers = $this->Course->Teacher->find('list', array('conditions' => array('Teacher.id' => $teacher_id_array)));
+            $this->set(compact('fields', 'teachers'));
+            $this->render('home');
+        }
     }
 
     public function student_home() {

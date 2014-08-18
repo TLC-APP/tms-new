@@ -8,18 +8,18 @@
                 <span class="icon-bar"></span>
             </button>
         </div>          
-        <div class="navbar-collapse collapse" id="navbar-collapse">
+        <div class="navbar-collapse collapse pull-right" id="navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class=" nav-item">
                     <?php echo $this->Html->link('Trang chủ', array('controller' => 'dashboards', 'action' => 'home')); ?>
                 </li>
                 <li class=" nav-item">
-                    <?php echo $this->Html->link('Khóa học đã hoàn thành', array('controller' => 'dashboards', 'action' => 'courses_completed')); ?>
+                    <?php //echo $this->Html->link('Khóa học đã hoàn thành', array('controller' => 'dashboards', 'action' => 'courses_completed')); ?>
                 </li>
                 <li class=" nav-item">
                     <?php echo $this->Html->link('Hướng dẫn sử dụng', array('controller' => 'dashboards', 'action' => 'help')); ?>
                 <li class=" nav-item">
-                    <?php echo $this->Html->link('Liên hệ', array('controller' => 'dashboards', 'action' => 'contact')); ?>
+                    <?php //echo $this->Html->link('Liên hệ', array('controller' => 'dashboards', 'action' => 'contact')); ?>
                 </li>
                 <?php if(isset($loginUser)&&count($loginUser['Group'])>1):?>
                 <li class="nav-item dropdown">

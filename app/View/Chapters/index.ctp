@@ -20,9 +20,9 @@
                     <td class="actions">
                         
                         <?php echo $this->Html->link('<button type="button" class="btn btn-info">
-  <span class="glyphicon glyphicon-edit"></span></button>', array('action' => 'edit', $chapter['Chapter']['id']),array('escape'=>false)); ?>
+  <span class="glyphicon glyphicon-edit"></span></button>', array('action' => 'edit', $chapter['Chapter']['id']),array('escape' => false,'data-toggle'=>"tooltip" ,'data-placement'=>"left", 'title'=>"sửa")); ?>
                         <?php echo $this->Form->postLink('<button type="button" class="btn btn-warning">
-  <span class="glyphicon glyphicon-trash"></span></button>', array('action' => 'delete', $chapter['Chapter']['id']), array('escape'=>false), __('Bạn có chắc xóa chuyên đề # %s?', $chapter['Chapter']['name'])); ?>
+  <span class="glyphicon glyphicon-trash"></span></button>', array('action' => 'delete', $chapter['Chapter']['id']), array('escape' => false,'data-toggle'=>"tooltip" ,'data-placement'=>"left", 'title'=>"xóa"), __('Bạn có chắc xóa chuyên đề # %s?', $chapter['Chapter']['name'])); ?>
                     </td>
                 </tr>
             <?php endforeach; ?>

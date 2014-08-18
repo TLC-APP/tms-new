@@ -36,9 +36,9 @@ $this->Paginator->options(array(
                 <fieldset>
                     <?php
                     echo $this->Form->input('name', array('placeholder' => 'tên khóa', 'required'=>false));
-                    echo $this->Form->input('field_id', array('empty' => 'Lĩnh vực'));
+                    echo $this->Form->input('field_id', array('empty' => 'Lĩnh vực','options'=>$fields));
                     echo $this->Form->input('chapter_id', array('required' => false, 'empty' => 'Chuyên đề'));
-                    echo $this->Form->input('teacher_id', array('empty' => 'Tập huấn viên'));
+                    echo $this->Form->input('teacher_id', array('empty' => 'Tập huấn viên','options'=>$teachers));
                     ?>
                     <div class="form-group ">
                         <div class="keywords">                
@@ -112,7 +112,8 @@ $this->Paginator->options(array(
                 url: "<?php echo SUB_DIR; ?>/chapters/fill_selectbox/" + field_id + ".json"
             })
                     .done(function(data) {
-                        chapterbox.select2('destroy');
+                        chapterbox.empty();
+                chapterbox.append($('<option>').text('Chuyên đề').attr('value', ''));
                         $.each(data, function(i, value) {
                             $.each(value, function(index, text) {
                                 chapterbox.append($('<option>').text(text).attr('value', index));

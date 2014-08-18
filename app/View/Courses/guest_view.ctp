@@ -1,15 +1,19 @@
 <div class="col-lg-12 content-right" style="margin-top:-40px">
     <div class="row">
-        <h3 class="page-header" style=" font-family: arial">Khóa học: <?php echo $course['Course']['name'] ?> </h3>
+        <h3 class="page-header" style=" font-family: arial">Khóa học: <?php echo $course['Course']['name'] . ' '; ?>                
+            <?php if ($course['Course']['status'] == COURSE_REGISTERING): ?>
+                <a href="<?php echo SUB_DIR ?>/attends/register/<?php echo $course['Course']['id'] ?>"><button class="btn btn-success">Đăng ký</button></a>
+            <?php endif; ?>    
+        </h3>
         <div class="col-md-12">
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
-                    <li ><a data-toggle="tab" href="#tab_2-4">Lịch học</a></li>
+                    <li ><a data-toggle="tab" href="#lich_hoc">Lịch học</a></li>
                     <li class=""><a data-toggle="tab" href="#thong_tin">Thông tin</a></li>
-                    <li class="active"><a data-toggle="tab" href="#tab_1-1">Nội dung</a></li>
+                    <li class="active"><a data-toggle="tab" href="#noi_dung">Nội dung</a></li>
                 </ul>
                 <div class="tab-content">
-                    <div id="tab_1-1" class="tab-pane active">
+                    <div id="noi_dung" class="tab-pane active">
                         <div class="noi_dung" >
                             <p><?php echo $course['Course']['decription']; ?></p>
                         </div>
@@ -46,7 +50,7 @@
                                         <strong><?php echo $course['Chapter']['name'] ?></strong> 
                                     </td>
                                 </tr>
-                                 <tr>
+                                <tr>
                                     <td>Lĩnh vực</td>
                                     <td>                 
                                         <?php echo $course['Chapter']['Field']['name']; ?>
@@ -55,7 +59,7 @@
                             </tbody>
                         </table>
                     </div><!-- /.tab-pane -->
-                    <div id="tab_2-4" class="tab-pane">
+                    <div id="lich_hoc" class="tab-pane">
                         <div class="row">
                             <div class="col-md-12">
 
@@ -92,11 +96,17 @@
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div> 
                     </div>
                 </div><!-- /.tab-content -->
+            </div>
+            <div class="pull-right">
+                <?php if ($course['Course']['status'] == COURSE_REGISTERING): ?>
+                    <a href="<?php echo SUB_DIR ?>/attends/register/<?php echo $course['Course']['id'] ?>"><button class="btn btn-success">Đăng ký</button></a>
+                <?php endif; ?>
             </div>
         </div>
     </div>

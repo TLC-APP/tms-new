@@ -23,9 +23,9 @@
         echo $this->Form->input('id');
         echo $this->Form->input('name', array('label' => 'Họ tên'));
         echo $this->Form->input('hoc_ham_id', array('label' => 'Học hàm','empty'=>'-- Chọn học hàm --',
-            'after' => $this->Html->link('<span class="glyphicon glyphicon-plus"></span>Thêm mới', '/hochams/add', array('escape' => false,
+            'after' => $this->Html->link('<span class="glyphicon glyphicon-plus"></span>Thêm mới', '/hoc_hams/add', array('escape' => false,
                 'class' => 'add-button btn btn-primary fancybox.ajax', 'role' => 'button', 'div' => false))));
-        echo $this->Form->input('hoc_vi_id', array('label' => 'Học vị', 'after' => $this->Html->link('<span class="glyphicon glyphicon-plus"></span>Thêm mới', '/hocvis/add', array('escape' => false, 'class' => 'add-button btn btn-primary fancybox.ajax', 'role' => 'button', 'div' => false))));
+        echo $this->Form->input('hoc_vi_id', array('label' => 'Học vị', 'after' => $this->Html->link('<span class="glyphicon glyphicon-plus"></span>Thêm mới', '/hoc_vis/add', array('escape' => false, 'class' => 'add-button btn btn-primary fancybox.ajax', 'role' => 'button', 'div' => false))));
         echo $this->Form->input('email');
         echo $this->Form->input('birthday', array('class' => false, 'label' => 'Ngày sinh ','dateFormat' => 'DMY', 'monthNames' => false, 'minYear' => '1950'));
         echo $this->Form->input('birthplace', array('label' => 'Nơi sinh'));

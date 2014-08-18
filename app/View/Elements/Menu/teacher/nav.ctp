@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
             </button><!--//nav-toggle-->
         </div><!--//navbar-header-->            
-        <div class="navbar-collapse collapse" id="navbar-collapse">
+        <div class="navbar-collapse collapse pull-right" id="navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class=" nav-item">
                     <?php echo $this->Html->link('Trang chủ', array('controller' => 'dashboards', 'action' => 'teacher_home')); ?>

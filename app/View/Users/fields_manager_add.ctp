@@ -24,9 +24,9 @@
         echo $this->Form->input('department_id', array('id' => 'UserDepartmentId', 'label' => 'Đơn vị', 'empty' => '-- chọn đơn vị --', 'after' => $this->Html->link('<span class="glyphicon glyphicon-plus"></span>', array('action' => 'add', 'controller' => 'departments', 'fields_manager' => false), array('escape' => false,
                 'class' => 'add-button btn btn-primary fancybox.ajax', 'role' => 'button', 'div' => false))));
         echo $this->Form->input('hoc_ham_id', array('label' => 'Học hàm', 'id'=>'UserHocHamId','empty' => '-- Chọn học hàm --',
-            'after' => $this->Html->link('<span class="glyphicon glyphicon-plus"></span>', '/hochams/add', array('escape' => false,
+            'after' => $this->Html->link('<span class="glyphicon glyphicon-plus"></span>', '/hoc_hams/add', array('escape' => false,
                 'class' => 'add-button btn btn-primary fancybox.ajax', 'role' => 'button', 'div' => false))));
-        echo $this->Form->input('hoc_vi_id', array('label' => 'Học vị','id'=>'UserHocViId', 'after' => $this->Html->link('<span class="glyphicon glyphicon-plus"></span>', '/hocvis/add', array('escape' => false, 'class' => 'add-button btn btn-primary fancybox.ajax', 'role' => 'button', 'div' => false))));
+        echo $this->Form->input('hoc_vi_id', array('label' => 'Học vị','id'=>'UserHocViId', 'after' => $this->Html->link('<span class="glyphicon glyphicon-plus"></span>', '/hoc_vis/add', array('escape' => false, 'class' => 'add-button btn btn-primary fancybox.ajax', 'role' => 'button', 'div' => false))));
         echo $this->Form->input('sex', array('label' => 'Giới tính', 'type' => 'select', 'options' => array('0' => 'Nữ', '1' => 'Nam')));
         echo $this->Form->input('email');
         echo $this->Form->input('birthday', array('class' => false, 'label' => 'Ngày sinh ', 'dateFormat' => 'DMY', 'monthNames' => false, 'minYear' => '1950'));

@@ -584,7 +584,7 @@ ul.custom-list-style li {
 }
 .box {
   background: #f5f5f5;
-  padding: 15px;
+  padding: 2px;
 }
 .box.box-border {
   border-left: 5px solid #6091ba;
@@ -975,7 +975,7 @@ ul.custom-list-style li {
 .flexslider .slides .flex-caption {
   position: absolute;
   left: 30px;
-  bottom: 30px;
+  bottom: 2px;
   color: #fff;
   display: inline-block;
   font-family: 'open sans', arial, sans-serif;
@@ -985,7 +985,7 @@ ul.custom-list-style li {
   background: #6091ba;
   margin-bottom: 5px;
   padding: 10px 15px;
-  font-size: 18px;
+  font-size: 13px;
   text-transform: uppercase;
 }
 .flexslider .slides .flex-caption .secondary {
@@ -993,7 +993,7 @@ ul.custom-list-style li {
   background: rgba(0, 0, 0, 0.8);
   padding: 5px 15px;
   color: #fff;
-  font-size: 16px;
+  font-size: 13px;
 }
 .flexslider .slides .promo-badge {
   position: absolute;
@@ -1426,8 +1426,8 @@ ul.custom-list-style li {
 }
 /* ======= Home Page ======= */
 .home-page h1.section-heading {
-  font-size: 22px;
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: 200;
   line-height: 2;
   margin-top: 0;
   color: #2f506c;
@@ -1441,7 +1441,7 @@ ul.custom-list-style li {
 .home-page section {
   background: #f5f5f5;
   overflow: hidden;
-  margin-bottom: 30px;
+  margin-bottom: 9px;
 }
 .home-page .section-content {
   padding: 15px;
@@ -1532,7 +1532,7 @@ ul.custom-list-style li {
 }
 .home-page .events .event-item h2.title {
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .home-page .events .event-item p {
   margin-bottom: 5px;

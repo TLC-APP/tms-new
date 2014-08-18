@@ -38,12 +38,16 @@
         </ul><!--//slides-->
         <ul class="flex-direction-nav">
             <li>
-                <a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div><!--//flexslider-->
+                <a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li>
+        </ul>
+    </div><!--//flexslider-->
     <!--//promo-->
     <!--//Đang mở-->
     <?php echo $this->element('Widgets/guest/uncompleted_courses'); ?>
     <div class="row cols-wrapper">
-        <div class="col-md-2">
+        <div class="col-md-3">
+            
+
             <?php echo $this->element('Widgets/guest/courses_today'); ?>
         </div><!--//col-md-10-->
         <div class="col-md-9">

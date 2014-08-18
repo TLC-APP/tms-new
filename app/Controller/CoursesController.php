@@ -53,7 +53,7 @@ class CoursesController extends AppController {
         $this->Paginator->settings = array('fields' => $fields, 'contain' => $contain, 'conditions' => $conditions, 'order' => array('Course.created' => 'DESC'), 'limit' => 5);
         $this->set('courses', $this->Paginator->paginate());
         if ($this->request->is('ajax')) {
-
+            $this->set('status', $status);
             $this->render('admin_index_ajax');
         }
         $fields = $this->Course->Chapter->Field->find('list');
@@ -478,7 +478,7 @@ class CoursesController extends AppController {
         $paginator = $this->params;
         $completeCourseIds = $this->Course->getCoursesCompleted();
         $conditions = array('Course.id' => $completeCourseIds);
-        $fields = array('id', 'name', 'decription', 'teacher_id','created');
+        $fields = array('id', 'name', 'decription', 'teacher_id', 'created');
         $contain = array('Teacher' => array('id', 'name'));
         //search
         if (!empty($this->request->data['khoang_thoi_gian'])) {
@@ -774,8 +774,12 @@ class CoursesController extends AppController {
             $conditions = Set::merge($conditions, array('Course.teacher_id' => $this->request->data['Course']['teacher_id']));
         }
 
-        if (isset($this->request->data['Course']['is_published']) && !empty($this->request->data['Course']['is_published'])) {
-            $conditions = Set::merge($conditions, array('Course.is_published' => $this->request->data['Course']['is_published']));
+        if (isset($this->request->data['Course']['is_published']) && !is_null($this->request->data['Course']['is_published'])) {
+            if ($this->request->data['Course']['is_published'])
+                $conditions = Set::merge($conditions, array('Course.is_published' => $this->request->data['Course']['is_published']));
+            else
+                if($this->request->data['Course']['is_published']==0)
+                $conditions = Set::merge($conditions, array('Course.is_published' => 0));
         }
 
         $contain = array(

@@ -1,4 +1,3 @@
-<?php $messages = $this->requestAction(array('controller' => 'messages', 'action' => 'getLastMessage', 'student' => false)) ?>
 <div class="panel panel-theme">
     <div class="panel-heading">
         <h3 class="panel-title"><i class=" glyphicon glyphicon-bullhorn"></i> Thông báo</h3>

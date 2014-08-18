@@ -19,16 +19,19 @@
         $courses_register = $this->requestAction(array('student' => true, 'controller' => 'courses', 'action' => 'student_khoamoidangki'));
         //debug($courses_register);
         ?>
-        <?php echo $this->element('Widgets/student/news', array('courses_register' => $courses_register)); ?>
+        <?php if (!empty($courses_register)) echo $this->element('Widgets/student/news', array('courses_register' => $courses_register)); ?>
         <!--WIDGET Thông báo chứng nhận-->
         <?php
         $courses_notification = $this->requestAction(array('student' => true, 'controller' => 'attends', 'action' => 'student_thongbao'));
         if (!empty($courses_notification)) {
+            debug($courses_notification);
             echo $this->element('Widgets/student/statistics', array('courses_notification' => $courses_notification));
         }
         ?>
 
         <!--WIDGET Thông báo từ hệ thống-->
-<?php echo $this->element('Widgets/student/notification') ?>
+        <?php $messages = $this->requestAction(array('controller' => 'messages', 'action' => 'getLastMessage', 'student' => false)) ?>
+        
+        <?php if(!empty($messages))echo $this->element('Widgets/student/notification',array('messages'=>$messages)); ?>
     </div>
 </div>

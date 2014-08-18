@@ -93,5 +93,6 @@ class Field extends AppModel {
         $fields = $this->find('all', array('recursive' => -1, 'fields' => array('id'), 'conditions' => array('Field.manage_user_id' => $user_id)));
         return Set::classicExtract($fields, '{n}.Field.id');
     }
+    
 
 }

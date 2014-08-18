@@ -17,6 +17,6 @@
     <!-- tin tức thông báo-->
     <?php echo $this->element('Widgets/teacher/new_notification') ?>
      <!--Thống kê-->
-    <?php echo $this->element('Widgets/teacher/teacher_statistic') ?>
+    <?php //echo $this->element('Widgets/teacher/teacher_statistic') ?>
     </div>
 </div>

@@ -14,18 +14,6 @@ class FieldTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.field',
-		'app.user',
-		'app.hoc_ham',
-		'app.hoc_vi',
-		'app.department',
-		'app.course',
-		'app.chapter',
-		'app.attachment',
-		'app.attend',
-		'app.courses_room',
-		'app.room',
-		'app.group',
-		'app.users_group'
 	);
 
 /**
@@ -35,6 +23,7 @@ class FieldTest extends CakeTestCase {
  */
 	public function setUp() {
 		parent::setUp();
+                //it knows to use your test database connection.
 		$this->Field = ClassRegistry::init('Field');
 	}
 
@@ -48,5 +37,6 @@ class FieldTest extends CakeTestCase {
 
 		parent::tearDown();
 	}
+        
 
 }

@@ -19,10 +19,11 @@ $this->Html->addCrumb('Thêm lĩnh vực');
         <?php
         echo $this->Form->input('name', array('label' => 'Tên lĩnh vực'));
         echo $this->Form->input('manage_user_id', array('label' => 'Người quản lý'));
-        echo $this->Form->input('decription', array('label' => 'Miêu tả'));
         echo $this->Form->input('certificated_number_suffix');
+
+        echo $this->Form->input('decription', array('label' => 'Miêu tả'));
         ?>
     </fieldset>
-   <?php echo $this->Form->button('Lưu',array('type'=>'submit','class'=>'btn btn-primary'))?>
-<?php echo $this->Form->end(); ?>
+    <?php echo $this->Form->button('Lưu', array('type' => 'submit', 'class' => 'btn btn-primary')) ?>
+    <?php echo $this->Form->end(); ?>
 </div>
