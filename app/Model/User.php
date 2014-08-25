@@ -190,6 +190,7 @@ class User extends AppModel {
      * @var array
      */
     public $hasMany = array(
+        //Tap huan
         'TeachingCourse' => array(
             'className' => 'Course',
             'foreignKey' => 'teacher_id',
@@ -203,6 +204,7 @@ class User extends AppModel {
             'finderQuery' => '',
             'counterQuery' => ''
         ),
+        //Tham gia
         'Attend' => array(
             'className' => 'Attend',
             'foreignKey' => 'student_id',
@@ -216,6 +218,7 @@ class User extends AppModel {
             'finderQuery' => '',
             'counterQuery' => ''
         ),
+        //Quan ly
         'QuanLyDonVi' => array(
             'className' => 'Department',
             'foreignKey' => 'truong_don_vi_id',
@@ -228,7 +231,21 @@ class User extends AppModel {
             'exclusive' => '',
             'finderQuery' => '',
             'counterQuery' => ''
-        )
+        ),
+        //Tro giang
+        'AssistantTeacher' => array(
+            'className' => 'AssistantTeacher',
+            'foreignKey' => 'user_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        ),
     );
     public $belongsTo = array(
         'HocHam' => array(

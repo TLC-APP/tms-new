@@ -46,7 +46,7 @@ class Chapter extends AppModel {
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
-            'isUnique'=>array('rule'=>array('isUnique'),
+            'isUnique' => array('rule' => array('isUnique'),
                 'message' => 'Tên chuyên đề đã tồn tại')
         ),
         'field_id' => array(
@@ -58,10 +58,10 @@ class Chapter extends AppModel {
             //'last' => false, // Stop validation after this rule
             //'on' => 'create', // Limit validation to 'create' or 'update' operations
             ),
-          /*  'mustUnique' => array(
-                'rule' => 'isUnique',
-                'message' => 'Tên chuyên đề đã tồn tại',
-                'last' => true),*/
+        /*  'mustUnique' => array(
+          'rule' => 'isUnique',
+          'message' => 'Tên chuyên đề đã tồn tại',
+          'last' => true), */
         ),
     );
     public $belongsTo = array(
@@ -134,8 +134,11 @@ class Chapter extends AppModel {
         return $this->saveAll($data, array('validate' => 'first', 'deep' => true));
     }
 
-    public function isOwnedBy($chapter, $user) {
-        return $this->field('id', array('id' => $chapter, 'created_user_id' => $user)) !== false;
+    public function isManagedBy($chapter_id, $user_id) {
+        $this->id = $chapter_id;
+        $field_id = $this->field('field_id');
+        $managed_fields=$this->Field->managerFieldsId($user_id);
+        return in_array($field_id, $managed_fields);
     }
 
     public function getChapterByField_id($field_id) {
@@ -144,8 +147,8 @@ class Chapter extends AppModel {
         $courses_id_array = Set::classicExtract($chapters, '{n}.Chapter.id');
         return $courses_id_array;
     }
-    
-    public function getChapterByFieldIdArray($fields_id=array()) {
+
+    public function getChapterByFieldIdArray($fields_id = array()) {
         $conditions = array('Chapter.field_id' => $fields_id);
         $chapters = $this->find('all', array('conditions' => $conditions, 'recursive' => -1));
         $courses_id_array = Set::classicExtract($chapters, '{n}.Chapter.id');

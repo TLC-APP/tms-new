@@ -15,7 +15,8 @@ echo $this->Html->script('/fancybox/source/helpers/jquery.fancybox-thumbs');
             autoSize: false,
             closeClick: false,
             openEffect: 'none',
-            closeEffect: 'none'
+            closeEffect: 'none',
+            
         });
     });
 </script>

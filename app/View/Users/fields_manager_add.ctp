@@ -33,7 +33,7 @@
         echo $this->Form->input('birthplace', array('label' => 'Nơi sinh'));
         echo $this->Form->input('phone_number', array('label' => 'Số điện thoại'));
         echo $this->Form->input('address', array('label' => 'Địa chỉ'));
-        echo $this->Form->input('avatar', array('type' => 'file', 'class' => false, 'label' => 'Ảnh'));
+        echo $this->Form->input('avatar', array('type' => 'file', 'class' => false, 'label' => 'Ảnh đại diện','required'=>false));
         echo $this->Form->input('avatar_path', array('type' => 'hidden'));
         echo $this->Form->input('username');
         echo $this->Form->input('password', array('label' => 'Mật khẩu', 'type' => 'password'));

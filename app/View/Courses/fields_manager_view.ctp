@@ -8,10 +8,10 @@
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
 
-                    <li class="active"><a data-toggle="tab" href="#tab_2-4">Lịch học</a></li>
+                    <li class=""><a data-toggle="tab" href="#tab_2-4">Lịch học</a></li>
                     <li class=""><a data-toggle="tab" href="#tab_2-5">Tài liệu</a></li>
                     <li class=""><a data-toggle="tab" href="#tab_hoc_vien">Học viên</a></li>
-                    <li class=""><a data-toggle="tab" href="#tab_2-2">Thông tin</a></li>
+                    <li class="active"><a data-toggle="tab" href="#thong_tin">Thông tin</a></li>
                     <li class=""><a data-toggle="tab" href="#tab_1-1">Nội dung</a></li>
 
                 </ul>
@@ -26,12 +26,10 @@
 
                     <div id="tab_1-1" class="tab-pane">
                         <div class="noi_dung" >
-                            <img alt="" class="pull-left"  style="padding-right: 10px; width: 500px;"src="<?php echo SUB_DIR; ?>/files/course/image/<?php echo $course['Course']['image_path'] . '/' . $course['Course']['image']; ?>">
-
                             <p><?php echo $course['Course']['decription']; ?></p>
                         </div>
                     </div><!-- /.tab-pane -->
-                    <div id="tab_2-2" class="tab-pane">
+                    <div id="thong_tin" class="tab-pane active">
                         <table class="table table-condensed">
 
                             <tbody style="font-size: 15px;">
@@ -50,6 +48,21 @@
 
                                     </td>
                                 </tr>
+                                <?php
+                                $stt = 1;
+                                foreach ($course['AssistantTeacher'] as $assistant):
+                                    ?>
+                                    <tr>
+                                        <td>Trợ giảng <?php echo $stt++; ?>:</td>
+                                        <td><?php echo $assistant['User']['name']; ?> - Số tiết: <span id="lecture_hours_<?php echo $assistant['id']; ?>">
+                                                <?php
+                                                echo $assistant['lecture_hours'] . ' </span> ' .
+                                                $this->Html->link('  <i class="fa fa-edit"></i>', array('controller' => 'assistant_teachers', 'action' => 'updateLectureHours', 'admin' => false, $assistant['id']), array('escape' => false, 'class' => 'add-button fancybox.ajax', 'data-toggle' => "tooltip", 'data-placement' => "left", 'title' => "sửa số tiết")) .
+                                                $this->Form->postLink('<i class="fa fa-trash-o"></i>', array('controller' => 'assistant_teachers', 'action' => 'delete', 'admin' => false, $assistant['id']), array('escape' => false, 'data-toggle' => "tooltip", 'data-placement' => "left", 'title' => "xóa " . $assistant['User']['name']), __('Bạn có chắc xóa trợ giảng %s', $assistant['User']['name']));
+                                                ?>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
                                 <tr>
                                     <td>Số buổi</td>
                                     <td><?php echo count($course['CoursesRoom']); ?></td>
@@ -90,7 +103,7 @@
                                 <tr>
                                     <td>Chuyên đề</td>
                                     <td>                 
-                                        <?php echo $this->Html->link($course['Chapter']['name'], array('controller' => 'chapters', 'action' => 'view', $course['Chapter']['id'])); ?>
+                                        <?php echo $this->Html->link($course['Chapter']['name'], array('controller' => 'chapters', 'action' => 'view', $course['Chapter']['id']),array('class' => 'add-button fancybox.ajax')); ?>
                                     </td>
                                 </tr>
                                 <tr>
@@ -102,7 +115,7 @@
                             </tbody>
                         </table>
                     </div><!-- /.tab-pane -->
-                    <div id="tab_2-4" class="tab-pane active">
+                    <div id="tab_2-4" class="tab-pane">
                         <div class="row">
                             <div class="col-md-12">
 
@@ -203,7 +216,8 @@
                 </div><!-- /.tab-content -->
             </div>
             <div class="btn-toolbar pull-right">
-                <?php echo $this->Html->link('IN DS học viên', '/courses/print_student/' . $course['Course']['id'], array('class' => 'btn btn-info')); ?>
+                
+                <?php if(count($course['Attend'])>0) echo $this->Html->link('IN DS học viên', '/courses/print_student/' . $course['Course']['id'], array('class' => 'btn btn-info')); ?>
                 <?php echo $this->Html->link('SỬA', '/fields_manager/courses/edit/' . $course['Course']['id'], array('class' => 'btn btn-info')); ?>
                 <?php echo $this->Html->link('HỦY', '#', array('class' => 'btn btn-warning')); ?>
             </div>

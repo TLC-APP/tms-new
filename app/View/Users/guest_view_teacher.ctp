@@ -11,7 +11,7 @@
                                 <td>Ảnh đại diện</td>
                                 <td>
                                         <div class="img-responsive">   
-                                            <?php echo $this->Html->image("/files/user/avatar/" . $teacher['User']['avatar_path'] . '/' . $teacher['User']['avatar'], array('width' => 200)); ?>
+                                            <?php echo $this->Html->image("/files/user/avatar/" . $teacher['User']['avatar_path'] . '/' . $teacher['User']['avatar'], array('width' => 200,'class'=>'img-repository')); ?>
                                         </div>
                                 </td>
                             </tr>

@@ -11,7 +11,7 @@ echo $this->Form->create('Course', array(
         'wrapInput' => false,
         'class' => 'form-control'
     ),
-    'url' => array('action' => 'index',  $status),
+    'url' => array('action' => 'index', $status),
     'class' => 'form-inline ajax',
     'id' => 'search_form'
 ));
@@ -34,7 +34,6 @@ echo $this->Form->create('Course', array(
             e.preventDefault(); // prevent native submit
             $('#datarows').parent().parent().append('<div class="overlay"></div><div class="loading-img"></div>');
             $(this).ajaxSubmit({
-                //url: '<?php //echo SUB_DIR;      ?>/manager/courses/index/',
                 success: response
             });
             return false;
@@ -57,6 +56,7 @@ echo $this->Form->create('Course', array(
             })
                     .done(function(data) {
                         chapterbox.empty();
+                        chapterbox.append($('<option>').text('-- Chuyên đề --').attr('value', ''));
                         $.each(data, function(i, value) {
                             $.each(value, function(index, text) {
                                 chapterbox.append($('<option>').text(text).attr('value', index));

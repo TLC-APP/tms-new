@@ -67,10 +67,9 @@ $this->Paginator->options(array(
                         <?php foreach ($courses as $course): ?>
                             <?php $output = preg_match_all('/<img[^>]+src=[\'"]([^\'"]+)[\'"][^>]*>/i', $course['Course']['decription'], $matches); ?>
 
-                            <div class="col-md-4 col-sm-4 col-xs-12 text-center">
+                            <div class="col-md-3 col-sm-3 col-xs-12 text-center">
                                 <div class="album-cover">
-                                    <?php echo $this->Html->link($this->Html->image($matches[1][0], array('class' => 'img-responsive', 'alt' => '')), array('guest' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']), array('class' => 'add-button fancybox.ajax', 'escape' => false)) ?>
-
+                                     <?php echo (!empty($matches[1][0]))?$this->Html->image($matches[1][0],array('class' => 'img-responsive', 'alt' => '')):$this->Html->image('training_default.jpg',array('class' => 'img-responsive', 'alt' => '')); ?>
                                     <div class="desc">
 
                                         <h4><small>

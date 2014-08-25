@@ -308,21 +308,21 @@ class ChaptersController extends AppController {
             throw new NotFoundException(__('Invalid chapter'));
         }
         $this->request->onlyAllow('post', 'delete');
-        if (!$this->Chapter->isOwnedBy($id, $this->Auth->user('id')) && (!$this->Chapter->User->isAdmin() || !$this->Chapter->User->isManager())) {
+        if (!$this->Chapter->isManagedBy($id, $this->Auth->user('id')) && (!$this->Chapter->User->isAdmin() || !$this->Chapter->User->isManager())) {
             $this->Session->setFlash('Bạn không có quyền xóa chuyên đề người khác tạo', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
-            return $this->redirect($this->render());
+            return $this->redirect($this->request->referer());
         } else {
             $course_number = $this->Chapter->field('course_number');
             if ($course_number > 0) {
                 $this->Session->setFlash('Có ' . $course_number . ' khóa học thuộc chuyên đề này, bạn cần xóa chúng trước đã.', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
-                return $this->redirect($this->render());
+                return $this->redirect($this->request->referer());
             } else {
                 if ($this->Chapter->delete()) {
                     $this->Session->setFlash('Xóa thành công', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'));
-                    return $this->redirect($this->render());
+                    return $this->redirect($this->request->referer());
                 } else {
                     $this->Session->setFlash('Xóa không thành công', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
-                    return $this->redirect($this->render());
+                    return $this->redirect($this->request->referer());
                 }
             }
         }

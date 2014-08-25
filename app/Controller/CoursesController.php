@@ -127,7 +127,18 @@ class CoursesController extends AppController {
             throw new NotFoundException(__('Invalid course'));
         }
         if ($this->request->is(array('post', 'put'))) {
-            if ($this->Course->save($this->request->data)) {
+            $i = 0;
+            $n = count($this->request->data['AssistantTeacher']);
+            while ($i < $n) {
+
+                if (($this->request->data['AssistantTeacher'][$i]['user_id']) == '') {
+                    unset($this->request->data['AssistantTeacher'][$i]);
+                }
+                $i++;
+            }
+
+            unset($this->Course->AssistantTeacher->validate['course_id']);
+            if ($this->Course->saveAssociated($this->request->data)) {
                 $this->Session->setFlash('Cập nhật khóa học thành công', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'));
                 return $this->redirect(array('action' => 'index'));
             } else {
@@ -158,6 +169,7 @@ class CoursesController extends AppController {
             'Teacher' => array('fields' => array('id', 'name', 'email', 'phone_number'), 'HocHam', 'HocVi'),
             'Chapter' => array('Attachment', 'Field' => array('fields' => array('id', 'name'))),
             'Attachment',
+            'AssistantTeacher' => array('User' => array('fields' => array('id', 'name'))),
             'Attend' => array('Student' => array('fields' => array('id', 'name', 'email', 'phone_number')))
         );
         $options = array('conditions' => array('Course.' . $this->Course->primaryKey => $id), 'contain' => $contain);
@@ -170,11 +182,21 @@ class CoursesController extends AppController {
         if ($this->request->is('post')) {
             $this->Course->create();
             $this->request->data['Course']['created_user_id'] = $this->Auth->user('id');
-            if ($this->Course->save($this->request->data)) {
+            $i = 0;
+            $n = count($this->request->data['AssistantTeacher']);
+            while ($i < $n) {
+                if (($this->request->data['AssistantTeacher'][$i]['user_id']) == '') {
+                    unset($this->request->data['AssistantTeacher'][$i]);
+                }
+                $i++;
+            }
+
+            unset($this->Course->AssistantTeacher->validate['course_id']);
+            if ($this->Course->saveAssociated($this->request->data)) {
                 $this->Session->setFlash('Đã thêm khóa học thành công', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'));
                 return $this->redirect(array('action' => 'index', COURSE_REGISTERING));
             } else {
-                $this->Session->setFlash('Đã thêm khóa học không thành công', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
+                $this->Session->setFlash('Thêm khóa học không thành công', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
                 return $this->redirect(array('action' => 'index'));
             }
         }
@@ -317,10 +339,11 @@ class CoursesController extends AppController {
 
         $enrolling_expiry_date = new DateTime($this->Course->field('enrolling_expiry_date'));
         $today = new DateTime();
+        /*
         if ($today < $enrolling_expiry_date) {
             $this->Session->setFlash('Khóa học chưa hết hạn đăng ký!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
             return $this->redirect($this->referer());
-        }
+        }*/
 //
         if ($this->Course->field('so_buoi') < 1) {
             $this->Session->setFlash('Vui lòng thêm buổi học cho khóa.!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
@@ -480,7 +503,7 @@ class CoursesController extends AppController {
         $conditions = array('Course.id' => $completeCourseIds);
         $fields = array('id', 'name', 'decription', 'teacher_id', 'created');
         $contain = array('Teacher' => array('id', 'name'));
-        //search
+//search
         if (!empty($this->request->data['khoang_thoi_gian'])) {
             $khoang_thoi_gian = $this->request->data['khoang_thoi_gian'];
             $khoang_thoi_gian = explode('-', $khoang_thoi_gian);
@@ -504,7 +527,7 @@ class CoursesController extends AppController {
         if (!empty($this->request->data['Course']['teacher_id'])) {
             $conditions = Set::merge($conditions, array('Course.teacher_id' => $this->request->data['Course']['teacher_id']));
         }
-        //end search
+//end search
         $this->Paginator->settings = array('conditions' => $conditions, 'contain' => $contain, 'fields' => $fields, 'limit' => 6);
 
         $courses = $this->Paginator->paginate();
@@ -531,11 +554,14 @@ class CoursesController extends AppController {
 
         $enrolling_expiry_date = new DateTime($this->Course->field('enrolling_expiry_date'));
         $today = new DateTime();
+        /*
         if ($today < $enrolling_expiry_date) {
             $this->Session->setFlash('Khóa học chưa hết hạn đăng ký!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
             return $this->redirect($this->referer());
         }
-        //
+         * */
+         
+//
         if ($this->Course->field('so_buoi') < 1) {
             $this->Session->setFlash('Vui lòng thêm buổi học cho khóa.!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
             return $this->redirect($this->referer());
@@ -594,6 +620,7 @@ class CoursesController extends AppController {
             'Teacher' => array('fields' => array('id', 'name', 'email', 'phone_number'), 'HocHam', 'HocVi'),
             'Chapter' => array('Attachment', 'Field' => array('fields' => array('id', 'name'))),
             'Attachment',
+            'AssistantTeacher' => array('User' => array('fields' => array('id', 'name'))),
             'Attend' => array('Student' => array('fields' => array('id', 'name', 'email', 'phone_number')), 'fields' => array('id', 'student_id', 'course_id'))
         );
         $options = array('conditions' => array('Course.' . $this->Course->primaryKey => $id), 'contain' => $contain);
@@ -643,7 +670,9 @@ class CoursesController extends AppController {
 
             $this->render('fields_manager_index_ajax');
         }
-        $fields = $this->Course->Chapter->Field->find('list');
+        $manage_fields = $this->Course->Chapter->Field->managerFieldsId($this->Auth->user('id'));
+
+        $fields = $this->Course->Chapter->Field->find('list', array('conditions' => array('Field.id' => $manage_fields)));
         $teacher_id_array = $this->Course->Teacher->getTeacherIdArray();
         $teachers = $this->Course->Teacher->find('list', array('conditions' => array('Teacher.id' => $teacher_id_array)));
         $this->set(compact('fields', 'teachers', 'status'));
@@ -654,7 +683,17 @@ class CoursesController extends AppController {
         if ($this->request->is('post')) {
             $this->Course->create();
             $this->request->data['Course']['created_user_id'] = $this->Auth->user('id');
-            if ($this->Course->save($this->request->data)) {
+            $i = 0;
+            $n = count($this->request->data['AssistantTeacher']);
+            while ($i < $n) {
+                if (($this->request->data['AssistantTeacher'][$i]['user_id']) == '') {
+                    unset($this->request->data['AssistantTeacher'][$i]);
+                }
+                $i++;
+            }
+
+            unset($this->Course->AssistantTeacher->validate['course_id']);
+            if ($this->Course->saveAssociated($this->request->data)) {
                 $this->Session->setFlash('Đã thêm khóa học thành công', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'));
                 return $this->redirect(array('action' => 'index', COURSE_REGISTERING));
             } else {
@@ -662,13 +701,8 @@ class CoursesController extends AppController {
             }
         }
 
-        $manage_fields = $this->Course->Chapter->Field->find('all', array('fields' => array('id'), 'recursive' => -1, 'conditions' => array(
-                'Field.manage_user_id' => $this->Auth->user('id'))));
-        $manage_fields_id_array = array();
-        if (!empty($manage_fields)) {
-            $manage_fields_id_array = Set::classicExtract($manage_fields, '{n}.Field.id');
-        }
-        $chapters = $this->Course->Chapter->find('list', array('conditions' => array('Chapter.field_id' => $manage_fields_id_array)));
+        $manage_fields = $this->Course->Chapter->Field->managerFieldsId($this->Auth->user('id'));
+        $chapters = $this->Course->Chapter->find('list', array('conditions' => array('Chapter.field_id' => $manage_fields)));
         $teacher_id_array = $this->Course->Teacher->getTeacherIdArray();
         $teachers = $this->Course->Teacher->find('list', array('conditions' => array('Teacher.id' => $teacher_id_array)));
         $this->set(compact('chapters', 'teachers'));
@@ -679,7 +713,17 @@ class CoursesController extends AppController {
             throw new NotFoundException(__('Invalid course'));
         }
         if ($this->request->is(array('post', 'put'))) {
-            if ($this->Course->save($this->request->data)) {
+            $i = 0;
+            $n = count($this->request->data['AssistantTeacher']);
+            while ($i < $n) {
+                if (($this->request->data['AssistantTeacher'][$i]['user_id']) == '') {
+                    unset($this->request->data['AssistantTeacher'][$i]);
+                }
+                $i++;
+            }
+
+            unset($this->Course->AssistantTeacher->validate['course_id']);
+            if ($this->Course->saveAssociated($this->request->data)) {
                 $this->Session->setFlash(__('The course has been saved.'));
                 return $this->redirect(array('action' => 'index', COURSE_REGISTERING));
             } else {
@@ -774,12 +818,8 @@ class CoursesController extends AppController {
             $conditions = Set::merge($conditions, array('Course.teacher_id' => $this->request->data['Course']['teacher_id']));
         }
 
-        if (isset($this->request->data['Course']['is_published']) && !is_null($this->request->data['Course']['is_published'])) {
-            if ($this->request->data['Course']['is_published'])
-                $conditions = Set::merge($conditions, array('Course.is_published' => $this->request->data['Course']['is_published']));
-            else
-                if($this->request->data['Course']['is_published']==0)
-                $conditions = Set::merge($conditions, array('Course.is_published' => 0));
+        if (isset($this->request->data['Course']['is_published']) && !empty($this->request->data['Course']['is_published'])) {
+            $conditions = Set::merge($conditions, array('Course.is_published' => $this->request->data['Course']['is_published']));
         }
 
         $contain = array(
@@ -795,11 +835,11 @@ class CoursesController extends AppController {
             $conditions = Set::merge($conditions, array('Course.status' => $status));
             $this->set('status', $status);
         }
-
-        $this->Paginator->settings = array('contain' => $contain, 'conditions' => $conditions, 'order' => array('Course.created' => 'DESC'), 'limit' => 5);
+        $fields = array('id', 'name', 'chapter_id', 'register_student_number', 'max_enroll_number', 'status', 'teacher_id', 'is_published', 'enrolling_expiry_date', 'created', 'created_user_id');
+        $this->Paginator->settings = array('fields' => $fields, 'contain' => $contain, 'conditions' => $conditions, 'order' => array('Course.created' => 'DESC'), 'limit' => 5);
         $this->set('courses', $this->Paginator->paginate());
         if ($this->request->is('ajax')) {
-
+            $this->set('status', $status);
             $this->render('manager_index_ajax');
         }
         $fields = $this->Course->Chapter->Field->find('list');
@@ -964,10 +1004,13 @@ class CoursesController extends AppController {
 
         $enrolling_expiry_date = new DateTime($this->Course->field('enrolling_expiry_date'));
         $today = new DateTime();
+        /*
         if ($today < $enrolling_expiry_date) {
             $this->Session->setFlash('Khóa học chưa hết hạn đăng ký!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
             return $this->redirect($this->referer());
         }
+         * */
+         
 //
         if ($this->Course->field('so_buoi') < 1) {
             $this->Session->setFlash('Vui lòng thêm buổi học cho khóa.!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
@@ -1090,7 +1133,7 @@ class CoursesController extends AppController {
             throw new NotFoundException(__('Invalid course'));
         }
         if ($this->request->is(array('post', 'put'))) {
-            //debug($this->request->data);die;
+//debug($this->request->data);die;
             if ($this->Course->save($this->request->data)) {
                 $this->Session->setFlash('Lưu thành công', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'));
                 return $this->redirect(array('action' => 'view1', $id));
@@ -1191,7 +1234,7 @@ class CoursesController extends AppController {
                     $this->send_mail($to, $subject, $message);
                 }
             }
-            //Tạo thông báo gủi nội bộ hệ thống
+//Tạo thông báo gủi nội bộ hệ thống
             App::uses('Message', 'Model');
             foreach ($ds_sinh_vien as $sinh_vien) {
                 $name = $sinh_vien['Student']['name'];

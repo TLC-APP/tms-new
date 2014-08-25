@@ -196,6 +196,7 @@ class UsersController extends AppController {
      */
     public function admin_index() {
         $this->User->recursive = 0;
+        $this->Paginator->settings=array('limit'=>10);
         $this->set('users', $this->Paginator->paginate());
     }
 
@@ -508,7 +509,7 @@ class UsersController extends AppController {
         $hocHams = $this->User->HocHam->find('list');
         $hocVis = $this->User->HocVi->find('list');
         $departments = $this->User->Department->find('list');
-        $groups = $this->User->Group->find('list', array('conditions' => array('NOT' => array('Group.alias' => array('admin', 'manager')))));
+        $groups = $this->User->Group->find('list');
         $this->set(compact('hocHams', 'hocVis', 'groups', 'departments'));
     }
 

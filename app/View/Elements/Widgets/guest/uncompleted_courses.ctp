@@ -20,7 +20,8 @@ if (!empty($unCompleteCourses)):
                                         <?php echo $this->Html->link($course['Course']['name'] . ' - ' . $course['Teacher']['name'], array('guest' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']), array('class' => 'add-button fancybox.ajax', 'escape' => false)) ?>
                                     </h2>
                                     <?php $output = preg_match_all('/<img[^>]+src=[\'"]([^\'"]+)[\'"][^>]*>/i', $course['Course']['decription'], $matches); ?>
-                                    <?php  echo $this->Html->link($this->Html->image($matches[1][0], array('class' => 'thumb', 'alt' => '', 'width' => 100, 'height' => '100')), array('guest' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']), array('class' => 'add-button fancybox.ajax', 'escape' => false)) ?>
+                                    <?php echo (!empty($matches[1][0])) ? $this->Html->image($matches[1][0], array('class' => 'thumb', 'width' => 100, 'height' => '100')) : $this->Html->image('training_default.jpg',array('class' => 'thumb', 'width' => 100, 'height' => '100')); ?>
+
                                     <p><?php
                                         /* echo $this->Text->truncate(strip_tags($course['Course']['decription']), 100, array(
                                           'ellipsis' => '...',
@@ -29,7 +30,7 @@ if (!empty($unCompleteCourses)):
                                           )); */
                                         ?>
                                     </p>
-                                               
+
                                 </div><!--//news-item-->
                             <?php endif; ?>
                             <?php

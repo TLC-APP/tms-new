@@ -56,68 +56,22 @@ class Course extends AppModel {
             'numeric' => array(
                 'rule' => array('naturalNumber'),
                 'message' => 'Số người học > 0',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            
             ),
             'notEmpty' => array(
                 'rule' => array('notEmpty'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            
             ),
         ),
-        'session_number' => array(
-            'notEmpty' => array(
-                'rule' => array('notEmpty'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-            'numeric' => array(
-                'rule' => array('numeric'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-        ),
+        
         'is_published' => array(
             'boolean' => array(
                 'rule' => array('boolean'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            
             ),
         ),
-        'is_cancelled' => array(
-            'boolean' => array(
-                'rule' => array('boolean'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-        ),
-        'status' => array(
-            'numeric' => array(
-                'rule' => array('numeric'),
-            //'message' => 'Your custom message here',
-            //'allowEmpty' => false,
-            //'required' => false,
-            //'last' => false, // Stop validation after this rule
-            //'on' => 'create', // Limit validation to 'create' or 'update' operations
-            ),
-        ),
+        
+
         'chapter_id' => array(
             'numeric' => array(
                 'rule' => array('numeric'),
@@ -167,6 +121,7 @@ class Course extends AppModel {
      * @var array
      */
     public $hasMany = array(
+        //Tham gia
         'Attend' => array(
             'className' => 'Attend',
             'foreignKey' => 'course_id',
@@ -180,6 +135,7 @@ class Course extends AppModel {
             'finderQuery' => '',
             'counterQuery' => ''
         ),
+        //Phong hoc
         'CoursesRoom' => array(
             'className' => 'CoursesRoom',
             'foreignKey' => 'course_id',
@@ -193,6 +149,7 @@ class Course extends AppModel {
             'finderQuery' => '',
             'counterQuery' => ''
         ),
+        //Tai lieu
         'Attachment' => array(
             'className' => 'Attachment',
             'foreignKey' => 'foreign_key',
@@ -201,6 +158,20 @@ class Course extends AppModel {
                 'Attachment.model' => 'Course',
             ),
             'limit' => 1
+        ),
+        //Tro gian
+        'AssistantTeacher' => array(
+            'className' => 'AssistantTeacher',
+            'foreignKey' => 'course_id',
+            'dependent' => true,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
         ),
     );
 
@@ -269,7 +240,9 @@ class Course extends AppModel {
 
     public function getManagerCourse($fields_manager_id=null) {
         if(!$fields_manager_id) $fields_manager_id= AuthComponent::user('id');
+        
         $fields=$this->Chapter->Field->managerFieldsId($fields_manager_id);
+        
         $chapter=  $this->Chapter->getChapterByFieldIdArray($fields);
         $conditions = array('Course.chapter_id' => $chapter);
         $courses = $this->find('all', array('conditions' => $conditions, 'recursive' => -1, 'fields' => array('Course.id')));

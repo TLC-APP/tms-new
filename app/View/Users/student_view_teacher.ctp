@@ -9,7 +9,11 @@
                             <?php if ($teacher['User']['avatar']) { ?>
                                 <tr>
                                     <td>Ảnh đại diện</td>
-                                    <td><?php echo $teacher['User']['avatar']; ?></td>
+                                    <td>
+                                        <div class="img-responsive">   
+                                            <?php echo $this->Html->image("/files/user/avatar/" . $teacher['User']['avatar_path'] . '/' . $teacher['User']['avatar'], array('width' => 200, 'class' => 'img-repository')); ?>
+                                        </div>
+                                    </td>
                                 </tr>
                             <?php } ?>
 
@@ -30,17 +34,17 @@
                             <?php if ($teacher['User']['email']) { ?>
                                 <tr><td>Email</td><td><?php echo $teacher['User']['email']; ?></td></tr>
                             <?php } ?>
-                                
-                             <?php if ($teacher['User']['birthday']) { ?>  
-                            <tr><td>Ngày sinh</td><td><?php echo $teacher['User']['birthday']; ?></td></tr>
-                             <?php } ?>
-                            
-                             <?php if ($teacher['User']['birthplace']) { ?>
-                            <tr><td>Nơi sinh</td><td><?php echo $teacher['User']['birthplace']; ?></td></tr>
+
+                            <?php if ($teacher['User']['birthday']) { ?>  
+                                <tr><td>Ngày sinh</td><td><?php echo $teacher['User']['birthday']; ?></td></tr>
                             <?php } ?>
-                            
-                             <?php if ($teacher['User']['address']) { ?>
-                            <tr><td>Địa chỉ</td><td><?php echo $teacher['User']['address']; ?></td></tr>
+
+                            <?php if ($teacher['User']['birthplace']) { ?>
+                                <tr><td>Nơi sinh</td><td><?php echo $teacher['User']['birthplace']; ?></td></tr>
+                            <?php } ?>
+
+                            <?php if ($teacher['User']['address']) { ?>
+                                <tr><td>Địa chỉ</td><td><?php echo $teacher['User']['address']; ?></td></tr>
                             <?php } ?>
                         </tbody>
                     </table>

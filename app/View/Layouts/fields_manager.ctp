@@ -34,20 +34,19 @@
 
                 <!-- Main content -->
                 <section class="content">
-                    <div class="row">
-                        <?php 
-                        echo $this->Session->flash(); 
-                        echo $this->Session->flash('auth'); 
-                        ?>
 
-                        <?php echo $this->fetch('content'); ?>
-                    </div>
+                    <?php
+                    echo $this->Session->flash();
+                    echo $this->Session->flash('auth');
+                    echo $this->fetch('content');
+                    ?>
+
 
 
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
 
-        <?php echo $this->Js->writeBuffer(); ?>
+<?php echo $this->Js->writeBuffer(); ?>
     </body>
 </html>

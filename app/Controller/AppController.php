@@ -32,8 +32,7 @@ class AppController extends Controller {
             'unauthorizedRedirect' => '/',
             'loginRedirect' => array(
                 'controller' => 'dashboards',
-                'action' => 'home',
-                'student' => true),
+                'action' => 'home'),
             'loginAction' => array(
                 'controller' => 'users',
                 'action' => 'login',

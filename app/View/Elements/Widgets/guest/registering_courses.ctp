@@ -23,9 +23,10 @@
                                 <?php
                                 $output = preg_match_all('/<img[^>]+src=[\'"]([^\'"]+)[\'"][^>]*>/i', $course['Course']['decription'], $matches);
                                 ?>
-                                <img alt="" class="img-responsive"  style="padding-right: 10px; 
-                                     width: 100px;"
-                                     src="<?php echo $matches[1][0]; ?>">
+
+                                <?php echo (!empty($matches[1][0])) ? $this->Html->image($matches[1][0], array('style' => "padding-right: 10px; 
+                                     width: 100px;", 'class' => 'img-responsive')) : $this->Html->image('training_default.jpg', array('style' => "padding-right: 10px; 
+                                     width: 100px;", 'class' => 'img-responsive')); ?>
                             </td>
                             <td><?php echo $this->Html->link($course['Course']['name'], array('guest' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']), array('class' => 'add-button fancybox.ajax')) ?></td>
                             <td><?php echo $course['Chapter']['name'] ?></td>

@@ -5,19 +5,14 @@
 <?php echo $this->Html->css('bootstrap'); ?>
 <!-- font Awesome -->
 <?php echo $this->Html->css('font-awesome.min'); ?>
-<!-- fullCalendar -->
-<?php echo $this->Html->css('fullcalendar/fullcalendar'); ?>
 <?php echo $this->Html->css('select2'); ?>
 <?php echo $this->Html->css('select2-bootstrap'); ?>
 <!-- daterange picker -->
-<?php echo $this->Html->css('daterangepicker/daterangepicker-bs3'); ?>
-<?php echo $this->Html->script('plugins/daterangepicker/daterangepicker'); ?>
+
 <!-- Theme style -->
 <?php echo $this->Html->css('AdminLTE'); ?>
 <!-- add new calendar event modal -->
 <!-- jQuery 2.0.2 -->
-<?php //echo $this->Html->script('jquery') ?>
-<?php //echo $this->Html->script('jquery-migrate-1.2.1') ?>
 <?php echo $this->Html->script('/user/plugins/jquery-1.10.2.min'); ?>
 <?php echo $this->Html->script('/user/plugins/jquery-migrate-1.2.1.min'); ?>
 <!-- jQuery UI 1.10.3 -->
@@ -30,6 +25,9 @@
 <?php echo $this->Html->script('plugins/fullcalendar/fullcalendar.min') ?>
 
 <?php echo $this->Html->script('plugins/select2/select2'); ?>
+<!-- daterange picker -->
+<?php echo $this->Html->css('daterangepicker/daterangepicker-bs3'); ?>
+<?php echo $this->Html->script('plugins/daterangepicker/daterangepicker'); ?>
 <?php echo $this->Html->script('moment.min'); ?>
 
 <?php

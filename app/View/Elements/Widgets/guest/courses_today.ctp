@@ -29,16 +29,16 @@
         ?>
         <?php if (!empty($messages)): ?>
             <?php foreach ($messages as $message): ?>
-                <div>
-
-                    <div>
+                <ul>
+                    <li>
                         <a href="<?php echo SUB_DIR; ?>/messages/xem_thong_bao/<?php echo $message['Message']['id'] ?>" class="add-button fancybox.ajax"><?php echo $message['Message']['title'] ?>
                             <span class="badge"><?php
                                 $date = new DateTime($message['Message']['created']);
                                 echo $date->format('H:i:s, d-m-Y')
                                 ?></span></a>                            
-                    </div><!--//details-->
-                </div><!--event-item-->  
+                    </li><!--//details-->
+                </ul><!--event-item-->  
+                <div class="clearfix"></div>
             <?php endforeach; ?>
         <?php endif; ?>
     </div><!--//section-content-->
