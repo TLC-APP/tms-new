@@ -29,7 +29,7 @@ class AttachmentsController extends AppController {
         if (!$this->Attachment->exists()) {
             throw new NotFoundException(__('Invalid attachment'));
         }
-        //$this->request->onlyAllow('post', 'delete');
+        Configure::write('debug',0);
         if ($this->Attachment->delete(($id))) {
             if ($this->request->is('ajax')) {
                 echo json_encode(array('status'=>1));die;

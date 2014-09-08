@@ -156,8 +156,8 @@ class Course extends AppModel {
             'dependent' => true,
             'conditions' => array(
                 'Attachment.model' => 'Course',
-            ),
-            'limit' => 1
+            )
+            
         ),
         //Tro gian
         'AssistantTeacher' => array(

@@ -16,6 +16,10 @@ echo $this->Form->create('Course', array(
 <div class="box box-solid box-success">
     <div class="box-header">
         <h3 class="box-title">Thêm Khóa học mới</h3>
+        <div class="box-tools pull-right">
+            <?php echo $this->Html->link('Back', array('action' => 'index', 1), array('type' => 'button', 'class' => 'btn btn-warning')) ?>
+            <?php echo $this->Form->button('Lưu', array('type' => 'submit', 'class' => 'btn btn-info')) ?>
+        </div>
     </div><!-- /.box-header -->
     <div class="box-body">
         <div class="box-group" id="accordion">
@@ -80,8 +84,6 @@ echo $this->Form->create('Course', array(
         </div>
     </div>
     <div class="box-footer">
-        <?php echo $this->Html->link('Back', array('action' => 'index', 1), array('type' => 'button', 'class' => 'btn btn-primary')) ?>
-        <?php echo $this->Form->button('Lưu', array('type' => 'submit', 'class' => 'btn btn-info')) ?>
         <?php echo $this->Form->end(); ?>
     </div>
 </div>

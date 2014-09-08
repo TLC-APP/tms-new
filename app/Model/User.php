@@ -96,8 +96,10 @@ class User extends AppModel {
             ),
         ),
         'avatar' => array(
-            'rule' => array('isValidMimeType', array('image/jpg', 'image/png'), false),
-            'message' => 'Bạn phải chọn ảnh .JPG hoặc .PNG'
+            'rule' => array('isValidMimeType', array('image/png',
+                    'image/jpeg',
+                    'image/gif'), false),
+            'message' => 'Bạn phải chọn ảnh .jpg hoặc .png'
         )
     );
 

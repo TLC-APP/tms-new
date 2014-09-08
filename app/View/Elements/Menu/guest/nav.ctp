@@ -21,58 +21,46 @@
                 <li class=" nav-item">
                     <?php //echo $this->Html->link('Liên hệ', array('controller' => 'dashboards', 'action' => 'contact')); ?>
                 </li>
-                <?php if(isset($loginUser)&&count($loginUser['Group'])>1):?>
-                <li class="nav-item dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Vai trò <i class="fa fa-angle-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <?php foreach ($loginUser['Group'] as $group): ?>
-                            <li>
-                                <?php 
-                                if ($group['alias'] != $this->params['prefix'])
-                                echo $this->Html->link($group['name'], array(
-                                    'controller' => 'dashboards', 
-                                    'action' => 'home', $group['alias'] => true)); 
-                                ?>                
-                            </li>
+                
+                <?php if (isset($loginUser) && count($loginUser['Group']) > 1): ?>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Vai trò <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <?php foreach ($loginUser['Group'] as $group): ?>
+                                <li>
+                                    <?php
+                                    if ($group['alias'] != $this->params['prefix'])
+                                        echo $this->Html->link($group['name'], array(
+                                            'controller' => 'dashboards',
+                                            'action' => 'home', $group['alias'] => true));
+                                    ?>                
+                                </li>
 
-                        <?php endforeach; ?>
-                               
-                    </ul>
-                </li>
-                <?php endif;?>
+                            <?php endforeach; ?>
+
+                        </ul>
+                    </li>
+                <?php endif; ?>
+                <?php if (AuthComponent::user('id')): ?>
+                    <li class="nav-item dropdown">
+                        <?php echo $this->Html->link('Chào '.AuthComponent::user('name').'<i class="fa fa-angle-down"></i>','#',array('class'=>"dropdown-toggle", 'data-toggle'=>"dropdown", 'data-hover'=>"dropdown", 'data-delay'=>"0", 'data-close-others'=>"false",'escape'=>false)); ?>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <?php echo $this->Html->link('Thoát',array('controller'=>'users','action'=>'logout'));?>
+                            </li>
+                        </ul>
+                    </li>
+                <?php endif; ?>
             </ul>
             <?php if (!($this->Session->check('Auth.User.id'))): ?>
                 <ul class="nav navbar-nav pull-right">
-                    <li class="nav-item dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown"data-hover="dropdown" data-delay="0" data-close-others="false" href="#">Đăng nhập <i class="fa fa-angle-down"></i></a>
-                        <div class="dropdown-menu col-lg-5">
-                            <div class="panel panel-theme">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title"><i class="fa fa-lock"></i> Đăng nhập</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <form accept-charset="utf-8" method="post" id="login-nav" role="form" action="<?php echo Router::url('/', true) ?>users/login"><div style="display:none;"><input type="hidden" value="POST" name="_method"></div>                                <div class="form-group">
-                                            <label for="exampleInputEmail2" class="sr-only">Username</label>
-                                            <input type="text" maxlength="100" required="required" placeholder="Username" id="exampleInputEmail2" class="form-control" name="data[User][username]">                                </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword2" class="sr-only">Mật khẩu</label>
-                                            <input type="password" id="UserPassword" placeholder="Mật khẩu" class="form-control" name="data[User][password]">                                </div>
+                    <li class="nav-item">
+                        <?php echo $this->Html->link('Đăng nhập', array('controller' => 'users', 'action' => 'login')) ?>
 
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="hidden" id="UserRemember_" name="data[User][remember]"><input type="checkbox" id="UserRemember" name="data[User][remember]">Ghi nhớ
-                                            </label>
-                                        </div>
-                                        <div class="form-group">
-                                            <button class="btn btn-success btn-block" type="submit">Thực hiện</button>                                    
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                     </li>
                 </ul>
             <?php endif; ?>
+
         </div>
     </div>
 </nav>

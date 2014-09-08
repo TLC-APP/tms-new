@@ -8,11 +8,11 @@
 <link rel="shortcut icon" href="favicon.ico">  
 <?php echo $this->Html->css('http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'); ?>
 <!-- Global CSS -->
-<?php echo $this->Html->css('/user/plugins/bootstrap/css/bootstrap.min') ?>
+<?php echo $this->Html->css('bootstrap.min') ?>
 <!-- Plugins CSS -->    
-<?php echo $this->Html->css('/user/plugins/font-awesome/css/font-awesome') ?>
-<?php echo $this->Html->css('/user/plugins/flexslider/flexslider') ?>
-<?php echo $this->Html->css('/user/plugins/pretty-photo/css/prettyPhoto') ?>
+<?php echo $this->Html->css('font-awesome') ?>
+<?php //echo $this->Html->css('/user/plugins/flexslider/flexslider') ?>
+<?php //echo $this->Html->css('/user/plugins/pretty-photo/css/prettyPhoto') ?>
 <!-- Javascript -->          
 <?php echo $this->Html->script('/user/plugins/jquery-1.10.2.min'); ?>
 <?php echo $this->Html->script('/user/plugins/jquery-migrate-1.2.1.min'); ?>
@@ -21,10 +21,9 @@
 <?php echo $this->Html->script('/user/plugins/back-to-top'); ?>
 <?php echo $this->Html->script('/user/js/main'); ?>
 <?php echo $this->Html->script('plugins/fullcalendar/fullcalendar.min') ?>
-
 <?php echo $this->Html->css('select2'); ?>
 <?php echo $this->Html->css('select2-bootstrap'); ?>
-<?php echo $this->Html->script('plugins/select2/select2'); ?>
+<?php echo $this->Html->script('plugins/select2/select2.min'); ?>
 
 <!-- daterange picker -->
 <?php echo $this->Html->css('daterangepicker/daterangepicker-bs3'); ?>
@@ -43,7 +42,7 @@
 
 
 <?php
-echo $this->element('Common/fancybox');
+echo $this->element('Common/fancybox',array(),array('cache' => true));
 
 echo $this->fetch('meta');
 echo $this->fetch('css');

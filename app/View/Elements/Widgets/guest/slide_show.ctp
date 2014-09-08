@@ -21,33 +21,36 @@
                 $i = 0;
                 foreach ($courses as $course):
                     ?>
+                    <?php
+                    $output = preg_match_all('/<img[^>]+src=[\'"]([^\'"]+)[\'"][^>]*>/i', $course['Course']['decription'], $matches);
+                    ?>
                     <div class="item <?php if (++$i == 1) echo 'active'; ?>">
                         <div style="background:url(<?php echo (!empty($matches[1][0])) ? $matches[1][0] : $this->Html->url('/', true) . 'img/training_default.jpg'; ?>) center center; 
                              background-size:cover;" class="slider-size">
                             <div class="carousel-caption">
                                 <h2 class="main"><?php
-                                    $teacher = '';
-                                    if (!empty($course['Teacher']['HocHam']))
-                                        $teacher.=$course['Teacher']['HocHam']['name'];
-                                    if (!empty($course['Teacher']['HocHam']) && !empty($course['Teacher']['HocVi'])) {
-                                        $teacher.=' ' . $course['Teacher']['HocVi']['name'];
-                                    } else {
-                                        if (!empty($course['Teacher']['HocVi']))
-                                            $teacher.=$course['Teacher']['HocVi']['name'];
-                                    }
-                                    $teacher.=' ' . $course['Teacher']['name'];
+                $teacher = '';
+                if (!empty($course['Teacher']['HocHam']))
+                    $teacher.=$course['Teacher']['HocHam']['name'];
+                if (!empty($course['Teacher']['HocHam']) && !empty($course['Teacher']['HocVi'])) {
+                    $teacher.=' ' . $course['Teacher']['HocVi']['name'];
+                } else {
+                    if (!empty($course['Teacher']['HocVi']))
+                        $teacher.=$course['Teacher']['HocVi']['name'];
+                }
+                $teacher.=' ' . $course['Teacher']['name'];
 
-                                    echo $course['Course']['name'] . ' - ' . $teacher;
-                                    ?> 
+                echo $course['Course']['name'] . ' - ' . $teacher;
+                    ?> 
                                 </h2>
                                 <p class="secondary clearfix"><?php
-                                    echo $this->Text->truncate(strip_tags($course['Course']['decription']), 450, array(
-                                        'ellipsis' => '...',
-                                        'exact' => false,
-                                        'html' => false
-                                    ));
-                                    echo $this->Html->link('xem chi tiết và tham gia', array('guest' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']), array('class' => 'add-button fancybox.ajax btn btn-large btn-warning'))
-                                    ?> </p>
+                                echo $this->Text->truncate(strip_tags($course['Course']['decription']), 450, array(
+                                    'ellipsis' => '...',
+                                    'exact' => false,
+                                    'html' => false
+                                ));
+                                echo $this->Html->link('xem chi tiết và tham gia', array('guest' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']), array('class' => 'add-button fancybox.ajax btn btn-large btn-warning'))
+                    ?> </p>
                             </div>
                         </div>
                     </div>

@@ -198,36 +198,7 @@ class CoursesRoomsController extends AppController {
             
             $this->request->data['CoursesRoom']['end'] = date('Y-m-d H:i:s', strtotime($this->request->data['end']));
             
-            /*
-              if (!empty($this->request->data['start'])) {
-              $format = 'Y-m-d H:i:s';
-              $end = $this->request->data['start'];
-              $dbstart = $this->CoursesRoom->field('start');
-
-              if (!empty($dbstart)) {
-              $dbstart = new DateTime($dbstart);
-              $db_start_hours = $dbstart->format('H');
-              $db_start_minute = $dbstart->format('i');
-              $request_start_date = new DateTime($this->request->data['start']);
-              date_time_set($request_start_date, $db_start_hours, $db_start_minute);
-              $this->request->data['CoursesRoom']['start'] = date($format, strtotime(date_format($request_start_date, $format)));
-              } else {
-              $this->request->data['start'] = date('Y-m-d H:i:s', strtotime($this->request->data['start']));
-              }
-
-              $dbend = $this->CoursesRoom->field('end');
-              if (!empty($dbend)) {
-              $dbend = new DateTime($dbend);
-              $db_end_hours = $dbend->format('H');
-              $db_end_minute = $dbend->format('i');
-              $request_end_date = new DateTime($this->request->data['start']);
-              date_time_set($request_end_date, $db_end_hours, $db_end_minute);
-              $this->request->data['CoursesRoom']['end'] = date('Y-m-d H:i:s', strtotime(date_format($request_end_date, $format)));
-              } else {
-              $this->request->data['end'] = date('Y-m-d H:i:s', strtotime($end . ' +' . THOI_GIAN_MOT_BUOI_HOC . ' hours'));
-              }
-              }
-             */
+            
             if ($this->CoursesRoom->save($this->request->data)) {
                 $this->layout = 'ajax';
                 $response = array('status' => 1, 'message' => 'Thành công!');

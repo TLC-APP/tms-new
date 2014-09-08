@@ -1,7 +1,7 @@
 <?php
 echo $this->element('Common/tinymce');
 $this->Html->addCrumb('Khóa học đăng đăng ký', '/admin/courses/index/1');
-$this->Html->addCrumb('Sửa khóa học '.$this->Form->value('name'));
+$this->Html->addCrumb('Sửa khóa học ' . $this->Form->value('name'));
 ?>
 <?php
 echo $this->Form->create('Course', array(
@@ -15,7 +15,11 @@ echo $this->Form->create('Course', array(
 ?>
 <div class="box box-solid box-success">
     <div class="box-header">
-        <h3 class="box-title">Thêm Khóa học mới</h3>
+        <h3 class="box-title">Cập nhật khóa học</h3>
+        <div class="box-tools pull-right">
+            <?php echo $this->Html->link('Back', array('action' => 'index', 1), array('type' => 'button', 'class' => 'btn btn-warning')) ?>
+            <?php echo $this->Form->button('Lưu', array('type' => 'submit', 'class' => 'btn btn-info')) ?>
+        </div>
     </div><!-- /.box-header -->
     <div class="box-body">
         <div class="box-group" id="accordion">
@@ -70,10 +74,10 @@ echo $this->Form->create('Course', array(
                     <div class="box-body">
                         <?php
                         echo $this->Form->input('teacher_id', array('label' => 'Tập huấn bởi'));
-                        echo $this->Form->input('AssistantTeacher.0.user_id', array('empty'=>'Chọn','label' => 'Trợ giảng 1', 'options' => $teachers,'required'=>false));
-                        echo $this->Form->input('AssistantTeacher.0.lecture_hours', array('label' => 'Số tiết TG 1','required'=>false));
-                        echo $this->Form->input('AssistantTeacher.1.user_id', array('empty'=>'Chọn','label' => 'Trợ giảng 2', 'options' => $teachers,'required'=>false));
-                        echo $this->Form->input('AssistantTeacher.1.lecture_hours', array('label' => 'Số tiết TG 2','required'=>false));
+                        echo $this->Form->input('AssistantTeacher.0.user_id', array('empty' => 'Chọn', 'label' => 'Trợ giảng 1', 'options' => $teachers, 'required' => false));
+                        echo $this->Form->input('AssistantTeacher.0.lecture_hours', array('label' => 'Số tiết TG 1', 'required' => false));
+                        echo $this->Form->input('AssistantTeacher.1.user_id', array('empty' => 'Chọn', 'label' => 'Trợ giảng 2', 'options' => $teachers, 'required' => false));
+                        echo $this->Form->input('AssistantTeacher.1.lecture_hours', array('label' => 'Số tiết TG 2', 'required' => false));
                         ?>
                     </div>
                 </div>
@@ -81,8 +85,7 @@ echo $this->Form->create('Course', array(
         </div>
     </div><!-- /.box-body -->
     <div class="box-footer">
-        <?php echo $this->Html->link('Back', array('action' => 'index', 1), array('type' => 'button', 'class' => 'btn btn-primary')) ?>
-        <?php echo $this->Form->button('Lưu', array('type' => 'submit', 'class' => 'btn btn-info')) ?>
+
         <?php echo $this->Form->end(); ?>
     </div>
 </div><!-- /.box -->

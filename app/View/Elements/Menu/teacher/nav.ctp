@@ -40,6 +40,19 @@
                         </ul>
                     </li>
                 <?php endif; ?>
+                <?php if (AuthComponent::user('id')): ?>
+                    <li class="nav-item dropdown">
+                        <?php echo $this->Html->link('Chào ' . AuthComponent::user('name') . '<i class="fa fa-angle-down"></i>', '#', array('class' => "dropdown-toggle", 'data-toggle' => "dropdown", 'data-hover' => "dropdown", 'data-delay' => "0", 'data-close-others' => "false", 'escape' => false)); ?>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <?php echo $this->Html->link('Thoát', array('controller' => 'users', 'action' => 'logout')); ?>
+                            </li>
+                            <li>
+                                <?php echo $this->Html->link('Hồ sơ', array('controller' => 'users', 'action' => 'profile',AuthComponent::user('id'))); ?>
+                            </li>
+                        </ul>
+                    </li>
+                <?php endif; ?>
 
             </ul><!--//nav-->
         </div><!--//navabr-collapse-->

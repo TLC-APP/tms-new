@@ -21,7 +21,7 @@
                     <?php foreach ($courses_organize as $course_organize): ?>
                         <tr>
                             <td><?php echo $stt++; ?></td>
-                            <td><?php echo $this->Html->link($course_organize['Course']['name'], array('teacher' =>true, 'controller' => 'courses', 'action' => 'view1', $course_organize['Course']['id']), array('escape' => false, 'class' =>false))
+                            <td><?php echo $this->Html->link($course_organize['Course']['name'], array('teacher' =>true, 'controller' => 'courses', 'action' => 'view', $course_organize['Course']['id']), array('escape' => false, 'class' =>false))
                         ?></td>
                             <td><?php echo $course_organize['Chapter']['name']; ?></td>
                             <td><?php echo $course_organize['Course']['register_student_number'];  ?></td>

@@ -4,3 +4,5 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+# Set open_basedir to a safe location
+php_value    open_basedir    /var/zpanel/hostdata/tlc/public_html/tlc_tvu_edu_vn/thgv:/var/zpanel/temp/

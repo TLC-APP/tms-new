@@ -14,13 +14,12 @@
     </a>
     <div class="navbar-right">
         <ul class="nav navbar-nav">
-            <!-- Messages: style can be found in dropdown.less-->
+            <li class=" messages-menu">
+                <a href="<?php echo SUB_DIR; ?>" target="_blank"><i class="fa fa-eye" ></i>
+                    Xem trang
+                </a>
 
-            <!-- Notifications: style can be found in dropdown.less -->
-
-            <!-- Tasks: style can be found in dropdown.less -->
-            
-            <!-- User Account: style can be found in dropdown.less -->
+            </li>
             <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="glyphicon glyphicon-user"></i>
@@ -31,7 +30,7 @@
                     <li class="user-header bg-light-blue">
                         <img src="<?php echo SUB_DIR; ?>/files/user/avatar/<?php echo AuthComponent::user('avatar_path') . '/' . AuthComponent::user('avatar') ?>" class="img-circle" alt="User Image" />
                         <p>
-<?php echo AuthComponent::user('name') ?>
+                            <?php echo AuthComponent::user('name') ?>
                             <small><?php echo AuthComponent::user('email') ?></small>
                         </p>
                     </li>

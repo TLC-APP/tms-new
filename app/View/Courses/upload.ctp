@@ -45,7 +45,8 @@
 // post-submit callback 
     function addTaiLieuResponse(responseText, statusText, xhr, $form) {        
         var response = JSON.parse(responseText);
-        if (response.status === 1) {
+        console.log(response);
+        if (response.status == 1) {
             $.fancybox.close();
             $.ajax({
                 type: "POST",

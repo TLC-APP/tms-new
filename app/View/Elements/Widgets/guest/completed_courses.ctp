@@ -28,17 +28,16 @@ $this->Paginator->options(array(
                         'wrapInput' => false,
                         'class' => 'form-control'
                     ),
-                    
                     'class' => 'form-inline',
                     'id' => 'search_form'
                 ));
                 ?>
                 <fieldset>
                     <?php
-                    echo $this->Form->input('name', array('placeholder' => 'tên khóa', 'required'=>false));
-                    echo $this->Form->input('field_id', array('empty' => 'Lĩnh vực','options'=>$fields));
+                    echo $this->Form->input('name', array('placeholder' => 'tên khóa', 'required' => false));
+                    echo $this->Form->input('field_id', array('empty' => 'Lĩnh vực', 'options' => $fields));
                     echo $this->Form->input('chapter_id', array('required' => false, 'empty' => 'Chuyên đề'));
-                    echo $this->Form->input('teacher_id', array('empty' => 'Tập huấn viên','options'=>$teachers));
+                    echo $this->Form->input('teacher_id', array('empty' => 'Tập huấn viên', 'options' => $teachers));
                     ?>
                     <div class="form-group ">
                         <div class="keywords">                
@@ -65,15 +64,18 @@ $this->Paginator->options(array(
 
                     <?php if (!empty($courses)): ?>
                         <?php foreach ($courses as $course): ?>
-                            <?php $output = preg_match_all('/<img[^>]+src=[\'"]([^\'"]+)[\'"][^>]*>/i', $course['Course']['decription'], $matches); ?>
+                            <?php
+                            $output = preg_match_all('/<img[^>]+src=[\'"]([^\'"]+)[\'"][^>]*>/i', $course['Course']['decription'], $matches);
+                            //debug($matches[1][0]);
+                            ?>
 
                             <div class="col-md-3 col-sm-3 col-xs-12 text-center">
                                 <div class="album-cover">
-                                     <?php echo (!empty($matches[1][0]))?$this->Html->image($matches[1][0],array('class' => 'img-responsive', 'alt' => '')):$this->Html->image('training_default.jpg',array('class' => 'img-responsive', 'alt' => '')); ?>
+                                    <?php echo (!empty($matches[1][0])) ? $this->Html->image($matches[1][0], array('class' => 'img-responsive', 'alt' => '')) : $this->Html->image('training_default.jpg', array('class' => 'img-responsive', 'alt' => '')); ?>
                                     <div class="desc">
 
                                         <h4><small>
-                                            <?php echo $this->Html->link($course['Course']['name'] . ' - ' . $course['Teacher']['name'], array('guest' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']), array('class' => 'add-button fancybox.ajax', 'escape' => false)) ?>
+                                                <?php echo $this->Html->link($course['Course']['name'] . ' - ' . $course['Teacher']['name'], array('guest' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']), array('class' => 'add-button fancybox.ajax', 'escape' => false)) ?>
                                             </small></h4>
                                         <p></p>
                                     </div>
@@ -112,7 +114,7 @@ $this->Paginator->options(array(
             })
                     .done(function(data) {
                         chapterbox.empty();
-                chapterbox.append($('<option>').text('Chuyên đề').attr('value', ''));
+                        chapterbox.append($('<option>').text('Chuyên đề').attr('value', ''));
                         $.each(data, function(i, value) {
                             $.each(value, function(index, text) {
                                 chapterbox.append($('<option>').text(text).attr('value', index));

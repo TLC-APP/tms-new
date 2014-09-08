@@ -674,11 +674,14 @@ ul.custom-list-style li {
   padding: 0;
 }
 .header .header-main {
-  padding: 30px 0;
+  padding: 62px 0;
+  background-image:url("/thgv/img/banner.jpg");
+  background-repeat: no-repeat;
 }
 .header h1.logo {
   margin-top: 0;
   margin-bottom: 0;
+ 
 }
 .header .menu-top {
   list-style: none;
@@ -697,7 +700,9 @@ ul.custom-list-style li {
   padding-right: 0;
 }
 .header .menu-top li.divider a {
+  color:#ffffff;
   border-right: 1px solid #c3c3c3;
+  
 }
 .header .menu-top li a {
   display: inline-block;

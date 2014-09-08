@@ -1,5 +1,5 @@
 <header class="header">
-    <?php echo $this->Html->link('TMS', array('controller' => 'dashboards', 'action' => 'home','manager'=>false), array('class' => 'logo')); ?>
+    <?php echo $this->Html->link('TMS', array('controller' => 'dashboards', 'action' => 'home', 'manager' => false), array('class' => 'logo')); ?>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
@@ -12,7 +12,12 @@
         <div class="navbar-right">
             <ul class="nav navbar-nav">
                 <!-- Messages: style can be found in dropdown.less-->
+                <li class=" messages-menu">
+                    <a href="<?php echo SUB_DIR; ?>" target="_blank"><i class="fa fa-eye"></i>
+                        Xem trang
+                    </a>
 
+                </li>
                 <!-- User Account: style can be found in dropdown.less -->
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -22,10 +27,10 @@
                     <ul class="dropdown-menu">
                         <!-- User image -->
                         <li class="user-header bg-light-blue">
-                            <img src="<?php echo SUB_DIR;?>/files/user/avatar/<?php echo AuthComponent::user('avatar_path') . '/' . AuthComponent::user('avatar') ?>" class="img-circle" alt="User Image" />
+                            <img src="<?php echo SUB_DIR; ?>/files/user/avatar/<?php echo AuthComponent::user('avatar_path') . '/' . AuthComponent::user('avatar') ?>" class="img-circle" alt="<?php echo AuthComponent::user('name') ?>" />
                             <p>
-                                <?php echo AuthComponent::user('name');?>
-                                <small><?php echo AuthComponent::user('email');?></small>
+                                <?php echo AuthComponent::user('name'); ?>
+                                <small><?php echo AuthComponent::user('email'); ?></small>
                             </p>
                         </li>
                         <!-- Menu Body -->
@@ -33,10 +38,10 @@
                         <!-- Menu Footer-->
                         <li class="user-footer">
                             <div class="pull-left">
-                                <a href="<?php echo SUB_DIR;?>/student/users/profile/<?php echo AuthComponent::user('id')?>" class="btn btn-default btn-flat fancybox.ajax">Hồ sơ</a>
+                                <a href="<?php echo SUB_DIR; ?>/student/users/profile/<?php echo AuthComponent::user('id') ?>" class="btn btn-default btn-flat fancybox.ajax">Hồ sơ</a>
                             </div>
                             <div class="pull-right">
-                                <a href="<?php echo SUB_DIR;?>/users/logout" class="btn btn-default btn-flat">Thoát</a>
+                                <a href="<?php echo SUB_DIR; ?>/users/logout" class="btn btn-default btn-flat">Thoát</a>
                             </div>
                         </li>
                     </ul>

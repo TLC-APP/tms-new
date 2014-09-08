@@ -4,7 +4,7 @@
     tinymce.init({
         selector: "textarea",
         theme: "modern",
-        //height : 450,
+        height : 700,
         fontsize_formats: "8pt 9pt 10pt 11pt 12pt 14pt 15pt 26pt 36pt",
         plugins: [
             "advlist autolink lists link image charmap print preview hr anchor pagebreak",

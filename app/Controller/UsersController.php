@@ -189,6 +189,18 @@ class UsersController extends AppController {
         return $this->redirect($this->Auth->logout());
     }
 
+    public function student_logout() {
+        return $this->redirect($this->Auth->logout());
+    }
+    public function teacher_logout() {
+        return $this->redirect($this->Auth->logout());
+    }
+    public function manager_logout() {
+        return $this->redirect($this->Auth->logout());
+    }
+    public function admin_logout() {
+        return $this->redirect($this->Auth->logout());
+    }
     /**
      * index method
      *
@@ -196,7 +208,7 @@ class UsersController extends AppController {
      */
     public function admin_index() {
         $this->User->recursive = 0;
-        $this->Paginator->settings=array('limit'=>10);
+        $this->Paginator->settings = array('limit' => 10);
         $this->set('users', $this->Paginator->paginate());
     }
 
@@ -353,17 +365,16 @@ class UsersController extends AppController {
                 $this->Session->setFlash('Đã cập nhật thành công', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'));
                 return $this->redirect(array('action' => 'profile', $id, 'student' => true));
             } else {
-                $this->Session->setFlash('Lỗi cập nhật hồ sơ!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
+                $this->Session->setFlash('Lỗi cập nhật hồ sơ! Vui lòng kiểm tra các trường dữ liệu', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
             }
-        } else {
-            $departments = $this->User->Department->find('list');
-            $hocHams = $this->User->HocHam->find('list');
-            $hocVis = $this->User->HocVi->find('list');
-
-            $this->set(compact('departments', 'hocVis', 'hocHams'));
-            $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
-            $this->request->data = $this->User->find('first', $options);
         }
+        $departments = $this->User->Department->find('list');
+        $hocHams = $this->User->HocHam->find('list');
+        $hocVis = $this->User->HocVi->find('list');
+
+        $this->set(compact('departments', 'hocVis', 'hocHams'));
+        $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
+        $this->request->data = $this->User->find('first', $options);
     }
 
     public function teacher_edit_profile($id) {
@@ -378,14 +389,13 @@ class UsersController extends AppController {
             } else {
                 $this->Session->setFlash('Lỗi cập nhật hồ sơ!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
             }
-        } else {
-            $departments = $this->User->Department->find('list');
-            $hocHams = $this->User->HocHam->find('list');
-            $hocVis = $this->User->HocVi->find('list');
-            $this->set(compact('departments', 'hocVis', 'hocHams'));
-            $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
-            $this->request->data = $this->User->find('first', $options);
         }
+        $departments = $this->User->Department->find('list');
+        $hocHams = $this->User->HocHam->find('list');
+        $hocVis = $this->User->HocVi->find('list');
+        $this->set(compact('departments', 'hocVis', 'hocHams'));
+        $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
+        $this->request->data = $this->User->find('first', $options);
     }
 
     public function admin_edit_profile($id) {
@@ -400,14 +410,13 @@ class UsersController extends AppController {
             } else {
                 $this->Session->setFlash('Lỗi cập nhật hồ sơ!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
             }
-        } else {
-            $departments = $this->User->Department->find('list');
-            $hocHams = $this->User->HocHam->find('list');
-            $hocVis = $this->User->HocVi->find('list');
-            $this->set(compact('departments', 'hocVis', 'hocHams'));
-            $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
-            $this->request->data = $this->User->find('first', $options);
         }
+        $departments = $this->User->Department->find('list');
+        $hocHams = $this->User->HocHam->find('list');
+        $hocVis = $this->User->HocVi->find('list');
+        $this->set(compact('departments', 'hocVis', 'hocHams'));
+        $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
+        $this->request->data = $this->User->find('first', $options);
     }
 
     public function fields_manager_edit_profile($id) {
@@ -415,21 +424,19 @@ class UsersController extends AppController {
             throw new NotFoundException(__('Invalid user'));
         }
         if ($this->request->is(array('post', 'put'))) {
-            //debug($this->request->data);die;
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash('Đã cập nhật thành công', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'));
                 return $this->redirect(array('action' => 'profile', $id, 'fields_manager' => true));
             } else {
                 $this->Session->setFlash('Lỗi cập nhật hồ sơ!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
             }
-        } else {
-            $departments = $this->User->Department->find('list');
-            $hocHams = $this->User->HocHam->find('list');
-            $hocVis = $this->User->HocVi->find('list');
-            $this->set(compact('departments', 'hocVis', 'hocHams'));
-            $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
-            $this->request->data = $this->User->find('first', $options);
         }
+        $departments = $this->User->Department->find('list');
+        $hocHams = $this->User->HocHam->find('list');
+        $hocVis = $this->User->HocVi->find('list');
+        $this->set(compact('departments', 'hocVis', 'hocHams'));
+        $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
+        $this->request->data = $this->User->find('first', $options);
     }
 
     public function manager_edit_profile($id) {
@@ -444,14 +451,14 @@ class UsersController extends AppController {
             } else {
                 $this->Session->setFlash('Lỗi cập nhật hồ sơ!', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-warning'));
             }
-        } else {
+        } 
             $departments = $this->User->Department->find('list');
             $hocHams = $this->User->HocHam->find('list');
             $hocVis = $this->User->HocVi->find('list');
             $this->set(compact('departments', 'hocVis', 'hocHams'));
             $options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
             $this->request->data = $this->User->find('first', $options);
-        }
+        
     }
 
     public function student_view_teacher($id = null) {

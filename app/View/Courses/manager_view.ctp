@@ -7,10 +7,10 @@
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
 
-                    <li class="active"><a data-toggle="tab" href="#lich_hoc">Lịch học</a></li>
+                    <li class=""><a data-toggle="tab" href="#lich_hoc">Lịch học</a></li>
                     <li class=""><a data-toggle="tab" href="#tai_lieu">Tài liệu</a></li>
                     <li class=""><a data-toggle="tab" href="#tab_hoc_vien">Học viên</a></li>
-                    <li class=""><a data-toggle="tab" href="#thong_tin">Thông tin</a></li>
+                    <li class="active"><a data-toggle="tab" href="#thong_tin">Thông tin</a></li>
                     <li class=""><a data-toggle="tab" href="#noi_dung">Nội dung</a></li>
 
                 </ul>
@@ -28,7 +28,7 @@
                             <p><?php echo $course['Course']['decription']; ?></p>
                         </div>
                     </div><!-- /.tab-pane -->
-                    <div id="thong_tin" class="tab-pane">
+                    <div id="thong_tin" class="tab-pane active">
                         <table class="table table-condensed">
 
                             <tbody style="font-size: 15px;">
@@ -103,7 +103,7 @@
                         </table>
                     </div><!-- /.tab-pane -->
 
-                    <div id="lich_hoc" class="tab-pane active">
+                    <div id="lich_hoc" class="tab-pane ">
                         <div class="row">
                             <div class="col-md-12">
 
@@ -178,6 +178,7 @@
                                                     <tbody>
                                                         <?php
                                                         $stt = 0;
+                                                        
                                                         foreach ($course['Attachment'] as $tailieu):
                                                             ?>
                                                             <tr id='attachment_<?php echo $tailieu['id'] ?>'>

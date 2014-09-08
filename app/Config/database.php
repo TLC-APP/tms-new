@@ -7,9 +7,9 @@ class DATABASE_CONFIG {
         'datasource' => 'Database/Mysql',
         'persistent' => false,
         'host' => 'localhost',
-        'login' => 'root',
-        'password' => '',
-        'database' => 'thgv',
+        'login' => 'tlc',
+        'password' => 'ta8agusa4',
+        'database' => 'tlc_thgv',
         'prefix' => '',
         'encoding' => 'utf8'
 

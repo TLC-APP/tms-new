@@ -56,7 +56,7 @@ if (isset($status)) {
 
                             <td>
                                 <?php
-                                echo $this->Html->link($course['Course']['name'], array('admin' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']));
+                                echo $this->Html->link($course['Course']['name'], array('admin' => true, 'controller' => 'courses', 'action' => 'edit', $course['Course']['id']));
                                 $now = new DateTime();
                                 $expired_date = new DateTime($course['Course']['enrolling_expiry_date']);
                                 if ($expired_date < $now && $course['Course']['status'] == COURSE_REGISTERING) {
@@ -96,7 +96,7 @@ if (isset($status)) {
                             <td class="tools">
 
                                 <?php echo $this->Html->link('
-  <span class="fa fa-edit"></span>', array('action' => 'edit', $course['Course']['id']), array('escape' => false,'data-toggle'=>"tooltip" ,'data-placement'=>"left", 'title'=>"sửa khóa học"));
+  <span class="fa fa-eye"></span>', array('action' => 'view', $course['Course']['id']), array('escape' => false,'data-toggle'=>"tooltip" ,'data-placement'=>"left", 'title'=>"xem chi tiết"));
                                 ?>
                                 <?php
                                 if (isset($status) && $status == COURSE_COMPLETED) {

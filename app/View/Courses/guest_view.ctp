@@ -21,27 +21,7 @@
                     <div id="thong_tin" class="tab-pane">
                         <table class="table table-condensed">
                             <tbody style="font-size: 15px;">
-                                <tr>
-                                    <td>Số buổi</td>
-                                    <td><?php echo count($course['CoursesRoom']); ?></td>
-                                </tr>
-                                <tr>
-                                    <td>Ngày mở</td>
-                                    <td><?php echo ($course['Course']['created']); ?></td>
-                                </tr>
-                                <tr>
-                                    <td>Số lượng đăng ký tối đa</td> 
-                                    <td><?php echo $course['Course']['max_enroll_number']; ?></td>
-                                </tr>
-                                <tr>
-                                    <td>Hạn đăng ký</td> 
-                                    <td>
-                                        <span class="text-red"><?php
-                                            $start = new DateTime($course['Course']['enrolling_expiry_date']);
-                                            echo $start->format('H:i');
-                                            echo", ngày: ";
-                                            echo $start->format('d/m/Y');
-                                            ?></span>
+                                                               ?></span>
                                     </td>
                                 </tr>
                                 <tr>

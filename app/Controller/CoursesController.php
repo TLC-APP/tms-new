@@ -853,6 +853,7 @@ class CoursesController extends AppController {
             throw new NotFoundException(__('Invalid course'));
         }
         if ($this->request->is(array('post', 'put'))) {
+            
             if ($this->Course->save($this->request->data)) {
                 $this->Session->setFlash('Cập nhật khóa học thành công', 'alert', array('plugin' => 'BoostCake', 'class' => 'alert-success'));
                 return $this->redirect(array('action' => 'index', COURSE_REGISTERING));

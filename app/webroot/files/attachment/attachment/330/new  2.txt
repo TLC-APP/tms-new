@@ -1,0 +1,7 @@
+CPU: Mobile DualCore Intel Core i3-3110M, 2400 MHz (24 x 100)
+Chipset: Intel Panther Point HM76, Intel Ivy Bridge
+VGA: Intel HD Graphics 4000
+Soundcard: Conexant CX20757
+Lan card: Qualcomm Atheros AR8172/8176/8178 
+Wifi card: Intel(R) Centrino(R) Wireless-N 135
+
