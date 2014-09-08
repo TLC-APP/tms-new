@@ -11,12 +11,10 @@
 <?php echo $this->Html->css('bootstrap.min') ?>
 <!-- Plugins CSS -->    
 <?php echo $this->Html->css('font-awesome') ?>
-<?php //echo $this->Html->css('/user/plugins/flexslider/flexslider') ?>
-<?php //echo $this->Html->css('/user/plugins/pretty-photo/css/prettyPhoto') ?>
 <!-- Javascript -->          
 <?php echo $this->Html->script('/user/plugins/jquery-1.10.2.min'); ?>
 <?php echo $this->Html->script('/user/plugins/jquery-migrate-1.2.1.min'); ?>
-<?php echo $this->Html->script('/user/plugins/bootstrap/js/bootstrap.min'); ?>
+<?php echo $this->Html->script('bootstrap.min'); ?>
 <?php echo $this->Html->script('/user/plugins/bootstrap-hover-dropdown.min'); ?>
 <?php echo $this->Html->script('/user/plugins/back-to-top'); ?>
 <?php echo $this->Html->script('/user/js/main'); ?>
@@ -24,12 +22,10 @@
 <?php echo $this->Html->css('select2'); ?>
 <?php echo $this->Html->css('select2-bootstrap'); ?>
 <?php echo $this->Html->script('plugins/select2/select2.min'); ?>
-
 <!-- daterange picker -->
 <?php echo $this->Html->css('daterangepicker/daterangepicker-bs3'); ?>
 <?php echo $this->Html->script('plugins/daterangepicker/daterangepicker'); ?>
 <?php echo $this->Html->script('moment.min'); ?>
-
 <!-- Theme CSS -->  
 <?php echo $this->Html->css('/user/css/styles') ?>
 
@@ -38,12 +34,8 @@
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
   <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 <![endif]-->
-
-
-
 <?php
 echo $this->element('Common/fancybox',array(),array('cache' => true));
-
 echo $this->fetch('meta');
 echo $this->fetch('css');
 echo $this->fetch('script');

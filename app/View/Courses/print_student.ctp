@@ -1,4 +1,5 @@
 <?php
+
 $this->PhpExcel->loadWorksheet(WWW_ROOT .'report/template/student_list.xlsx');
 $this->PhpExcel->setDefaultFont('Times New Roman', 11);
 if (!empty($course['CoursesRoom'])) {
@@ -45,7 +46,7 @@ foreach ($course['Attend'] as $student) {
 $this->PhpExcel->writeDataToCell($this->PhpExcel->getRow()+2, 'B', 'BAN GIÁM HIỆU');
 $this->PhpExcel->writeDataToCell($this->PhpExcel->getRow()+2, 'G', 'LẬP BẢNG');
 $this->PhpExcel->addTableFooter();
-$this->PhpExcel->output();
+$this->PhpExcel->output('danh_sach_sinh_vien_'.$course['Chapter']['name'].'_'.$course['Course']['name'].'.xlsx');
 
 
 

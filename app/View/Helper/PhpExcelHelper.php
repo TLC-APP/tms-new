@@ -46,6 +46,7 @@ class PhpExcelHelper extends AppHelper {
      */
     public function loadWorksheet($path) {
         $this->loadEssentials();
+        
         $objReader = PHPExcel_IOFactory::createReader('Excel2007');
         $this->xls = $objReader->load($path);
     }
@@ -193,11 +194,14 @@ class PhpExcelHelper extends AppHelper {
 
         $this->_View->layout = '';
         // headers
+        ob_end_clean();
         header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
         header('Content-Disposition: attachment;filename="' . $filename . '"');
         header('Cache-Control: max-age=0');
         // writer
+        //PHPExcel_Settings::setZipClass(PHPExcel_Settings::PCLZIP);
         $objWriter = PHPExcel_IOFactory::createWriter($this->xls, 'Excel2007');
+        //ob_end_clean();
         $objWriter->save('php://output');
         // clear memory
         $this->xls->disconnectWorksheets();

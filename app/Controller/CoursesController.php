@@ -1168,7 +1168,7 @@ class CoursesController extends AppController {
 
     public function print_student($course_id = null) {
         if (!$this->Course->exists($course_id)) {
-            throw new NotFoundException(__('Invalid course'));
+            throw new NotFoundException(__('Không tìm thấy khóa học'));
         }
         $contain = array(
             'Teacher' => array('fields' => array('id', 'name', 'email', 'phone_number')),

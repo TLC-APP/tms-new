@@ -49,7 +49,7 @@
                                     'exact' => false,
                                     'html' => false
                                 ));
-                                echo $this->Html->link('xem chi tiết và tham gia', array('guest' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']), array('class' => 'add-button fancybox.ajax btn btn-large btn-warning'))
+                                echo $this->Html->link('..chi tiết', array('guest' => true, 'controller' => 'courses', 'action' => 'view', $course['Course']['id']), array('class' => 'add-button fancybox.ajax btn btn-large btn-warning'))
                     ?> </p>
                             </div>
                         </div>

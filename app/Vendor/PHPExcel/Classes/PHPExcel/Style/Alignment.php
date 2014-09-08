@@ -37,7 +37,69 @@ class PHPExcel_Style_Alignment extends PHPExcel_Style_Supervisor implements PHPE
 {
 	/* Horizontal alignment styles */
 	const HORIZONTAL_GENERAL				= 'general';
-	const HORIZONTAL ramifications are
+	const HORIZONTAL_LEFT					= 'left';
+	const HORIZONTAL_RIGHT					= 'right';
+	const HORIZONTAL_CENTER					= 'center';
+	const HORIZONTAL_CENTER_CONTINUOUS		= 'centerContinuous';
+	const HORIZONTAL_JUSTIFY				= 'justify';
+	const HORIZONTAL_FILL				    = 'fill';
+	const HORIZONTAL_DISTRIBUTED		    = 'distributed';        // Excel2007 only
+
+	/* Vertical alignment styles */
+	const VERTICAL_BOTTOM					= 'bottom';
+	const VERTICAL_TOP						= 'top';
+	const VERTICAL_CENTER					= 'center';
+	const VERTICAL_JUSTIFY					= 'justify';
+	const VERTICAL_DISTRIBUTED		        = 'distributed';        // Excel2007 only
+
+	/**
+	 * Horizontal
+	 *
+	 * @var string
+	 */
+	protected $_horizontal	= PHPExcel_Style_Alignment::HORIZONTAL_GENERAL;
+
+	/**
+	 * Vertical
+	 *
+	 * @var string
+	 */
+	protected $_vertical		= PHPExcel_Style_Alignment::VERTICAL_BOTTOM;
+
+	/**
+	 * Text rotation
+	 *
+	 * @var int
+	 */
+	protected $_textRotation	= 0;
+
+	/**
+	 * Wrap text
+	 *
+	 * @var boolean
+	 */
+	protected $_wrapText		= FALSE;
+
+	/**
+	 * Shrink to fit
+	 *
+	 * @var boolean
+	 */
+	protected $_shrinkToFit	= FALSE;
+
+	/**
+	 * Indent - only possible with horizontal alignment left and right
+	 *
+	 * @var int
+	 */
+	protected $_indent		= 0;
+
+	/**
+	 * Create a new PHPExcel_Style_Alignment
+	 *
+	 * @param	boolean	$isSupervisor	Flag indicating if this is a supervisor or not
+	 *									Leave this value at default unless you understand exactly what
+	 *										its ramifications are
 	 * @param	boolean	$isConditional	Flag indicating if this is a conditional style or not
 	 *									Leave this value at default unless you understand exactly what
 	 *										its ramifications are
