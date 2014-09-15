@@ -8,8 +8,8 @@ class DATABASE_CONFIG {
         'persistent' => false,
         'host' => 'localhost',
         'login' => 'tlc',
-        'password' => 'ta8agusa4',
-        'database' => 'tlc_thgv',
+        'password' => '',
+        'database' => '',
         'prefix' => '',
         'encoding' => 'utf8'
 
