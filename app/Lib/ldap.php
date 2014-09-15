@@ -6,8 +6,8 @@ class ldap
     private $ldapPort = '389';
     public $suffix = '';
     public $baseDN = 'ou=people,dc=tvu,dc=edu,dc=vn';
-    private $ldapUser = 'admin';
-    private $ldapPassword = 'Pas5w0rd';
+    private $ldapUser = '';
+    private $ldapPassword = '';
 
     public function  __construct()
     {
