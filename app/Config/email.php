@@ -48,17 +48,17 @@ class EmailConfig {
     );
     public $gmail = array(
         'host' => 'ssl://smtp.gmail.com',
-        'from' => array('thaitoan2210@gmail.com' => 'Trung tâm HT-PT Dạy & Học. Hệ thống Hỗ trợ công tác tập huấn giảng viên'),
+        'from' => array('xxx@gmail.com' => 'Trung tâm HT-PT Dạy & Học. Hệ thống Hỗ trợ công tác tập huấn giảng viên'),
         'port' => 465,
       'timeout' => 60,
-        'username' => 'thaitoan2210@gmail.com',
-        'password' => 'C27cX8C27cX8',
+        'username' => 'xxx@gmail.com',
+        'password' => 'xxxxxx',
         'transport' => 'Smtp',
         //'tls' => true
     );
     public $smtp = array(
         'transport' => 'Smtp',
-        'from' => array('thaitoan2210@gmail.com' => 'Hệ thống Hỗ trợ tập huấn giảng viên - TLC'),
+        'from' => array('xxx@gmail.com' => 'Hệ thống Hỗ trợ tập huấn giảng viên - TLC'),
         'host' => 'localhost',
         'port' => 25,
         'timeout' => 30,
